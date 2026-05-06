@@ -5,9 +5,9 @@ const settings = {
   // Theme Configuration
   theme: {
     colors: {
-      primary: '#d4af37', // Gold
-      secondary: '#ff6b6b', // Rose
-      accent: '#4a90e2', // Blue
+      primary: '#d4af37',
+      secondary: '#ff6b6b',
+      accent: '#4a90e2',
       dark: '#1a1a1a',
       darker: '#0a0a0a',
       light: '#f5f5f5',
@@ -37,35 +37,35 @@ const settings = {
   // Couple Information
   couple: {
     bride: {
-      name: "Patinya",
-      fullName: "Patinya Surname",
-      email: "patinya@wedding.com",
-      phone: "+66 123 456 789",
-      instagram: "@patinya",
-      parents: "Mr. & Mrs. Surname"
+      name: "Michy",
+      fullName: "Michelle",
+      email: "michelle@example.com",
+      phone: "+52 000 000 0000",
+      instagram: "@michy",
+      parents: "Familia de Michelle"
     },
     groom: {
-      name: "Dar",
-      fullName: "Dar Surname",
-      email: "dar@wedding.com",
-      phone: "+66 987 654 321",
-      instagram: "@dar",
-      parents: "Mr. & Mrs. Surname"
+      name: "Lalo",
+      fullName: "Eduardo",
+      email: "eduardo@example.com",
+      phone: "+52 000 000 0000",
+      instagram: "@lalo",
+      parents: "Familia de Eduardo"
     },
-    hashtag: "#PatinyaAndDar2026",
-    email: "hello@patinyaanddar.com"
+    hashtag: "#MichyYLalo",
+    email: "hola@michylalo.com"
   },
 
   // Wedding Date & Time
   wedding: {
-    date: "2026-03-07", // Format: YYYY-MM-DD
-    displayDate: "March 07, 2026",
-    shortDate: "03.07.26",
-    day: "Saturday",
+    date: "2026-11-15",
+    displayDate: "Sábado 15 de noviembre de 2026",
+    shortDate: "15.11.26",
+    day: "Sábado",
     ceremony: {
-      time: "17:30", // 24-hour format
+      time: "17:30",
       displayTime: "5:30 PM",
-      duration: "1 hour"
+      duration: "1 hora"
     },
     cocktailHour: {
       time: "18:30",
@@ -75,41 +75,41 @@ const settings = {
       time: "19:00",
       displayTime: "7:00 PM",
       endTime: "00:00",
-      displayEndTime: "Midnight"
+      displayEndTime: "Medianoche"
     }
   },
 
   // Venue Information
   venue: {
-    name: "The Botanical House Bangkok",
-    ceremonyLocation: "Garden Chapel",
-    receptionLocation: "Grand Ballroom",
-    cocktailLocation: "Garden Terrace",
+    name: "Veracruz, México",
+    ceremonyLocation: "Ceremonia por confirmar",
+    receptionLocation: "Recepción por confirmar",
+    cocktailLocation: "Cóctel de bienvenida",
     address: {
-      full: "The Botanical House Bangkok, Rama IX Rd, Suanluang, Prawet, Bangkok 10250, Thailand",
-      street: "Rama IX Rd",
-      district: "Suanluang, Prawet",
-      city: "Bangkok",
-      postalCode: "10250",
-      country: "Thailand"
+      full: "Veracruz, México",
+      street: "Dirección por confirmar",
+      district: "Zona por confirmar",
+      city: "Veracruz",
+      postalCode: "00000",
+      country: "México"
     },
     coordinates: {
-      lat: 13.7422323,
-      lng: 100.5754059
+      lat: 19.1738,
+      lng: -96.1342
     },
-    googleMapsUrl: "https://maps.google.com/?q=13.7422323,100.5754059",
-    shareUrl: "https://share.google/fZbzYMuySwltxPJZJ",
-    parking: "Valet Parking Available",
+    googleMapsUrl: "https://maps.google.com/?q=Veracruz,Mexico",
+    shareUrl: "https://maps.google.com/?q=Veracruz,Mexico",
+    parking: "Información de estacionamiento por confirmar.",
     accommodation: [
       {
-        name: "The Botanical Hotel",
-        distance: "On-site",
-        bookingCode: "PATDAR2026"
+        name: "Hotel sugerido por confirmar",
+        distance: "Cercano al evento",
+        bookingCode: "MICHYLALO2026"
       },
       {
-        name: "Bangkok Marriott",
-        distance: "5 minutes",
-        bookingCode: "WEDDING2026"
+        name: "Hospedaje recomendado por confirmar",
+        distance: "Cercano al evento",
+        bookingCode: "BODA2026"
       }
     ]
   },
@@ -117,45 +117,45 @@ const settings = {
   // Event Details
   events: {
     ceremony: {
-      title: "The Ceremony",
-      description: "Join us as we exchange vows in the beautiful Garden Chapel",
-      dressCode: "Modern Formal",
-      colors: ["Black", "White", "Gold"],
-      notes: "Outdoor ceremony - sun hats welcome"
+      title: "Ceremonia",
+      description: "Nos encantará contar con su presencia para acompañarnos en este momento tan especial.",
+      dressCode: "Formal elegante",
+      colors: ["Negro", "Dorado", "Tonos neutros"],
+      notes: "Muy pronto compartiremos la hora y ubicación exacta de la ceremonia."
     },
     reception: {
-      title: "The Reception",
-      description: "Dinner, dancing, and celebration under the stars",
-      dressCode: "Cocktail Attire",
-      features: ["Open Bar", "Live Band", "DJ", "Photo Booth"],
-      menu: "Thai & International Cuisine"
+      title: "Recepción",
+      description: "Después de la ceremonia, celebraremos juntos con cena, música y mucho cariño.",
+      dressCode: "Formal elegante",
+      features: ["Cena", "Música", "Baile", "Brindis"],
+      menu: "Cena por confirmar"
     }
   },
 
   // Love Story Timeline
   loveStory: [
     {
-      date: "May 2021",
-      title: "First Meeting",
-      description: "Coffee shop magic in Bangkok",
+      date: "Nuestro inicio",
+      title: "El comienzo",
+      description: "Toda historia tiene un primer momento. El nuestro fue el inicio de muchos recuerdos juntos.",
       icon: "Heart"
     },
     {
-      date: "Dec 2021",
-      title: "First Adventure",
-      description: "Exploring Chiang Mai together",
+      date: "Nuestro camino",
+      title: "Momentos compartidos",
+      description: "Entre risas, planes y días especiales, fuimos construyendo una historia que hoy queremos celebrar.",
       icon: "MapPin"
     },
     {
-      date: "Feb 2024",
-      title: "The Proposal",
-      description: "Under the stars at Koh Samui",
+      date: "La promesa",
+      title: "El sí",
+      description: "Un momento que quedará para siempre en nuestro corazón y que nos trajo hasta este día.",
       icon: "Sparkles"
     },
     {
-      date: "March 2026",
-      title: "Our Wedding",
-      description: "Beginning our forever journey",
+      date: "15 de noviembre de 2026",
+      title: "Nuestra boda",
+      description: "Hoy queremos celebrar nuestro amor rodeados de las personas que forman parte de nuestra vida.",
       icon: "Calendar"
     }
   ],
@@ -164,33 +164,33 @@ const settings = {
   gallery: [
     {
       url: "/our-moments/no-image.jpg",
-      alt: "Romantic couple photo",
-      caption: "Our engagement shoot"
+      alt: "Foto de la pareja",
+      caption: "Un recuerdo especial"
     },
     {
       url: "/our-moments/no-image.jpg",
-      alt: "Beautiful wedding rings",
-      caption: "The rings"
+      alt: "Detalle de la boda",
+      caption: "Detalles que cuentan nuestra historia"
     },
     {
       url: "/our-moments/no-image.jpg",
-      alt: "Our Wedding Rings",
-      caption: "Our Wedding Rings"
+      alt: "Anillos de boda",
+      caption: "El símbolo de nuestro compromiso"
     },
     {
       url: "/our-moments/no-image.jpg",
-      alt: "Wedding bouquet",
-      caption: "Floral details"
+      alt: "Flores de boda",
+      caption: "Detalles para un día inolvidable"
     },
     {
       url: "/our-moments/no-image.jpg",
-      alt: "Couple walking together",
-      caption: "Adventure awaits"
+      alt: "Pareja caminando",
+      caption: "Un camino juntos"
     },
     {
       url: "/our-moments/no-image.jpg",
-      alt: "Wedding celebration",
-      caption: "Celebration time"
+      alt: "Celebración de boda",
+      caption: "La celebración apenas comienza"
     }
   ],
 
@@ -200,18 +200,18 @@ const settings = {
     images: [
       {
         url: "/botanical-house-bkk/5.jpg",
-        alt: "The Botanical House Bangkok - Garden View",
-        caption: "Beautiful garden entrance"
+        alt: "Lugar del evento",
+        caption: "Espacio del evento por confirmar"
       },
       {
         url: "/botanical-house-bkk/3.jpg",
-        alt: "The Botanical House Bangkok - Ceremony Space",
-        caption: "Garden chapel area"
+        alt: "Área de ceremonia",
+        caption: "Área de ceremonia por confirmar"
       },
       {
         url: "/botanical-house-bkk/4.jpg",
-        alt: "The Botanical House Bangkok - Reception Setup",
-        caption: "Evening reception setting"
+        alt: "Área de recepción",
+        caption: "Área de recepción por confirmar"
       }
     ]
   },
@@ -219,40 +219,40 @@ const settings = {
   // Social Media
   social: {
     instagram: {
-      bride: "@patinya",
-      groom: "@dar",
-      wedding: "@patinyaanddar2026",
-      hashtag: "#PatinyaAndDar2026"
+      bride: "@michy",
+      groom: "@lalo",
+      wedding: "@michylalo",
+      hashtag: "#MichyYLalo"
     },
     facebook: {
-      eventPage: "https://facebook.com/events/patinyaanddar2026"
+      eventPage: "https://facebook.com"
     }
   },
 
   // RSVP Settings
   rsvp: {
-    deadline: "2026-02-01",
-    displayDeadline: "February 1st, 2026",
+    deadline: "2026-10-15",
+    displayDeadline: "15 de octubre de 2026",
     maxGuests: 5,
     allowPlusOne: true,
     collectDietaryInfo: true,
     collectSongRequests: true,
-    emailNotification: "rsvp@patinyaanddar.com"
+    emailNotification: "rsvp@michylalo.com"
   },
 
   // Registry Information
   registry: {
     enabled: true,
-    message: "Your presence is our present, but if you wish to contribute...",
+    message: "Su presencia es nuestro mejor regalo. Si desean tener un detalle con nosotros, pronto compartiremos más información.",
     links: [
       {
-        name: "Honeymoon Fund",
-        url: "https://registry.com/honeymoon",
-        icon: "Plane"
+        name: "Mesa de regalos",
+        url: "https://example.com",
+        icon: "Gift"
       },
       {
-        name: "Home Fund",
-        url: "https://registry.com/home",
+        name: "Fondo para nuestro hogar",
+        url: "https://example.com",
         icon: "Home"
       }
     ]
@@ -261,28 +261,28 @@ const settings = {
   // Contact Information
   contact: {
     weddingPlanner: {
-      name: "Bangkok Wedding Planners",
-      phone: "+66 555 123 456",
-      email: "planner@bangkokweddings.com"
+      name: "Coordinación por confirmar",
+      phone: "+52 000 000 0000",
+      email: "contacto@michylalo.com"
     },
     photographer: {
-      name: "Moments Photography",
-      instagram: "@momentsphotobkk"
+      name: "Fotografía por confirmar",
+      instagram: "@fotografia"
     }
   },
 
-  // COVID/Health Guidelines (if needed)
+  // COVID/Health Guidelines
   guidelines: {
     enabled: false,
-    message: "We're following all local health guidelines for your safety.",
+    message: "Seguiremos las recomendaciones necesarias para que todos puedan disfrutar el evento con tranquilidad.",
     requirements: []
   },
 
   // Metadata for SEO
   metadata: {
-    title: "Patinya & Dar | March 07, 2026",
-    description: "Join us for our wedding celebration at The Botanical House Bangkok",
-    keywords: "wedding, bangkok, patinya, dar, 2026, botanical house",
+    title: "Michy & Lalo | Sábado 15 de noviembre de 2026",
+    description: "Acompáñanos a celebrar la boda de Michy y Lalo en Veracruz, México.",
+    keywords: "boda, invitación, michy, lalo, veracruz, 2026",
     ogImage: "/og-image.jpg"
   }
 };
