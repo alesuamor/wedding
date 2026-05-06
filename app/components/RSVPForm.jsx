@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Check, Mail } from 'lucide-react';
+import { Send, Check } from 'lucide-react';
 
 export default function RSVPForm() {
     const [formData, setFormData] = useState({
@@ -36,18 +36,20 @@ export default function RSVPForm() {
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.6 }}
-                    className="text-center"
+                    className="text-center px-6"
                 >
                     <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-[#87a878] to-[#a8c89a] rounded-full mb-6">
                         <Check className="w-12 h-12 text-white" />
                     </div>
+
                     <h2 className="font-playfair text-5xl font-thin tracking-[0.02em] mb-4">
                         <span className="bg-gradient-to-r from-[#1a1a1a] via-[#d4af37] to-[#1a1a1a] bg-clip-text text-transparent">
-                            THANK YOU!
+                            ¡Gracias!
                         </span>
                     </h2>
-                    <p className="text-xl text-[#1a1a1a] opacity-70">
-                        Your RSVP has been received. We're so excited to celebrate with you!
+
+                    <p className="text-xl text-[#1a1a1a] opacity-70 max-w-xl mx-auto">
+                        Hemos recibido tu confirmación. Nos emociona mucho poder compartir este día contigo.
                     </p>
                 </motion.div>
             </section>
@@ -64,14 +66,16 @@ export default function RSVPForm() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-playfair text-[clamp(6rem,12vw,7rem)] font-thin tracking-[0.02em] mb-5 drop-shadow-[0_0_5px_rgba(212,175,55,0.4)] ">
+                    <h2 className="font-playfair text-[clamp(6rem,12vw,7rem)] font-thin tracking-[0.02em] mb-5 drop-shadow-[0_0_5px_rgba(212,175,55,0.4)]">
                         <span className="bg-gradient-to-r from-[#1a1a1a] via-[#514343] to-[#1a1a1a] bg-clip-text text-transparent">
                             RSVP
                         </span>
                     </h2>
+
                     <p className="text-lg font-light tracking-[2px] uppercase opacity-60">
-                        We Hope You Can Join Us,
-                        Let us know if you’re coming.
+                        Nos encantará compartir este día contigo.
+                        <br />
+                        Confírmanos si podrás acompañarnos.
                     </p>
                 </motion.div>
 
@@ -95,11 +99,11 @@ export default function RSVPForm() {
                                 className="w-full px-0 py-3 bg-transparent border-b border-[#1a1a1a]/20 focus:border-[#d4af37] outline-none transition-all duration-300 peer"
                                 placeholder=" "
                             />
-                            <label 
+                            <label
                                 htmlFor="firstName"
                                 className="absolute left-0 top-3 text-[#1a1a1a]/60 transition-all duration-300 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#d4af37] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm"
                             >
-                                First Name
+                                Nombre
                             </label>
                         </div>
 
@@ -113,11 +117,11 @@ export default function RSVPForm() {
                                 className="w-full px-0 py-3 bg-transparent border-b border-[#1a1a1a]/20 focus:border-[#d4af37] outline-none transition-all duration-300 peer"
                                 placeholder=" "
                             />
-                            <label 
+                            <label
                                 htmlFor="lastName"
                                 className="absolute left-0 top-3 text-[#1a1a1a]/60 transition-all duration-300 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#d4af37] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm"
                             >
-                                Last Name
+                                Apellido
                             </label>
                         </div>
                     </div>
@@ -134,11 +138,11 @@ export default function RSVPForm() {
                                 className="w-full px-0 py-3 bg-transparent border-b border-[#1a1a1a]/20 focus:border-[#d4af37] outline-none transition-all duration-300 peer"
                                 placeholder=" "
                             />
-                            <label 
+                            <label
                                 htmlFor="email"
                                 className="absolute left-0 top-3 text-[#1a1a1a]/60 transition-all duration-300 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#d4af37] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm"
                             >
-                                Email Address
+                                Correo electrónico
                             </label>
                         </div>
 
@@ -150,12 +154,12 @@ export default function RSVPForm() {
                                 required
                                 className="w-full px-0 py-3 bg-transparent border-b border-[#1a1a1a]/20 focus:border-[#d4af37] outline-none transition-all duration-300 appearance-none cursor-pointer"
                             >
-                                <option value="">Number of Guests</option>
-                                <option value="1">1 Guest</option>
-                                <option value="2">2 Guests</option>
-                                <option value="3">3 Guests</option>
-                                <option value="4">4 Guests</option>
-                                <option value="5+">5+ Guests</option>
+                                <option value="">Número de asistentes</option>
+                                <option value="1">1 persona</option>
+                                <option value="2">2 personas</option>
+                                <option value="3">3 personas</option>
+                                <option value="4">4 personas</option>
+                                <option value="5+">5 o más personas</option>
                             </select>
                         </div>
                     </div>
@@ -170,11 +174,11 @@ export default function RSVPForm() {
                             className="w-full px-0 py-3 bg-transparent border-b border-[#1a1a1a]/20 focus:border-[#d4af37] outline-none transition-all duration-300 resize-none peer"
                             placeholder=" "
                         />
-                        <label 
+                        <label
                             htmlFor="message"
                             className="absolute left-0 top-3 text-[#1a1a1a]/60 transition-all duration-300 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#d4af37] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm"
                         >
-                            Special Requests or Dietary Restrictions
+                            Mensaje, restricciones alimentarias o comentarios
                         </label>
                     </div>
 
@@ -191,12 +195,12 @@ export default function RSVPForm() {
                             {isSubmitting ? (
                                 <>
                                     <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
-                                    Sending...
+                                    Enviando...
                                 </>
                             ) : (
                                 <>
                                     <Send className="w-5 h-5" />
-                                    Send RSVP
+                                    Confirmar asistencia
                                 </>
                             )}
                         </span>
