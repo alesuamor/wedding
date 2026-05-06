@@ -400,7 +400,7 @@ export default function Hero({ guest }) {
             className="mt-8 md:mt-12 space-y-2"
           >
             <p className="text-sm tracking-[3px] uppercase text-[#87a878] font-light">
-              Are Getting Married
+              Nos casamos
             </p>
             {settings.venue?.name && (
               <div className="flex items-center justify-center gap-3">
@@ -421,11 +421,11 @@ export default function Hero({ guest }) {
               transition={{ duration: 1, delay: 1.4 }}
               className="mt-8 md:mt-12 p-6 rounded-2xl bg-[#0a0a0a]/40 border border-[#d4af37]/20 backdrop-blur-sm mx-auto max-w-md"
             >
-              <h3 className="text-[#d4af37] font-playfair italic mb-2">Invitación para</h3>
+              <h3 className="text-[#d4af37] font-playfair italic mb-2">Con mucho cariño para</h3>
               <p className="text-xl md:text-2xl text-[#faf8f3] font-light mb-2">{guest.displayName}</p>
               <div className="flex items-center justify-center gap-2">
                 <span className="w-12 h-[1px] bg-gradient-to-r from-transparent to-[#d4af37]/50"></span>
-                <p className="text-sm tracking-widest text-[#87a878] uppercase">Pases: {guest.passes}</p>
+                <p className="text-sm tracking-widest text-[#87a878] uppercase">Pases reservados: {guest.passes}</p>
                 <span className="w-12 h-[1px] bg-gradient-to-l from-transparent to-[#d4af37]/50"></span>
               </div>
             </motion.div>

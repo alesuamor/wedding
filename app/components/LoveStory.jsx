@@ -96,10 +96,10 @@ export default function LoveStory() {
             viewport={{ once: true }}
           >
             <span className="block bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent">
-              OUR
+              NUESTRA
             </span>
             <span className="block bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent mt-2">
-              JOURNEY
+              JNUESTRANEY
             </span>
           </motion.h2>
 
@@ -110,7 +110,7 @@ export default function LoveStory() {
             transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            A Collection of Moments
+            Una colección de momentos
           </motion.p>
 
           {/* Scroll Indicator - simplified for mobile */}
@@ -290,7 +290,7 @@ export default function LoveStory() {
                 <span className="block mt-2">In all the world, there is no love for you like mine."</span>
               </p>
               <cite className="block mt-8 text-xs tracking-[0.3em] uppercase text-[#d4af37]/40 not-italic">
-                — Maya Angelou
+                Con cariño, Michy & Lalo
               </cite>
             </motion.blockquote>
           </div>

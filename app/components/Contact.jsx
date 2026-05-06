@@ -16,28 +16,28 @@ export default function Contact() {
     const contactInfo = [
         {
             icon: Mail,
-            title: "Email",
+            title: "Correo",
             details: [couple.bride.email, couple.groom.email],
             color: "from-[#ff6b6b] to-[#ffc4c4]"
         },
         {
             icon: Phone,
-            title: "Phone",
+            title: "Teléfono",
             details: [couple.bride.phone, couple.groom.phone],
             color: "from-[#d4af37] to-[#e6c757]"
         },
         {
             icon: MapPin,
-            title: "Venue",
+            title: "Lugar",
             details: [venue.name, venue.address.district],
             color: "from-[#87a878] to-[#a8c89a]"
         },
         {
             icon: Clock,
-            title: "Timeline",
+            title: "Itinerario",
             details: [
-                `Ceremony: ${wedding.ceremony.displayTime}`,
-                `Reception: ${wedding.reception.displayTime}`
+                `Ceremonia: ${wedding.ceremony.displayTime}`,
+                `Recepción: ${wedding.reception.displayTime}`
             ],
             color: "from-[#ff6b6b] to-[#d4af37]"
         }
@@ -92,11 +92,11 @@ export default function Contact() {
                 >
                     <h2 className="font-playfair text-[clamp(3rem,8vw,5rem)] font-thin tracking-[0.02em] mb-5">
                         <span className="bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent">
-                            GET IN TOUCH
+                            CONTACTO
                         </span>
                     </h2>
                     <p className="text-lg font-light tracking-[2px] uppercase opacity-60 text-[#faf8f3]">
-                        We'd Love To Hear From You
+                        Estamos para ayudarles
                     </p>
                 </motion.div>
 
@@ -178,7 +178,7 @@ export default function Contact() {
                             whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
                         >
                             <MapPin className="w-5 h-5" />
-                            Get Directions
+                            Ver cómo llegar
                             <ExternalLink className="w-4 h-4" />
                         </motion.a>
                     </div>
@@ -194,7 +194,7 @@ export default function Contact() {
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                             className="rounded-xl"
-                            title="Wedding Venue Location"
+                            title="Ubicación de la boda"
                         ></iframe>
                     </div>
                 </motion.div>

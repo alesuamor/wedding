@@ -27,9 +27,9 @@ export default function WeddingDetails() {
     };
     
     const eventDetails = {
-      text: `${settings.couple.bride.name} & ${settings.couple.groom.name}'s Wedding`,
+      text: `Boda de ${settings.couple.bride.name} & ${settings.couple.groom.name}`,
       dates: `${formatDate(startDate)}/${formatDate(endDate)}`,
-      details: `Join us for our wedding celebration!\n\nCeremony: ${wedding.ceremony.displayTime}\nReception: ${wedding.reception.displayTime}\n\nDress Code: ${events.ceremony.dressCode}\n\nWedding Website: ${window.location.origin}`,
+      details: `Acompáñennos a celebrar nuestra boda.\n\nCeremonia: ${wedding.ceremony.displayTime}\nRecepción: ${wedding.reception.displayTime}\n\nCódigo de vestimenta: ${events.ceremony.dressCode}\n\nSitio web: ${window.location.origin}`,
       location: `${venue.name}, ${venue.address.street}, ${venue.address.district}, ${venue.address.city}, ${venue.address.country}`,
       ctz: 'Asia/Bangkok' // Adjust timezone as needed
     };
@@ -64,38 +64,38 @@ export default function WeddingDetails() {
   const timeline = [
     {
       time: wedding.ceremony.displayTime,
-      title: "Guest Arrival",
-      description: "Welcome drinks and mingling",
+      title: "Llegada de invitados",
+      description: "Recepción y bienvenida",
       icon: Users
     },
     {
       time: wedding.ceremony.displayTime,
-      title: "Wedding Ceremony",
-      description: "Exchange of vows in the garden",
+      title: "Ceremonia",
+      description: "Intercambio de votos",
       icon: Heart
     },
     {
       time: wedding.cocktailHour.displayTime,
-      title: "Cocktail Hour",
-      description: "Champagne, canapés & live music",
+      title: "Cóctel",
+      description: "Bebidas, bocadillos y música",
       icon: Music
     },
     {
       time: wedding.reception.displayTime,
-      title: "Dinner Reception",
-      description: "Multi-course dinner service",
+      title: "Cena",
+      description: "Cena y celebración",
       icon: Utensils
     },
     {
       time: "9:00 PM",
-      title: "First Dance & Party",
-      description: "Dancing under the stars",
+      title: "Primer baile y fiesta",
+      description: "Baile y música para celebrar",
       icon: Sparkles
     },
     {
       time: wedding.reception.displayEndTime,
-      title: "Grand Finale",
-      description: "Sparkler send-off",
+      title: "Cierre de la noche",
+      description: "Despedida especial",
       icon: Sparkles
     }
   ];
@@ -103,61 +103,61 @@ export default function WeddingDetails() {
   // Detail tabs
   const detailTabs = [
     {
-      title: "The Ceremony",
+      title: "Ceremonia",
       icon: Heart,
       content: {
         title: events.ceremony.title,
         time: wedding.ceremony.displayTime,
         location: venue.ceremonyLocation,
-        duration: "30 minutes",
+        duration: "30 minutos",
         notes: [
-          "Garden ceremony with natural backdrop",
-          "Unplugged ceremony - please no phones",
-          "Professional photography provided",
-          "Reserved seating for family"
+          "Ceremonia en un ambiente especial",
+          "Les pedimos vivir la ceremonia sin celulares",
+          "Habrá fotografía profesional",
+          "Espacios reservados para familia"
         ]
       }
     },
     {
-      title: "The Reception",
+      title: "Recepción",
       icon: Music,
       content: {
         title: events.reception.title,
         time: wedding.reception.displayTime,
-        location: "Grand Ballroom",
-        duration: `Until ${wedding.reception.displayEndTime}`,
+        location: "Salón principal",
+        duration: `Hasta ${wedding.reception.displayEndTime}`,
         notes: events.reception.features
       }
     },
     {
-      title: "Dress Code",
+      title: "Vestimenta",
       icon: Palette,
       content: {
-        title: "Attire Guidelines",
+        title: "Código de vestimenta",
         time: events.ceremony.dressCode,
-        location: "Color Palette",
+        location: "Paleta de color",
         duration: events.ceremony.colors.join(', '),
         notes: [
-          "Formal/Cocktail attire requested",
-          "Light, breathable fabrics recommended",
-          "Ladies: Block heels suggested for garden",
-          "Gentlemen: Suit jacket optional after ceremony"
+          "Vestimenta formal o cóctel",
+          "Se recomiendan telas cómodas",
+          "Para ellas, se sugieren zapatos cómodos",
+          "Para ellos, saco sugerido"
         ]
       }
     },
     {
-      title: "Guest Info",
+      title: "Información",
       icon: Gift,
       content: {
-        title: "Important Information",
-        time: "RSVP by",
+        title: "Información importante",
+        time: "Confirmar antes de",
         location: wedding.displayDate,
-        duration: "Accommodations",
+        duration: "Detalles para invitados",
         notes: [
-          "Hotel blocks available nearby",
-          "Shuttle service from select hotels",
-          "Dietary restrictions accommodated",
-          `Wedding hashtag: ${social.instagram.hashtag}`
+          "Muy pronto compartiremos recomendaciones de hospedaje",
+          "La logística de traslado se confirmará próximamente",
+          "Si tienes alguna restricción alimentaria, avísanos",
+          `Hashtag de la boda: ${social.instagram.hashtag}`
         ]
       }
     }
@@ -220,11 +220,11 @@ export default function WeddingDetails() {
             
             <h2 className="font-playfair text-[clamp(3.5rem,9vw,6rem)] font-thin tracking-[0.02em] mb-6">
               <span className="bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent">
-                WEDDING DETAILS
+                DETALLES DE LA BODA
               </span>
             </h2>
             <p className="text-lg font-light tracking-[0.2em] uppercase text-[#faf8f3]/40">
-              Everything You Need To Know
+              Todo lo que necesitas saber
             </p>
           </motion.div>
 
@@ -273,7 +273,7 @@ export default function WeddingDetails() {
                     transition={{ duration: 1, delay: 0.7 }}
                     viewport={{ once: true }}
                   >
-                    The Venue of the Wedding
+                    Lugar de la celebración
                   </motion.p>
                 </div>
               </motion.div>
@@ -294,7 +294,7 @@ export default function WeddingDetails() {
                       viewport={{ once: true }}
                     >
                       <span className="text-sm font-medium tracking-wider text-[#d4af37]/80 uppercase">
-                        Full Address
+                        Dirección
                       </span>
                     </motion.div>
                     
@@ -314,7 +314,7 @@ export default function WeddingDetails() {
                         whileHover={performance.animationLevel === 'full' ? { scale: 1.05 } : {}}
                         whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
                       >
-                        View on Map
+                        Ver mapa
                       </motion.a>
                       
                       {mounted && (
@@ -326,7 +326,7 @@ export default function WeddingDetails() {
                           whileHover={performance.animationLevel === 'full' ? { scale: 1.05 } : {}}
                           whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
                         >
-                          Add to Calendar
+                          Agregar al calendario
                         </motion.a>
                       )}
                     </div>
@@ -349,7 +349,7 @@ export default function WeddingDetails() {
                           {wedding.displayDate}
                         </p>
                         <p className="text-[#d4af37] text-lg">
-                          {wedding.ceremony.displayTime} Onwards
+                          {wedding.ceremony.displayTime} en adelante
                         </p>
                       </div>
                     </motion.div>
@@ -375,10 +375,10 @@ export default function WeddingDetails() {
               className="text-center mb-12"
             >
               <h3 className="font-playfair text-4xl font-thin text-[#faf8f3] mb-4">
-                Explore The Venue
+                Conoce el lugar
               </h3>
               <p className="text-lg text-[#faf8f3]/60">
-                Click on any image to view in full size
+                Haz clic en cualquier imagen para verla completa
               </p>
             </motion.div>
 
@@ -475,7 +475,7 @@ export default function WeddingDetails() {
                     </div>
                     <div>
                       <h4 className="text-sm font-medium tracking-wider text-[#d4af37]/80 uppercase mb-4">
-                        Important Notes
+                        Notas importantes
                       </h4>
                       <ul className="space-y-3">
                         {detailTabs[activeTab].content.notes.map((note, idx) => (
@@ -500,7 +500,7 @@ export default function WeddingDetails() {
             viewport={{ once: true }}
           >
             <h3 className="font-playfair text-4xl font-thin text-center text-[#faf8f3] mb-12">
-              Wedding Day Timeline
+              Itinerario del día
             </h3>
             
             <div className="relative">
@@ -571,7 +571,7 @@ export default function WeddingDetails() {
           >
             <div className="inline-block bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl p-8 border border-white/10">
               <p className="text-sm tracking-wider text-[#faf8f3]/60 uppercase mb-2">
-                Share Your Moments
+                Comparte tus momentos
               </p>
               <p className="font-playfair text-2xl text-[#d4af37]">
                 {social.instagram.hashtag}

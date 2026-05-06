@@ -6,10 +6,10 @@ import settings from '../config/settings';
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
+    días: 0,
+    horas: 0,
+    minutos: 0,
+    segundos: 0
   });
   const [mounted, setMounted] = useState(false);
   const [isWeddingDay, setIsWeddingDay] = useState(false);
@@ -39,21 +39,21 @@ export default function Countdown() {
       if (distance > 0) {
         // Before wedding
         setTimeLeft({
-          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((distance % (1000 * 60)) / 1000)
+          días: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          horas: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutos: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          segundos: Math.floor((distance % (1000 * 60)) / 1000)
         });
         setIsWeddingDay(false);
         setIsPastWedding(false);
       } else if (distanceToEnd > 0) {
         // Wedding day
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        setTimeLeft({ días: 0, horas: 0, minutos: 0, segundos: 0 });
         setIsWeddingDay(true);
         setIsPastWedding(false);
       } else {
         // After wedding
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        setTimeLeft({ días: 0, horas: 0, minutos: 0, segundos: 0 });
         setIsWeddingDay(false);
         setIsPastWedding(true);
       }
@@ -244,7 +244,7 @@ export default function Countdown() {
             viewport={{ once: true }}
           >
             <span className="text-[#1a1a1a] uppercase">
-              Save The Date
+              Aparta la fecha
             </span>
           </motion.h2>
           
@@ -283,7 +283,7 @@ export default function Countdown() {
                   >
                     <AnimatePresence mode="wait">
                       <motion.div
-                        key={timeLeft.days}
+                        key={timeLeft.días}
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -20, opacity: 0 }}
@@ -291,10 +291,10 @@ export default function Countdown() {
                         className="relative"
                       >
                         <span className="font-playfair text-[clamp(7rem,12vw,8rem)] leading-none text-[#1a1a1a] font-thin">
-                          {String(timeLeft.days).padStart(2, '0')}
+                          {String(timeLeft.días).padStart(2, '0')}
                         </span>
                         <span className="absolute -top-2 -right-6 text-xs tracking-[0.2em] uppercase text-[#d4af37]">
-                          days
+                          días
                         </span>
                       </motion.div>
                     </AnimatePresence>
@@ -306,9 +306,9 @@ export default function Countdown() {
                   {/* Hours, Minutes, Seconds - Smaller */}
                   <div className="flex items-center gap-3 lg:gap-4">
                     {[
-                      { value: timeLeft.hours, label: 'hours' },
-                      { value: timeLeft.minutes, label: 'minutes' },
-                      { value: timeLeft.seconds, label: 'seconds' }
+                      { value: timeLeft.horas, label: 'horas' },
+                      { value: timeLeft.minutos, label: 'minutos' },
+                      { value: timeLeft.segundos, label: 'segundos' }
                     ].map((unit, index) => (
                       <React.Fragment key={unit.label}>
                         {index > 0 && (
@@ -374,11 +374,11 @@ export default function Countdown() {
                   }}
                 >
                   <span className="font-playfair text-[clamp(3rem,8vw,6rem)] text-[#d4af37] font-light">
-                    Today's The Day!
+                    ¡Hoy es el gran día!
                   </span>
                 </motion.div>
                 <p className="text-xl text-[#1a1a1a]/70 mt-6 font-light">
-                  Join us as we celebrate our love
+                  Acompáñennos a celebrar nuestro amor
                 </p>
                 <motion.div
                   className="mt-8 inline-block"
@@ -412,7 +412,7 @@ export default function Countdown() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 0.2 }}
                 >
-                  Thank You For Celebrating With Us
+                  Gracias por celebrar con nosotros
                 </motion.h2>
                 
                 <motion.div
@@ -422,7 +422,7 @@ export default function Countdown() {
                   className="space-y-4"
                 >
                   <p className="text-lg text-[#1a1a1a]/70 font-light">
-                    Your presence made our special day even more memorable
+                    Su presencia hizo que este día fuera aún más especial
                   </p>
                   <div className="flex items-center justify-center gap-2 text-[#d4af37]">
                     <span className="h-px w-12 bg-[#d4af37]/30"></span>
@@ -432,7 +432,7 @@ export default function Countdown() {
                     <span className="h-px w-12 bg-[#d4af37]/30"></span>
                   </div>
                   <p className="font-playfair text-2xl italic text-[#d4af37]">
-                    With love & gratitude,
+                    Con cariño y gratitud,
                   </p>
                   <p className="text-xl text-[#1a1a1a]/80">
                     {settings.couple.bride.name} & {settings.couple.groom.name}
@@ -447,10 +447,10 @@ export default function Countdown() {
                   className="mt-12 p-6 bg-white/50 backdrop-blur-sm rounded-2xl border border-[#d4af37]/20"
                 >
                   <p className="text-sm text-[#1a1a1a]/60 uppercase tracking-wider mb-2">
-                    Coming Soon
+                    Próximamente
                   </p>
                   <p className="text-lg text-[#1a1a1a]/80">
-                    Wedding photos will be available in our gallery
+                    Las fotos de la boda estarán disponibles en nuestra galería
                   </p>
                 </motion.div>
               </motion.div>
@@ -473,7 +473,7 @@ export default function Countdown() {
             transition={{ duration: 1, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            "Two hearts, one love, forever united"
+            "Dos corazones, una historia, un mismo camino"
           </motion.p>
         </motion.div>
       </div>
