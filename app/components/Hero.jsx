@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import settings from '../config/settings';
 
-export default function Hero() {
+export default function Hero({ guest }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isClient, setIsClient] = useState(false);
   const controls = useAnimation();
@@ -412,6 +412,24 @@ export default function Hero() {
               </div>
             )}
           </motion.div>
+
+          {/* Guest Information */}
+          {guest && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.4 }}
+              className="mt-8 md:mt-12 p-6 rounded-2xl bg-[#0a0a0a]/40 border border-[#d4af37]/20 backdrop-blur-sm mx-auto max-w-md"
+            >
+              <h3 className="text-[#d4af37] font-playfair italic mb-2">Invitación para</h3>
+              <p className="text-xl md:text-2xl text-[#faf8f3] font-light mb-2">{guest.displayName}</p>
+              <div className="flex items-center justify-center gap-2">
+                <span className="w-12 h-[1px] bg-gradient-to-r from-transparent to-[#d4af37]/50"></span>
+                <p className="text-sm tracking-widest text-[#87a878] uppercase">Pases: {guest.passes}</p>
+                <span className="w-12 h-[1px] bg-gradient-to-l from-transparent to-[#d4af37]/50"></span>
+              </div>
+            </motion.div>
+          )}
         </div>
       </div>
 

@@ -24,12 +24,12 @@ const LoadingFallback = () => (
   </div>
 )
 
-export default function Home() {
+export default function Home({ guest }) {
   return (
     <div className="min-h-screen">
       <FloatingMenu />
       <FloatingMusicControl />
-      <Hero />
+      <Hero guest={guest} />
       <Countdown />
       <Suspense fallback={<LoadingFallback />}>
         <WeddingDetails />
