@@ -37,7 +37,7 @@ const settings = {
   // Couple Information
   couple: {
     bride: {
-      name: "Michy",
+      name: "Mich",
       fullName: "Michelle",
       email: "michelle@example.com",
       phone: "+52 000 000 0000",
@@ -280,9 +280,9 @@ const settings = {
 
   // Metadata for SEO
   metadata: {
-    title: "Michy & Lalo | Sábado 15 de noviembre de 2026",
+    title: "Mich & Lalo | Sábado 15 de noviembre de 2026",
     description: "Acompáñanos a celebrar la boda de Michy y Lalo en Veracruz, México.",
-    keywords: "boda, invitación, michy, lalo, veracruz, 2026",
+    keywords: "boda, invitación, Mich, lalo, veracruz, 2026",
     ogImage: "/og-image.jpg"
   }
 };
