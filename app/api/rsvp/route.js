@@ -4,55 +4,125 @@ export async function POST(request) {
   const { GOOGLE_SCRIPT_URL, RSVP_SECRET } = process.env;
 
   if (!GOOGLE_SCRIPT_URL || !RSVP_SECRET) {
+    console.error("Missing env vars:", {
+      hasGoogleScriptUrl: Boolean(GOOGLE_SCRIPT_URL),
+      hasRsvpSecret: Boolean(RSVP_SECRET),
+    });
+
     return NextResponse.json(
-      { success: false, error: "Missing server configuration" },
+      {
+        success: false,
+        error: "Missing server configuration",
+        debug: {
+          hasGoogleScriptUrl: Boolean(GOOGLE_SCRIPT_URL),
+          hasRsvpSecret: Boolean(RSVP_SECRET),
+        },
+      },
       { status: 500 }
     );
   }
 
   try {
     const body = await request.json();
-    const { slug, firstName, lastName, email, message, guestDisplayName, reservedPasses } = body;
 
-    if (!firstName || !lastName || !email || !guestDisplayName || reservedPasses === undefined) {
-      return NextResponse.json(
-        { success: false, error: "Missing required fields" },
-        { status: 400 }
-      );
-    }
-
-    const payload = {
-      secret: RSVP_SECRET,
+    const {
       slug,
       firstName,
       lastName,
       email,
       message,
       guestDisplayName,
-      reservedPasses
+      reservedPasses,
+    } = body;
+
+    if (!firstName || !lastName || !email || !guestDisplayName || reservedPasses === undefined || reservedPasses === null) {
+      console.error("Missing required fields:", body);
+
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Missing required fields",
+          debug: {
+            firstName: Boolean(firstName),
+            lastName: Boolean(lastName),
+            email: Boolean(email),
+            guestDisplayName: Boolean(guestDisplayName),
+            reservedPasses,
+          },
+        },
+        { status: 400 }
+      );
+    }
+
+    const payload = {
+      secret: RSVP_SECRET,
+      slug: slug || "",
+      firstName,
+      lastName,
+      email,
+      message: message || "",
+      guestDisplayName,
+      reservedPasses,
     };
 
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
 
-    const result = await response.json();
+    const responseText = await response.text();
 
-    if (result.success === true) {
-      return NextResponse.json({ success: true });
-    } else {
+    let result;
+
+    try {
+      result = JSON.parse(responseText);
+    } catch (parseError) {
+      console.error("Google Apps Script did not return JSON:", {
+        status: response.status,
+        statusText: response.statusText,
+        responseText,
+      });
+
       return NextResponse.json(
-        { success: false, error: "Google Script error" },
+        {
+          success: false,
+          error: "Google Apps Script did not return JSON",
+          debug: {
+            status: response.status,
+            statusText: response.statusText,
+            responseText,
+          },
+        },
         { status: 500 }
       );
     }
-  } catch (error) {
+
+    if (result.success === true) {
+      return NextResponse.json({ success: true });
+    }
+
+    console.error("Google Apps Script returned an error:", result);
+
     return NextResponse.json(
-      { success: false, error: "Failed to submit RSVP" },
+      {
+        success: false,
+        error: "Google Script error",
+        debug: result,
+      },
+      { status: 500 }
+    );
+  } catch (error) {
+    console.error("RSVP API failed:", error);
+
+    return NextResponse.json(
+      {
+        success: false,
+        error: "Failed to submit RSVP",
+        debug: error.message,
+      },
       { status: 500 }
     );
   }
