@@ -27,15 +27,13 @@ export async function POST(request) {
 
     const {
       slug,
-      firstName,
-      lastName,
       email,
       message,
       guestDisplayName,
       reservedPasses,
     } = body;
 
-    if (!firstName || !lastName || !email || !guestDisplayName || reservedPasses === undefined || reservedPasses === null) {
+    if (!email || !guestDisplayName || reservedPasses === undefined || reservedPasses === null) {
       console.error("Missing required fields:", body);
 
       return NextResponse.json(
@@ -43,8 +41,6 @@ export async function POST(request) {
           success: false,
           error: "Missing required fields",
           debug: {
-            firstName: Boolean(firstName),
-            lastName: Boolean(lastName),
             email: Boolean(email),
             guestDisplayName: Boolean(guestDisplayName),
             reservedPasses,
@@ -57,8 +53,8 @@ export async function POST(request) {
     const payload = {
       secret: RSVP_SECRET,
       slug: slug || "",
-      firstName,
-      lastName,
+      firstName: "",
+      lastName: "",
       email,
       message: message || "",
       guestDisplayName,

@@ -6,8 +6,6 @@ import { Send, Check } from 'lucide-react';
 
 export default function RSVPForm({ guest }) {
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
         email: '',
         message: ''
     });
@@ -32,8 +30,6 @@ export default function RSVPForm({ guest }) {
                 },
                 body: JSON.stringify({
                     slug: guest?.slug || "",
-                    firstName: formData.firstName,
-                    lastName: formData.lastName,
                     email: formData.email,
                     message: formData.message,
                     guestDisplayName: guest?.displayName || "Invitación general",
@@ -92,9 +88,9 @@ export default function RSVPForm({ guest }) {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-playfair text-[clamp(6rem,12vw,7rem)] font-thin tracking-[0.02em] mb-5 drop-shadow-[0_0_5px_rgba(212,175,55,0.4)]">
+                    <h2 className="font-playfair text-[clamp(3rem,8vw,5rem)] font-thin tracking-[0.02em] mb-5 drop-shadow-[0_0_5px_rgba(212,175,55,0.4)]">
                         <span className="bg-gradient-to-r from-[#1a1a1a] via-[#514343] to-[#1a1a1a] bg-clip-text text-transparent">
-                            RSVP
+                            Confirma tu asistencia
                         </span>
                     </h2>
 
@@ -113,47 +109,25 @@ export default function RSVPForm({ guest }) {
                     onSubmit={handleSubmit}
                     className="space-y-8"
                 >
-                    {/* Name Row */}
+                    {/* Guest Row */}
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="relative">
                             <input
                                 type="text"
-                                id="firstName"
-                                value={formData.firstName}
-                                onChange={(e) => handleInputChange('firstName', e.target.value)}
-                                required
-                                className="w-full px-0 py-3 bg-transparent border-b border-[#1a1a1a]/20 focus:border-[#d4af37] outline-none transition-all duration-300 peer"
+                                id="guestName"
+                                value={guest?.displayName || "Invitación general"}
+                                readOnly
+                                className="w-full px-0 py-3 bg-transparent border-b border-[#1a1a1a]/20 focus:border-[#d4af37] outline-none transition-all duration-300 peer text-[#1a1a1a]/60 cursor-not-allowed"
                                 placeholder=" "
                             />
                             <label
-                                htmlFor="firstName"
-                                className="absolute left-0 top-3 text-[#1a1a1a]/60 transition-all duration-300 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#d4af37] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm"
+                                htmlFor="guestName"
+                                className="absolute left-0 -top-6 text-sm text-[#1a1a1a]/60 transition-all duration-300"
                             >
-                                Nombre
+                                Invitación para
                             </label>
                         </div>
 
-                        <div className="relative">
-                            <input
-                                type="text"
-                                id="lastName"
-                                value={formData.lastName}
-                                onChange={(e) => handleInputChange('lastName', e.target.value)}
-                                required
-                                className="w-full px-0 py-3 bg-transparent border-b border-[#1a1a1a]/20 focus:border-[#d4af37] outline-none transition-all duration-300 peer"
-                                placeholder=" "
-                            />
-                            <label
-                                htmlFor="lastName"
-                                className="absolute left-0 top-3 text-[#1a1a1a]/60 transition-all duration-300 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#d4af37] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm"
-                            >
-                                Apellido
-                            </label>
-                        </div>
-                    </div>
-
-                    {/* Contact Row */}
-                    <div className="grid md:grid-cols-2 gap-8">
                         <div className="relative">
                             <input
                                 type="email"
@@ -171,8 +145,11 @@ export default function RSVPForm({ guest }) {
                                 Correo electrónico
                             </label>
                         </div>
+                    </div>
 
-                        <div className="relative">
+                    {/* Passes Row */}
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div className="relative md:col-span-1">
                             <input
                                 type="text"
                                 id="guests"
