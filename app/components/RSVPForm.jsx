@@ -4,17 +4,16 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Check } from 'lucide-react';
 
-export default function RSVPForm() {
+export default function RSVPForm({ guest }) {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         email: '',
-        phone: '',
-        guests: '',
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState('');
 
     const handleInputChange = (field, value) => {
         setFormData(prev => ({ ...prev, [field]: value }));
@@ -23,10 +22,37 @@ export default function RSVPForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitError('');
 
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setSubmitted(true);
-        setIsSubmitting(false);
+        try {
+            const response = await fetch('/api/rsvp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    slug: guest?.slug || "",
+                    firstName: formData.firstName,
+                    lastName: formData.lastName,
+                    email: formData.email,
+                    message: formData.message,
+                    guestDisplayName: guest?.displayName || "Invitación general",
+                    reservedPasses: guest?.passes || null
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setSubmitted(true);
+            } else {
+                setSubmitError('No pudimos registrar tu confirmación. Inténtalo nuevamente.');
+            }
+        } catch (error) {
+            setSubmitError('No pudimos registrar tu confirmación. Inténtalo nuevamente.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (submitted) {
@@ -147,20 +173,20 @@ export default function RSVPForm() {
                         </div>
 
                         <div className="relative">
-                            <select
+                            <input
+                                type="text"
                                 id="guests"
-                                value={formData.guests}
-                                onChange={(e) => handleInputChange('guests', e.target.value)}
-                                required
-                                className="w-full px-0 py-3 bg-transparent border-b border-[#1a1a1a]/20 focus:border-[#d4af37] outline-none transition-all duration-300 appearance-none cursor-pointer"
+                                value={guest?.passes === 1 ? "1 persona" : guest?.passes > 1 ? `${guest.passes} personas` : "Invitación general"}
+                                readOnly
+                                className="w-full px-0 py-3 bg-transparent border-b border-[#1a1a1a]/20 focus:border-[#d4af37] outline-none transition-all duration-300 peer text-[#1a1a1a]/60 cursor-not-allowed"
+                                placeholder=" "
+                            />
+                            <label
+                                htmlFor="guests"
+                                className="absolute left-0 -top-6 text-sm text-[#1a1a1a]/60 transition-all duration-300"
                             >
-                                <option value="">Número de asistentes</option>
-                                <option value="1">1 persona</option>
-                                <option value="2">2 personas</option>
-                                <option value="3">3 personas</option>
-                                <option value="4">4 personas</option>
-                                <option value="5+">5 o más personas</option>
-                            </select>
+                                Pases reservados
+                            </label>
                         </div>
                     </div>
 
@@ -181,6 +207,12 @@ export default function RSVPForm() {
                             Mensaje, restricciones alimentarias o comentarios
                         </label>
                     </div>
+
+                    {submitError && (
+                        <div className="text-[#ff6b6b] text-sm text-center">
+                            {submitError}
+                        </div>
+                    )}
 
                     {/* Submit Button */}
                     <motion.button

@@ -25,6 +25,8 @@ const LoadingFallback = () => (
 )
 
 export default function Home({ guest }) {
+  const showRSVP = Boolean(guest);
+
   return (
     <div className="min-h-screen">
       <FloatingMenu />
@@ -43,9 +45,12 @@ export default function Home({ guest }) {
       <Suspense fallback={<LoadingFallback />}>
         <Contact />
       </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
-        <RSVPForm />
-      </Suspense>
+      {/* RSVP is only shown on personalized guest pages. */}
+      {showRSVP && (
+        <Suspense fallback={<LoadingFallback />}>
+          <RSVPForm guest={guest} />
+        </Suspense>
+      )}
       <Suspense fallback={<LoadingFallback />}>
         <Footer />
       </Suspense>

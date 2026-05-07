@@ -81,35 +81,30 @@ const settings = {
 
   // Venue Information
   venue: {
-    name: "Veracruz, México",
-    ceremonyLocation: "Ceremonia por confirmar",
-    receptionLocation: "Recepción por confirmar",
-    cocktailLocation: "Cóctel de bienvenida",
+    name: "Quinta Río H-J",
+    ceremonyLocation: "Quinta Río H-J",
+    receptionLocation: "Quinta Río H-J",
+    cocktailLocation: "Quinta Río H-J",
     address: {
-      full: "Veracruz, México",
-      street: "Dirección por confirmar",
-      district: "Zona por confirmar",
-      city: "Veracruz",
-      postalCode: "00000",
+      full: "Quinta Río H-J, Unnamed Road, Playa de Vacas, Veracruz, México",
+      street: "Unnamed Road",
+      district: "Playa de Vacas",
+      city: "Medellín de Bravo",
+      postalCode: "94274",
       country: "México"
     },
     coordinates: {
-      lat: 19.1738,
-      lng: -96.1342
+      lat: 19.096178,
+      lng: -96.1152022
     },
-    googleMapsUrl: "https://maps.google.com/?q=Veracruz,Mexico",
-    shareUrl: "https://maps.google.com/?q=Veracruz,Mexico",
-    parking: "Información de estacionamiento por confirmar.",
+    googleMapsUrl: "https://www.google.com/maps/place/Quinta+R%C3%ADo+H-J/@19.096178,-96.1152022,17z/data=!3m1!4b1!4m6!3m5!1s0x85c341974ea97ec5:0x4f7ab08af086abad!8m2!3d19.096178!4d-96.1152022!16s%2Fg%2F11n8bkwv47!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D",
+    shareUrl: "https://maps.app.goo.gl/D8dgwCaJhi4vjXL38?g_st=iw",
+    parking: "Ubicación disponible en Google Maps. Se recomienda revisar la ruta antes del evento.",
     accommodation: [
       {
-        name: "Hotel sugerido por confirmar",
+        name: "Hospedaje sugerido por confirmar",
         distance: "Cercano al evento",
         bookingCode: "MICHYLALO2026"
-      },
-      {
-        name: "Hospedaje recomendado por confirmar",
-        distance: "Cercano al evento",
-        bookingCode: "BODA2026"
       }
     ]
   },
