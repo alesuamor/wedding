@@ -69,16 +69,19 @@ Toda la información de la boda está centralizada en `app/config/settings.js`. 
 - Historia de amor y galería.
 
 ### Gestión de Invitados
-Los invitados se gestionan en `app/config/guests.js`. Cada invitado tiene un "slug" único que genera su invitación personalizada:
-```javascript
-export const GUESTS = {
-  'eduardo': {
-    name: 'Eduardo',
-    passes: 2,
-    // ...
-  }
-};
-```
+Los invitados ahora se gestionan de forma **dinámica** a través de Google Sheets, utilizando la pestaña `AyudanteWhatsApp`. Esta hoja es la "fuente de la verdad".
+
+**Instrucciones para los novios:**
+1. Los novios deben editar la pestaña `AyudanteWhatsApp` en su Google Sheet.
+2. Las columnas requeridas son:
+   - **Slug**: Genera la URL personalizada (ej. si el slug es `pepe-y-monica`, la URL será `/pepe-y-monica`).
+   - **Nombre mostrado final**: El nombre que aparecerá en la invitación (ej. "Pepe y Mónica").
+   - **Pases**: El número de pases reservados para ese invitado.
+   - **Teléfono (10 dígitos)*: (Opcional) El teléfono del invitado.
+3. **No se requieren despliegues**: Si agregas, editas o eliminas un invitado en la hoja, los cambios se reflejan automáticamente en la web sin necesidad de reprogramar ni redesplegar nada.
+4. Si se elimina una fila o se deja el Slug vacío, la invitación dejará de funcionar automáticamente (retornará un error 404).
+
+*Nota técnica*: El archivo `app/config/guests.js` se mantiene únicamente como datos de ejemplo (fallback) si el Google Sheet fallara. Las páginas de invitados son renderizadas dinámicamente (`force-dynamic`).
 
 ## 🎵 Música de Fondo
 
