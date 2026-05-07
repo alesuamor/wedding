@@ -10,11 +10,11 @@ export default function LoveStory() {
   const [mounted, setMounted] = useState(false);
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.3]);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
-  
+
   // Map images to milestones
   const imageMap = {
     0: '/love-story/coffe.webp',
@@ -22,7 +22,7 @@ export default function LoveStory() {
     2: '/love-story/proposal.webp',
     3: '/love-story/wedding.webp'
   };
-  
+
   const milestones = settings.loveStory.map((story, idx) => ({
     ...story,
     id: idx,
@@ -33,15 +33,15 @@ export default function LoveStory() {
     <section id="love-story" className="min-h-screen py-40 bg-[#0a0a0a] relative overflow-hidden">
       {/* Elegant Gradient Background - Same as Hero */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]"/>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]" />
         {/* Multiple gradient overlays for better distribution */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#d4af3715] via-transparent to-[#ff6b6b10]"/>
-        <div className="absolute inset-0 bg-gradient-to-bl from-[#87a87810] via-transparent to-transparent"/>
-        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-[#d4af3708] to-[#faf8f305]"/>
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#d4af3715] via-transparent to-[#ff6b6b10]" />
+        <div className="absolute inset-0 bg-gradient-to-bl from-[#87a87810] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-[#d4af3708] to-[#faf8f305]" />
         {/* Radial gradients for depth */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,175,55,0.1)_0%,_transparent_40%)]"/>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,107,107,0.08)_0%,_transparent_40%)]"/>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(135,168,120,0.05)_0%,_transparent_60%)]"/>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,175,55,0.1)_0%,_transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,107,107,0.08)_0%,_transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(135,168,120,0.05)_0%,_transparent_60%)]" />
       </div>
 
       {/* Floating Particles - reduced based on performance */}
@@ -99,7 +99,7 @@ export default function LoveStory() {
               NUESTRA
             </span>
             <span className="block bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent mt-2">
-              JNUESTRANEY
+              HISTORIA
             </span>
           </motion.h2>
 
@@ -166,9 +166,8 @@ export default function LoveStory() {
                 >
                   {/* Content */}
                   <motion.div
-                    className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
-                      isEven ? '' : 'lg:[direction:rtl]'
-                    }`}
+                    className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${isEven ? '' : 'lg:[direction:rtl]'
+                      }`}
                     initial={{ x: performance.animationLevel === 'none' ? 0 : (isEven ? -50 : 50), opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: performance.animationLevel === 'none' ? 0 : 1, delay: performance.animationLevel === 'none' ? 0 : 0.2 }}
