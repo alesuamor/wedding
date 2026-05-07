@@ -1,253 +1,106 @@
-# Elegant Wedding Template - Next.js
+# Boda de Mich & Lalo - Invitación Digital
 
-A beautiful, modern, and fully customizable wedding invitation website built with Next.js 14, Tailwind CSS, and Framer Motion. Perfect for couples who want to share their special day with a stunning digital presence.
+Una invitación de boda elegante, moderna y totalmente personalizada construida con Next.js 14, Tailwind CSS y Framer Motion. Diseñada para compartir el día especial de Eduardo y Michelle con una presencia digital impresionante.
 
-![Wedding Template](public/thumbnail.png)
+![Boda Mich & Lalo](public/og-image.jpg)
 
-## ✨ Features
+## ✨ Características
 
-### 🎨 Elegant Design
-- Modern, responsive design that looks beautiful on all devices
-- Smooth animations powered by Framer Motion
-- Customizable color schemes and themes
-- Beautiful gradient backgrounds and floating elements
+### 🎨 Diseño Elegante
+- Diseño moderno y responsivo que se ve hermoso en todos los dispositivos.
+- Animaciones fluidas impulsadas por Framer Motion.
+- Paleta de colores sofisticada (Dorado y Negro).
+- Fondos con gradientes y elementos flotantes.
 
-### 🎵 Interactive Elements
-- **Background Music**: Auto-plays when users interact with the site
-- **Floating Menu**: Elegant navigation that appears on scroll
-- **Countdown Timer**: Dynamic countdown to your wedding day
-- **RSVP Form**: Integrated form for guest responses
-- **Photo Gallery**: Showcase your engagement photos
+### 🎵 Elementos Interactivos
+- **Música de Fondo**: Reproducción automática (autoplay) optimizada para navegadores modernos.
+- **Menú Flotante**: Navegación elegante que aparece al hacer scroll.
+- **Temporizador de Cuenta Regresiva**: Cuenta atrás dinámica para el gran día (15 de noviembre de 2026).
+- **Formulario RSVP**: Sistema integrado para confirmar asistencia, incluyendo invitados adicionales y restricciones alimenticias.
+- **Galería de Fotos**: Sección para mostrar los momentos más especiales de la pareja.
+- **Invitaciones Personalizadas**: Soporte para rutas personalizadas por invitado (ej. `/eduardo`).
 
-### 📱 Fully Responsive
-- Mobile-first design approach
-- Optimized for all screen sizes
-- Touch-friendly interactions
-- Fast loading times
+### 📱 Totalmente Responsivo
+- Enfoque de diseño "mobile-first".
+- Optimizado para pantallas de todos los tamaños.
+- Interacciones amigables para pantallas táctiles.
 
-### 🔍 SEO Optimized
-- Full Open Graph support for social media sharing
-- Twitter Card integration
-- Structured data for rich snippets
-- Customizable meta tags
+### 🔍 Optimización SEO
+- Soporte completo de Open Graph para compartir en redes sociales.
+- Integración de Twitter Cards.
+- Etiquetas meta personalizadas para Eduardo y Michelle.
 
-## 🚀 Quick Start
+## 🚀 Inicio Rápido
 
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
+### Requisitos Previos
+- Node.js 18+
+- npm o yarn
 
-### Installation
+### Instalación
 
-1. Clone the repository:
+1. Clonar el repositorio:
 ```bash
-git clone https://github.com/georgekhananaev/elegant-wedding-template-nextjs.git
-cd elegant-wedding-template-nextjs
+git clone https://github.com/vuestro-usuario/ceremony-nextjs.git
+cd ceremony-nextjs
 ```
 
-2. Install dependencies:
+2. Instalar dependencias:
 ```bash
 npm install
-# or
-yarn install
 ```
 
-3. Create a `.env.local` file:
-```bash
-cp .env.local.example .env.local
-```
+3. Configurar variables de entorno:
+Crea un archivo `.env.local` basado en `.env.local.example`.
 
-4. Update the environment variables:
-```env
-NEXT_PUBLIC_SITE_URL=https://your-wedding-site.com
-```
-
-5. Run the development server:
+4. Ejecutar el servidor de desarrollo:
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see your wedding website!
+Abre [http://localhost:3000](http://localhost:3000) para ver la invitación.
 
-## ⚙️ Configuration
+## ⚙️ Configuración
 
-### Wedding Details
-All wedding information is centralized in `app/config/settings.js`:
+### Detalles de la Boda
+Toda la información de la boda está centralizada en `app/config/settings.js`. Puedes modificar:
+- Nombres de los novios.
+- Fecha y hora del evento.
+- Ubicación y mapas.
+- Historia de amor y galería.
 
+### Gestión de Invitados
+Los invitados se gestionan en `app/config/guests.js`. Cada invitado tiene un "slug" único que genera su invitación personalizada:
 ```javascript
-const settings = {
-  couple: {
-    bride: {
-      name: "Patinya",
-      fullName: "Patinya Surname",
-      // ... more details
-    },
-    groom: {
-      name: "Dar",
-      fullName: "Dar Surname",
-      // ... more details
-    }
-  },
-  wedding: {
-    date: "2026-03-07",
-    displayDate: "March 07, 2026",
-    // ... venue, time details
-  },
-  // ... more configurations
-}
+export const GUESTS = {
+  'eduardo': {
+    name: 'Eduardo',
+    passes: 2,
+    // ...
+  }
+};
 ```
 
-### Customizing Content
-1. **Names & Details**: Edit `app/config/settings.js`
-2. **Colors**: Modify theme colors in `settings.js` and Tailwind config
-3. **Images**: Replace images in `/public` folder
-4. **Music**: Add your song to `/public/music.mp3`
+## 🎵 Música de Fondo
 
-### Adding Your Photos
-1. Place venue photos in `/public/botanical-house-bkk/`
-2. Add couple photos to gallery section in settings
-3. Update `thumbnail.png` for social media preview
+La invitación incluye una función de música de fondo:
+- **Autoplay**: Intenta reproducirse automáticamente al cargar la página.
+- **Control Flotante**: Botón persistente para pausar/reproducir la música.
+- **Archivo**: El audio se encuentra en `/public/music.mp3`.
+- **Volumen**: Configurado al 30% por defecto para una experiencia agradable.
 
-## 📂 Project Structure
-
-```
-elegant-wedding-template-nextjs/
-├── app/
-│   ├── components/        # React components
-│   │   ├── Hero.jsx       # Landing section
-│   │   ├── Countdown.jsx  # Countdown timer
-│   │   ├── Gallery.jsx    # Photo gallery
-│   │   ├── RSVPForm.jsx   # Guest RSVP form
-│   │   └── ...
-│   ├── config/
-│   │   └── settings.js    # All wedding configuration
-│   ├── layout.js          # Root layout with SEO
-│   └── page.js            # Main page
-├── public/
-│   ├── music.mp3          # Background music
-│   ├── thumbnail.png      # Social media preview
-│   └── ...
-└── package.json
-```
-
-## 🎵 Background Music
-
-The template includes an elegant background music feature:
-- Starts playing when users scroll or click
-- Floating control button for play/pause
-- Respects user preferences
-- Optimized for browser autoplay policies
-
-To use your own music:
-1. Add your MP3 file as `/public/music.mp3`
-2. The music will automatically loop
-3. Volume is set to 30% by default
-
-## 🎨 Customization Guide
-
-### Colors
-The template uses a romantic color palette:
-- Primary: `#1a1a1a` (Elegant Black)
-- Accent: `#d4af37` (Gold)
-- Background: `#faf8f3` (Cream)
-- Additional: `#87a878` (Sage), `#ff6b6b` (Coral)
-
-### Fonts
-- Headings: Playfair Display (Elegant serif)
-- Body: Inter (Clean sans-serif)
-
-### Components
-Each component is fully customizable:
-- Edit component files in `/app/components/`
-- Adjust animations in component files
-- Modify styles using Tailwind classes
-
-## 📸 Screenshots
-
-### Desktop View
-- Elegant hero section with animated elements
-- Smooth scrolling between sections
-- Interactive countdown timer
-
-### Mobile View
-- Responsive navigation
-- Touch-optimized interactions
-- Perfect formatting on all devices
-
-## 🔧 Development
-
-### Available Scripts
-
-```bash
-# Development server
-npm run dev
-
-# Production build
-npm run build
-
-# Start production server
-npm start
-
-# Lint code
-npm run lint
-```
-
-### Tech Stack
+## 🛠️ Tecnologías Usadas
 - **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Font**: Google Fonts (Playfair Display, Inter)
+- **Estilos**: Tailwind CSS
+- **Animaciones**: Framer Motion
+- **Iconos**: Lucide React
+- **Fuentes**: Google Fonts (Playfair Display, Inter)
 
-## 📦 Deployment
-
-### Vercel (Recommended)
-1. Push your code to GitHub
-2. Import project to Vercel
-3. Add environment variables
-4. Deploy!
-
-### Other Platforms
-The template can be deployed to any platform that supports Next.js:
-- Netlify
-- AWS Amplify
-- Google Cloud Run
-- Self-hosted with Node.js
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**George Khananaev**
-- GitHub: [@georgekhananaev](https://github.com/georgekhananaev)
-
-## 🙏 Acknowledgments
-
-- Built with love for Patinya & Dar's special day
-- Inspired by modern wedding design trends
-- Thanks to the Next.js and React communities
-
-## 💝 Support
-
-If you found this template helpful, please consider:
-- ⭐ Starring the repository
-- 🍴 Forking for your own use
-- 📢 Sharing with others who might need it
+## 📦 Despliegue (Vercel)
+1. Sube el código a GitHub.
+2. Importa el proyecto en Vercel.
+3. Configura las variables de entorno si es necesario.
+4. ¡Despliega!
 
 ---
 
-Made with ❤️ by George Khananaev | 2025
+Hecho con ❤️ para la boda de **Michelle & Eduardo** | 2026

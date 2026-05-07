@@ -16,9 +16,41 @@ export default function FloatingMusicControl() {
       audioRef.current.volume = 0.3;
     }
 
-    // Listen for custom play music event
+    // Show the music button immediately
+    setIsVisible(true);
+
+    const attemptPlay = () => {
+      if (audioRef.current && !isPlaying && !hasAutoPlayed) {
+        audioRef.current.play().then(() => {
+          setIsPlaying(true);
+          setHasAutoPlayed(true);
+        }).catch(error => {
+          console.log('Autoplay blocked by browser:', error);
+          // We don't set hasAutoPlayed to true here so we can try again on first interaction
+        });
+      }
+    };
+
+    // Try immediately
+    attemptPlay();
+
+    // Also try on any user interaction with the document if it failed
+    const handleFirstInteraction = () => {
+      if (!isPlaying) {
+        attemptPlay();
+      }
+      // Remove listeners after first interaction attempt
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('touchstart', handleFirstInteraction);
+      document.removeEventListener('scroll', handleFirstInteraction);
+    };
+
+    document.addEventListener('click', handleFirstInteraction);
+    document.addEventListener('touchstart', handleFirstInteraction);
+    document.addEventListener('scroll', handleFirstInteraction);
+
+    // Listen for custom play music event (e.g. from Hero button)
     const handlePlayMusicEvent = () => {
-      setIsVisible(true); // Show the music button
       if (audioRef.current && !isPlaying) {
         audioRef.current.play().then(() => {
           setIsPlaying(true);
@@ -33,38 +65,11 @@ export default function FloatingMusicControl() {
     
     return () => {
       window.removeEventListener('playBackgroundMusic', handlePlayMusicEvent);
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('touchstart', handleFirstInteraction);
+      document.removeEventListener('scroll', handleFirstInteraction);
     };
-  }, [isPlaying]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Show the music button when scrolling past 100px
-      if (currentScrollY > 100 && !isVisible) {
-        setIsVisible(true);
-        
-        // Try autoplay only once when first visible
-        if (!hasAutoPlayed && audioRef.current) {
-          audioRef.current.play().then(() => {
-            setIsPlaying(true);
-            setHasAutoPlayed(true);
-          }).catch(error => {
-            console.log('Autoplay failed, user interaction required:', error);
-            // Set hasAutoPlayed to true even on failure to prevent retry
-            setHasAutoPlayed(true);
-          });
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Check initial scroll position
-    handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isVisible, hasAutoPlayed]);
+  }, [isPlaying, hasAutoPlayed]);
 
   const toggleMusic = () => {
     if (audioRef.current) {
