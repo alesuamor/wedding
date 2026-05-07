@@ -16,7 +16,7 @@ Una invitación de boda elegante, moderna y totalmente personalizada construida 
 - **Música de Fondo**: Reproducción automática (autoplay) optimizada para navegadores modernos.
 - **Menú Flotante**: Navegación elegante que aparece al hacer scroll.
 - **Temporizador de Cuenta Regresiva**: Cuenta atrás dinámica para el gran día (15 de noviembre de 2026).
-- **Formulario RSVP**: Sistema integrado para confirmar asistencia, incluyendo invitados adicionales y restricciones alimenticias.
+- **Formulario RSVP**: Sistema integrado para confirmar asistencia.
 - **Galería de Fotos**: Sección para mostrar los momentos más especiales de la pareja.
 - **Invitaciones Personalizadas**: Soporte para rutas personalizadas por invitado (ej. `/eduardo`).
 

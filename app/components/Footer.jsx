@@ -7,7 +7,7 @@ import settings from '../config/settings';
 
 export default function Footer() {
     const { couple, social } = settings;
-    
+
     const socialLinks = [
         { name: 'IG', href: `https://instagram.com/${social.instagram.wedding.replace('@', '')}` },
         { name: 'FB', href: social.facebook.eventPage }
@@ -17,7 +17,7 @@ export default function Footer() {
         <footer className="py-20 bg-[#1a1a1a] relative overflow-hidden">
             {/* Decorative Background */}
             <div className="absolute inset-0 opacity-5">
-                <div 
+                <div
                     className="absolute w-[200%] h-[200%] top-[-50%] left-[-50%]"
                     style={{
                         backgroundImage: `
@@ -38,7 +38,7 @@ export default function Footer() {
                     className="text-center"
                 >
                     {/* Names */}
-                    <motion.h3 
+                    <motion.h3
                         className="font-playfair text-6xl md:text-7xl font-thin tracking-[0.02em] mb-8"
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
@@ -50,9 +50,9 @@ export default function Footer() {
 
                     {/* Contact Info */}
                     <p className="text-lg text-[#faf8f3] opacity-80 leading-relaxed mb-12">
-                        Nos encantará celebrar este día con ustedes<br/>
-                        Para cualquier duda, pueden escribirnos a<br/>
-                        <a 
+                        Nos encantará celebrar este día con ustedes<br />
+                        Para cualquier duda, pueden escribirnos a<br />
+                        <a
                             href={`mailto:${settings.couple.email}`}
                             className="text-[#d4af37] hover:text-[#ff6b6b] transition-colors duration-300"
                         >
@@ -70,7 +70,7 @@ export default function Footer() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                whileHover={{ 
+                                whileHover={{
                                     scale: 1.1,
                                     rotate: 45,
                                     backgroundColor: '#d4af37'
@@ -94,10 +94,10 @@ export default function Footer() {
                     <div className="space-y-4">
                         {/* Animated Heart */}
                         <motion.div
-                            animate={{ 
+                            animate={{
                                 scale: [1, 1.2, 1],
                             }}
-                            transition={{ 
+                            transition={{
                                 duration: 2,
                                 repeat: Infinity,
                                 ease: "easeInOut"
@@ -110,16 +110,16 @@ export default function Footer() {
                         <p className="text-xs text-[#faf8f3] opacity-60 tracking-wider uppercase">
                             Hecho con cariño para nuestro gran día
                         </p>
-                        
+
                         <p className="text-[10px] text-[#faf8f3] opacity-50 mt-4">
-                            Diseño y desarrollo por{' '}
-                            <a 
-                                href="https://george.khananaev.com/" 
-                                target="_blank" 
+                            Contacto{' '}
+                            <a
+                                href="https://alesuamor.com/"
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-[#d4af37] hover:text-[#f4e4a1] transition-colors duration-300"
                             >
-                                George Khananaev
+                                Alejandro Suarez
                             </a>
                         </p>
                     </div>

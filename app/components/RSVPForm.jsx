@@ -181,7 +181,7 @@ export default function RSVPForm({ guest }) {
                             htmlFor="message"
                             className="absolute left-0 top-3 text-[#1a1a1a]/60 transition-all duration-300 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#d4af37] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm"
                         >
-                            Mensaje, restricciones alimentarias o comentarios
+                            ¿Algún mensajito?
                         </label>
                     </div>
 
