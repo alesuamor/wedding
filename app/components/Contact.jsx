@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, ExternalLink } from 'lucide-react';
+import { Phone, MapPin, Clock, ExternalLink } from 'lucide-react';
 import settings from '../config/settings';
 
 export default function Contact() {
@@ -14,23 +14,18 @@ export default function Contact() {
     }, []);
 
     const contactInfo = [
-        {
-            icon: Mail,
-            title: "Correo",
-            details: [couple.bride.email, couple.groom.email],
-            color: "from-[#ff6b6b] to-[#ffc4c4]"
-        },
+
         {
             icon: Phone,
             title: "Teléfono",
             details: [couple.bride.phone, couple.groom.phone],
-            color: "from-[#d4af37] to-[#e6c757]"
+            color: "from-[#d5ac2a] to-[#7e630d]"
         },
         {
             icon: MapPin,
             title: "Lugar",
             details: [venue.name, venue.address.district],
-            color: "from-[#87a878] to-[#a8c89a]"
+            color: "from-[#d5ac2a] to-[#7e630d]"
         },
         {
             icon: Clock,
@@ -39,7 +34,7 @@ export default function Contact() {
                 `Ceremonia: ${wedding.ceremony.displayTime}`,
                 `Recepción: ${wedding.reception.displayTime}`
             ],
-            color: "from-[#ff6b6b] to-[#d4af37]"
+            color: "from-[#d5ac2a] to-[#7e630d]"
         }
     ];
 
@@ -99,7 +94,7 @@ export default function Contact() {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="flex flex-wrap justify-center gap-8">
                     {contactInfo.map((item, index) => {
                         const Icon = item.icon;
                         return (
@@ -109,7 +104,7 @@ export default function Contact() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: performance.animationLevel === 'none' ? 0 : 0.6, delay: performance.animationLevel === 'none' ? 0 : index * 0.1 }}
                                 viewport={{ once: true }}
-                                className="glass p-8 text-center group hover:shadow-2xl transition-all duration-300 rounded-2xl"
+                                className="glass p-8 text-center group hover:shadow-2xl transition-all duration-300 rounded-2xl w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] max-w-[350px]"
                                 whileHover={performance.animationLevel === 'full' ? { y: -10 } : {}}
                             >
                                 <motion.div

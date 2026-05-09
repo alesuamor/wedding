@@ -2,16 +2,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart } from 'lucide-react';
+import { Heart, MessageCircle } from 'lucide-react';
 import settings from '../config/settings';
 
 export default function Footer() {
     const { couple, social } = settings;
 
-    const socialLinks = [
-        { name: 'IG', href: `https://instagram.com/${social.instagram.wedding.replace('@', '')}` },
-        { name: 'FB', href: social.facebook.eventPage }
-    ];
+
 
     return (
         <footer className="py-20 bg-[#1a1a1a] relative overflow-hidden">
@@ -49,42 +46,25 @@ export default function Footer() {
                     </motion.h3>
 
                     {/* Contact Info */}
-                    <p className="text-lg text-[#faf8f3] opacity-80 leading-relaxed mb-12">
+                    <p className="text-lg text-[#faf8f3] opacity-80 leading-relaxed mb-8">
                         Nos encantará celebrar este día con ustedes<br />
-                        Para cualquier duda, pueden escribirnos a<br />
-                        <a
-                            href={`mailto:${settings.couple.email}`}
-                            className="text-[#d4af37] hover:text-[#ff6b6b] transition-colors duration-300"
-                        >
-                            {settings.couple.email}
-                        </a>
+                        Para cualquier duda, escríbannos por WhatsApp
                     </p>
 
-                    {/* Social Links */}
-                    <div className="flex justify-center gap-6 mb-16">
-                        {socialLinks.map((link, index) => (
-                            <motion.a
-                                key={link.name}
-                                href={link.href}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                                whileHover={{
-                                    scale: 1.1,
-                                    rotate: 45,
-                                    backgroundColor: '#d4af37'
-                                }}
-                                className="w-14 h-14 border border-[#d4af37] flex items-center justify-center text-[#d4af37] hover:text-[#1a1a1a] transition-all duration-300"
-                            >
-                                <motion.span
-                                    whileHover={{ rotate: -45 }}
-                                    className="text-sm font-medium"
-                                >
-                                    {link.name}
-                                </motion.span>
-                            </motion.a>
-                        ))}
+                    {/* WhatsApp Icon */}
+                    <div className="flex justify-center mb-16">
+                        <motion.a
+                            href="https://api.whatsapp.com/send?phone=522291833790&text=Hola!"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            whileHover={{ scale: 1.1 }}
+                            viewport={{ once: true }}
+                            className="text-[#d4af37] hover:text-[#ff6b6b] transition-colors duration-300"
+                        >
+                            <MessageCircle className="w-12 h-12" />
+                        </motion.a>
                     </div>
 
                     {/* Divider */}
@@ -125,6 +105,6 @@ export default function Footer() {
                     </div>
                 </motion.div>
             </div>
-        </footer>
+        </footer >
     );
 }

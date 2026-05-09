@@ -40,7 +40,7 @@ const settings = {
       name: "Mich",
       fullName: "Michelle",
       email: "michelle@example.com",
-      phone: "+52 000 000 0000",
+      phone: "2291833790",
       instagram: "@michy",
       parents: "Familia de Michelle"
     },
@@ -48,7 +48,7 @@ const settings = {
       name: "Lalo",
       fullName: "Eduardo",
       email: "eduardo@example.com",
-      phone: "+52 000 000 0000",
+      phone: "2291833790",
       instagram: "@lalo",
       parents: "Familia de Eduardo"
     },
@@ -220,7 +220,7 @@ const settings = {
       hashtag: "#MichyYLalo"
     },
     facebook: {
-      eventPage: "https://facebook.com"
+      eventPage: "https://www.facebook.com/jica1970"
     }
   },
 
@@ -257,8 +257,8 @@ const settings = {
   contact: {
     weddingPlanner: {
       name: "Coordinación por confirmar",
-      phone: "+52 000 000 0000",
-      email: "contacto@michylalo.com"
+      phone: "2291833790",
+      //email: "contacto@michylalo.com"
     },
     photographer: {
       name: "Fotografía por confirmar",
