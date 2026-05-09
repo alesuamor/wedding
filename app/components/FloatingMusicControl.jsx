@@ -19,45 +19,71 @@ export default function FloatingMusicControl() {
     // Show the music button immediately
     setIsVisible(true);
 
-    const attemptPlay = () => {
+    let isAttemptingPlay = false;
+
+    const attemptPlay = (isExplicitGesture = false) => {
       if (audioRef.current && !isPlaying && !hasAutoPlayed) {
-        audioRef.current.play().then(() => {
-          setIsPlaying(true);
-          setHasAutoPlayed(true);
-        }).catch(error => {
-          console.log('Autoplay blocked by browser:', error);
-          // We don't set hasAutoPlayed to true here so we can try again on first interaction
-        });
+        // If we are already attempting to play and this isn't a direct click/touch, skip
+        if (isAttemptingPlay && !isExplicitGesture) return;
+
+        isAttemptingPlay = true;
+        const playPromise = audioRef.current.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            setIsPlaying(true);
+            setHasAutoPlayed(true);
+            isAttemptingPlay = false;
+          }).catch(error => {
+            console.log('Autoplay blocked by browser:', error);
+            // Allow another attempt shortly after
+            setTimeout(() => {
+              isAttemptingPlay = false;
+            }, 250);
+          });
+        } else {
+          isAttemptingPlay = false;
+        }
       }
     };
 
-    // Try immediately
-    attemptPlay();
+    // Try immediately on load
+    if (!hasAutoPlayed) {
+      attemptPlay(false);
+    }
 
-    // Also try on any user interaction with the document if it failed
-    const handleFirstInteraction = () => {
-      if (!isPlaying) {
-        attemptPlay();
+    // Try on scroll (passive, non-explicit)
+    const handleScrollInteraction = () => {
+      if (!isPlaying && !hasAutoPlayed) {
+        attemptPlay(false);
       }
-      // Remove listeners after first interaction attempt
-      document.removeEventListener('click', handleFirstInteraction);
-      document.removeEventListener('touchstart', handleFirstInteraction);
-      document.removeEventListener('scroll', handleFirstInteraction);
     };
 
-    document.addEventListener('click', handleFirstInteraction);
-    document.addEventListener('touchstart', handleFirstInteraction);
-    document.addEventListener('scroll', handleFirstInteraction);
+    // Try on explicit interaction (bypasses debounce)
+    const handleExplicitInteraction = () => {
+      if (!isPlaying && !hasAutoPlayed) {
+        attemptPlay(true);
+      }
+    };
+
+    if (!hasAutoPlayed) {
+      document.addEventListener('click', handleExplicitInteraction);
+      document.addEventListener('touchstart', handleExplicitInteraction, { passive: true });
+      document.addEventListener('scroll', handleScrollInteraction, { passive: true });
+    }
 
     // Listen for custom play music event (e.g. from Hero button)
     const handlePlayMusicEvent = () => {
       if (audioRef.current && !isPlaying) {
-        audioRef.current.play().then(() => {
-          setIsPlaying(true);
-          setHasAutoPlayed(true);
-        }).catch(error => {
-          console.log('Audio playback failed:', error);
-        });
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            setIsPlaying(true);
+            setHasAutoPlayed(true);
+          }).catch(error => {
+            console.log('Audio playback failed:', error);
+          });
+        }
       }
     };
 
@@ -65,9 +91,9 @@ export default function FloatingMusicControl() {
     
     return () => {
       window.removeEventListener('playBackgroundMusic', handlePlayMusicEvent);
-      document.removeEventListener('click', handleFirstInteraction);
-      document.removeEventListener('touchstart', handleFirstInteraction);
-      document.removeEventListener('scroll', handleFirstInteraction);
+      document.removeEventListener('click', handleExplicitInteraction);
+      document.removeEventListener('touchstart', handleExplicitInteraction);
+      document.removeEventListener('scroll', handleScrollInteraction);
     };
   }, [isPlaying, hasAutoPlayed]);
 
