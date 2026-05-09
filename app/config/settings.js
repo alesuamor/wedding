@@ -191,7 +191,7 @@ const settings = {
 
   // Venue Gallery Images
   venueGallery: {
-    heroImage: "/botanical-house-bkk/wide_bh.png",
+    heroImage: "/location/hero.jpg",
     images: [
       {
         url: "/location/2.png",
