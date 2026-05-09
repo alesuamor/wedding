@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Heart, Calendar, Users, Camera, Mail, MapPin } from 'lucide-react';
 import settings from '../config/settings';
 
-export default function FloatingMenu() {
+export default function FloatingMenu({ showRSVP = false }) {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [hasBeenShown, setHasBeenShown] = useState(false);
@@ -25,15 +25,18 @@ export default function FloatingMenu() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [hasBeenShown]);
 
-  const menuItems = [
-    { name: 'Home', href: '#hero', icon: Heart },
-    { name: 'Countdown', href: '#countdown', icon: Calendar },
-    { name: 'Details', href: '#wedding-details', icon: MapPin },
-    { name: 'Our Story', href: '#love-story', icon: Heart },
-    { name: 'Gallery', href: '#gallery', icon: Camera },
-    { name: 'Contact', href: '#contact', icon: Users },
-    { name: 'RSVP', href: '#rsvp', icon: Mail },
+  const allMenuItems = [
+    { name: 'Inicio', href: '#hero', icon: Heart },
+    { name: 'Cuenta Regresiva', href: '#countdown', icon: Calendar },
+    { name: 'Detalles', href: '#wedding-details', icon: MapPin },
+    { name: 'Nuestra Historia', href: '#love-story', icon: Heart },
+    { name: 'Galería', href: '#gallery', icon: Camera },
+    { name: 'Contacto', href: '#contact', icon: Users },
   ];
+
+  const menuItems = showRSVP
+    ? [...allMenuItems, { name: 'Confirmar Asistencia', href: '#rsvp', icon: Mail }]
+    : allMenuItems;
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);

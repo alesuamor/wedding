@@ -29,7 +29,7 @@ export default function Home({ guest }) {
 
   return (
     <div className="min-h-screen">
-      <FloatingMenu />
+      <FloatingMenu showRSVP={showRSVP} />
       <FloatingMusicControl />
       <Hero guest={guest} />
       <Countdown />
