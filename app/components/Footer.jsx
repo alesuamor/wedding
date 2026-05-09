@@ -54,7 +54,7 @@ export default function Footer() {
                     {/* WhatsApp Icon */}
                     <div className="flex justify-center mb-16">
                         <motion.a
-                            href="https://api.whatsapp.com/send?phone=522291833790&text=Hola!"
+                            href="https://api.whatsapp.com/send?phone=522291261381&text=Hola!"
                             target="_blank"
                             rel="noopener noreferrer"
                             initial={{ opacity: 0, scale: 0.5 }}

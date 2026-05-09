@@ -40,7 +40,7 @@ const settings = {
       name: "Mich",
       fullName: "Michelle",
       email: "michelle@example.com",
-      phone: "2291 83 37 90",
+      phone: "2291 261381",
       instagram: "@michy",
       parents: "Familia de Michelle"
     },
@@ -48,7 +48,7 @@ const settings = {
       name: "Lalo",
       fullName: "Eduardo",
       email: "eduardo@example.com",
-      phone: "2291833790",
+      phone: "2291 261381",
       instagram: "@lalo",
       parents: "Familia de Eduardo"
     },
@@ -257,7 +257,7 @@ const settings = {
   contact: {
     weddingPlanner: {
       name: "Coordinación por confirmar",
-      phone: "2291833790",
+      phone: "2291 261381",
       //email: "contacto@michylalo.com"
     },
     photographer: {
