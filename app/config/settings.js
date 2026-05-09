@@ -59,13 +59,13 @@ const settings = {
   // Wedding Date & Time
   wedding: {
     date: "2026-11-15",
-    displayDate: "Sábado 15 de noviembre de 2026",
+    displayDate: "Sábado 8 de agosto de 2026",
     shortDate: "15.11.26",
     day: "Sábado",
     ceremony: {
       time: "17:30",
       displayTime: "5:30 PM",
-      duration: "1 hora"
+      duration: "2 hora"
     },
     cocktailHour: {
       time: "18:30",
@@ -81,25 +81,25 @@ const settings = {
 
   // Venue Information
   venue: {
-    name: "Quinta Río H-J",
-    ceremonyLocation: "Quinta Río H-J",
-    receptionLocation: "Quinta Río H-J",
-    cocktailLocation: "Quinta Río H-J",
+    name: "Quinta Río HJ",
+    ceremonyLocation: "Quinta Río HJ",
+    receptionLocation: "Quinta Río HJ",
+    cocktailLocation: "Quinta Río HJ",
     address: {
-      full: "Quinta Río H-J, Unnamed Road, Playa de Vacas, Veracruz, México",
-      street: "Unnamed Road",
-      district: "Playa de Vacas",
+      full: "Quinta Río H-J, Quinta Río H-J, Playa de Vacas, Veracruz, México",
+      street: "Quinta Río HJ",
+      district: "Vereda / Playa de Vacas",
       city: "Medellín de Bravo",
       postalCode: "94274",
-      country: "México"
+      country: "Veracruz"
     },
     coordinates: {
-      lat: 19.096178,
-      lng: -96.1152022
+      lat: 19.0965436,
+      lng: -96.116551
     },
-    googleMapsUrl: "https://www.google.com/maps/place/Quinta+R%C3%ADo+H-J/@19.096178,-96.1152022,17z/data=!3m1!4b1!4m6!3m5!1s0x85c341974ea97ec5:0x4f7ab08af086abad!8m2!3d19.096178!4d-96.1152022!16s%2Fg%2F11n8bkwv47!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Quinta+R%C3%ADo+H-J&query_place_id=ChIJ5X6pSreBw4URravwhIqwZk8",
     shareUrl: "https://maps.app.goo.gl/D8dgwCaJhi4vjXL38?g_st=iw",
-    parking: "Ubicación disponible en Google Maps. Se recomienda revisar la ruta antes del evento.",
+    parking: "Jardín de Eventos ",
     accommodation: [
       {
         name: "Hospedaje sugerido por confirmar",

@@ -14,18 +14,18 @@ export default function WeddingDetails() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [calendarUrl, setCalendarUrl] = useState('#');
   const [mounted, setMounted] = useState(false);
-  
+
   // Generate Google Calendar URL on client side only
   React.useEffect(() => {
     setMounted(true);
     const startDate = new Date(`${wedding.date}T${wedding.ceremony.time}:00`);
     const endDate = new Date(`${wedding.date}T${wedding.reception.endTime}:00`);
-    
+
     // Format dates for Google Calendar (YYYYMMDDTHHmmss)
     const formatDate = (date) => {
       return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
     };
-    
+
     const eventDetails = {
       text: `Boda de ${settings.couple.bride.name} & ${settings.couple.groom.name}`,
       dates: `${formatDate(startDate)}/${formatDate(endDate)}`,
@@ -33,7 +33,7 @@ export default function WeddingDetails() {
       location: `${venue.name}, ${venue.address.street}, ${venue.address.district}, ${venue.address.city}, ${venue.address.country}`,
       ctz: 'Asia/Bangkok' // Adjust timezone as needed
     };
-    
+
     const baseUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
     const params = new URLSearchParams({
       text: eventDetails.text,
@@ -42,10 +42,10 @@ export default function WeddingDetails() {
       location: eventDetails.location,
       ctz: eventDetails.ctz
     });
-    
+
     setCalendarUrl(`${baseUrl}&${params.toString()}`);
   }, []);
-  
+
   // Lightbox functions
   const openLightbox = (index) => {
     setCurrentIndex(index);
@@ -59,7 +59,7 @@ export default function WeddingDetails() {
   const navigateToImage = (index) => {
     setCurrentIndex(index);
   };
-  
+
   // Timeline data
   const timeline = [
     {
@@ -114,7 +114,7 @@ export default function WeddingDetails() {
           "Ceremonia en un ambiente especial",
           "Les pedimos vivir la ceremonia sin celulares",
           "Habrá fotografía profesional",
-          "Espacios reservados para familia"
+
         ]
       }
     },
@@ -140,8 +140,7 @@ export default function WeddingDetails() {
         notes: [
           "Vestimenta formal o cóctel",
           "Se recomiendan telas cómodas",
-          "Para ellas, se sugieren zapatos cómodos",
-          "Para ellos, saco sugerido"
+          "Sugerimos zapatos cómodos",
         ]
       }
     },
@@ -150,14 +149,12 @@ export default function WeddingDetails() {
       icon: Gift,
       content: {
         title: "Información importante",
-        time: "Confirmar antes de",
+        time: "Confirmar antes de:",
         location: wedding.displayDate,
         duration: "Detalles para invitados",
         notes: [
-          "Muy pronto compartiremos recomendaciones de hospedaje",
-          "La logística de traslado se confirmará próximamente",
           "Si tienes alguna restricción alimentaria, avísanos",
-          `Hashtag de la boda: ${social.instagram.hashtag}`
+          `Hashtag del evento: ${social.instagram.hashtag}`
         ]
       }
     }
@@ -168,11 +165,11 @@ export default function WeddingDetails() {
       <section id="wedding-details" className="min-h-screen py-20 bg-[#0a0a0a] relative overflow-hidden">
         {/* Elegant Gradient Background - Same as Hero */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]"/>
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#d4af3715] via-transparent to-[#ff6b6b10]"/>
-          <div className="absolute inset-0 bg-gradient-to-bl from-[#87a87810] via-transparent to-transparent"/>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(212,175,55,0.08)_0%,_transparent_40%)]"/>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(135,168,120,0.06)_0%,_transparent_40%)]"/>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#d4af3715] via-transparent to-[#ff6b6b10]" />
+          <div className="absolute inset-0 bg-gradient-to-bl from-[#87a87810] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(212,175,55,0.08)_0%,_transparent_40%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(135,168,120,0.06)_0%,_transparent_40%)]" />
         </div>
 
         {/* Floating Particles - reduced based on performance */}
@@ -186,7 +183,7 @@ export default function WeddingDetails() {
                   left: `${(i * 19) % 100}%`,
                   top: `${(i * 13) % 100}%`
                 }}
-                animate={{ 
+                animate={{
                   y: [-20, -120],
                   opacity: [0, 1, 0]
                 }}
@@ -210,14 +207,14 @@ export default function WeddingDetails() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <motion.div 
+            <motion.div
               className="h-[0.5px] bg-gradient-to-r from-transparent via-[#d4af37]/30 to-transparent mb-12"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               transition={{ duration: 1.5, ease: "easeOut" }}
               viewport={{ once: true }}
             />
-            
+
             <h2 className="font-playfair text-[clamp(3.5rem,9vw,6rem)] font-thin tracking-[0.02em] mb-6">
               <span className="bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent">
                 DETALLES DE LA BODA
@@ -246,8 +243,8 @@ export default function WeddingDetails() {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/50 to-[#0a0a0a]/80"></div>
-              
-              <motion.div 
+
+              <motion.div
                 className="absolute inset-0 flex items-center justify-center text-center z-10"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -255,7 +252,7 @@ export default function WeddingDetails() {
                 viewport={{ once: true }}
               >
                 <div>
-                  <motion.h3 
+                  <motion.h3
                     className="drop-shadow-[2px_2px_4px_black] font-playfair text-[clamp(3rem,7vw,5rem)] font-thin tracking-[0.02em] leading-tight"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -266,7 +263,7 @@ export default function WeddingDetails() {
                       {venue.name.toUpperCase()}
                     </span>
                   </motion.h3>
-                  <motion.p 
+                  <motion.p
                     className="text-white/80 text-xl mt-4 max-w-2xl mx-auto px-6"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -282,11 +279,11 @@ export default function WeddingDetails() {
             {/* Venue Info Card */}
             <div className="relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10">
               <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 to-transparent opacity-50" />
-              
+
               <div className="relative p-12 lg:p-16">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                   <div>
-                    <motion.div 
+                    <motion.div
                       className="inline-flex items-center gap-3 mb-6"
                       initial={{ x: -20, opacity: 0 }}
                       whileInView={{ x: 0, opacity: 1 }}
@@ -297,7 +294,7 @@ export default function WeddingDetails() {
                         Dirección
                       </span>
                     </motion.div>
-                    
+
                     <div className="space-y-3 text-[#faf8f3]/70">
                       <p className="text-lg">{venue.address.street}</p>
                       <p className="text-lg">{venue.address.district}</p>
@@ -316,7 +313,7 @@ export default function WeddingDetails() {
                       >
                         Ver mapa
                       </motion.a>
-                      
+
                       {mounted && (
                         <motion.a
                           href={calendarUrl}
@@ -339,8 +336,8 @@ export default function WeddingDetails() {
                       transition={{ duration: 0.5 }}
                     >
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 to-transparent z-10" />
-                      <img 
-                        src={venue.imageUrl || "/botanical-house-bkk/1.jpg"}
+                      <img
+                        src={venue.imageUrl || "/location/loc2.jpg"}
                         alt={venue.name}
                         className="w-full h-full object-cover"
                       />
@@ -426,11 +423,10 @@ export default function WeddingDetails() {
                   <motion.button
                     key={index}
                     onClick={() => setActiveTab(index)}
-                    className={`flex items-center gap-3 px-6 py-3 rounded-full border transition-all duration-300 ${
-                      activeTab === index 
-                        ? 'border-[#d4af37] bg-[#d4af37]/10 text-[#d4af37]' 
-                        : 'border-white/10 text-[#faf8f3]/50 hover:border-[#d4af37]/50 hover:text-[#d4af37]/70'
-                    }`}
+                    className={`flex items-center gap-3 px-6 py-3 rounded-full border transition-all duration-300 ${activeTab === index
+                      ? 'border-[#d4af37] bg-[#d4af37]/10 text-[#d4af37]'
+                      : 'border-white/10 text-[#faf8f3]/50 hover:border-[#d4af37]/50 hover:text-[#d4af37]/70'
+                      }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -475,7 +471,7 @@ export default function WeddingDetails() {
                     </div>
                     <div>
                       <h4 className="text-sm font-medium tracking-wider text-[#d4af37]/80 uppercase mb-4">
-                        Notas importantes
+                        Notas:
                       </h4>
                       <ul className="space-y-3">
                         {detailTabs[activeTab].content.notes.map((note, idx) => (
@@ -502,17 +498,17 @@ export default function WeddingDetails() {
             <h3 className="font-playfair text-4xl font-thin text-center text-[#faf8f3] mb-12">
               Itinerario del día
             </h3>
-            
+
             <div className="relative">
               {/* Timeline Line - hidden on mobile */}
               <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-[0.5px] h-full bg-gradient-to-b from-transparent via-[#d4af37]/30 to-transparent" />
-              
+
               {/* Timeline Items */}
               <div className="space-y-12">
                 {timeline.map((item, index) => {
                   const Icon = item.icon;
                   const isEven = index % 2 === 0;
-                  
+
                   return (
                     <motion.div
                       key={index}
@@ -524,7 +520,7 @@ export default function WeddingDetails() {
                     >
                       {/* Content */}
                       <div className={`flex-1 ${isEven ? 'lg:text-right' : 'lg:text-left'} text-center`}>
-                        <motion.div 
+                        <motion.div
                           className="inline-block"
                           whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.3 }}
@@ -540,9 +536,9 @@ export default function WeddingDetails() {
                           </p>
                         </motion.div>
                       </div>
-                      
+
                       {/* Icon Node */}
-                      <motion.div 
+                      <motion.div
                         className="relative z-10"
                         whileHover={{ scale: 1.2, rotate: 360 }}
                         transition={{ duration: 0.5 }}
@@ -551,7 +547,7 @@ export default function WeddingDetails() {
                           <span className="text-[#d4af37] text-xs font-bold">{index + 1}</span>
                         </div>
                       </motion.div>
-                      
+
                       {/* Spacer for opposite side */}
                       <div className="flex-1 hidden lg:block" />
                     </motion.div>

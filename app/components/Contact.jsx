@@ -8,11 +8,11 @@ import settings from '../config/settings';
 export default function Contact() {
     const { couple, venue, wedding } = settings;
     const [mounted, setMounted] = useState(false);
-    
+
     useEffect(() => {
         setMounted(true);
     }, []);
-    
+
     const contactInfo = [
         {
             icon: Mail,
@@ -43,17 +43,16 @@ export default function Contact() {
         }
     ];
 
-    const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.5799!2d${venue.coordinates.lng}!3d${venue.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQ0JzMyLjAiTiAxMDDCsDM0JzMxLjUiRQ!5e0!3m2!1sen!2sth!4v1635835200000!5m2!1sen!2sth`;
-
+    const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.1266164658011!2d-96.11655101019373!3d19.096543562806673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c341974ea97ec5%3A0x4f7ab08af086abad!2sQuinta%20R%C3%ADo%20H-J!5e0!3m2!1ses-419!2smx!4v1778309098750!5m2!1ses-419!2smx";
     return (
         <section id="contact" className="min-h-screen flex items-center justify-center py-20 bg-[#1a1a1a] relative overflow-hidden">
             {/* Elegant Gradient Mesh Background - same as Hero */}
             <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]"/>
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#d4af3715] via-transparent to-[#ff6b6b10]"/>
-                <div className="absolute inset-0 bg-gradient-to-bl from-[#87a87810] via-transparent to-transparent"/>
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(212,175,55,0.08)_0%,_transparent_40%)]"/>
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(135,168,120,0.06)_0%,_transparent_40%)]"/>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#d4af3715] via-transparent to-[#ff6b6b10]" />
+                <div className="absolute inset-0 bg-gradient-to-bl from-[#87a87810] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(212,175,55,0.08)_0%,_transparent_40%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(135,168,120,0.06)_0%,_transparent_40%)]" />
             </div>
 
             {/* Floating Particles - reduced based on performance */}
@@ -67,7 +66,7 @@ export default function Contact() {
                                 left: `${(i * 13) % 100}%`,
                                 top: `${(i * 17) % 100}%`
                             }}
-                            animate={{ 
+                            animate={{
                                 y: [-20, -120],
                                 opacity: [0, 1, 0]
                             }}
@@ -113,18 +112,18 @@ export default function Contact() {
                                 className="glass p-8 text-center group hover:shadow-2xl transition-all duration-300 rounded-2xl"
                                 whileHover={performance.animationLevel === 'full' ? { y: -10 } : {}}
                             >
-                                <motion.div 
+                                <motion.div
                                     className={`w-20 h-20 bg-gradient-to-br ${item.color} rounded-full mx-auto mb-6 flex items-center justify-center`}
                                     whileHover={performance.animationLevel === 'full' ? { scale: 1.1, rotate: 360 } : {}}
                                     transition={performance.animationLevel === 'full' ? { duration: 0.5 } : {}}
                                 >
                                     <Icon className="w-10 h-10 text-white" />
                                 </motion.div>
-                                
+
                                 <h3 className="text-xl font-semibold mb-4 text-[#d4af37]">
                                     {item.title}
                                 </h3>
-                                
+
                                 <div className="space-y-2">
                                     {item.details.map((detail, idx) => (
                                         <p key={idx} className="text-[#faf8f3] opacity-70 hover:opacity-100 transition-opacity text-sm">
@@ -150,15 +149,15 @@ export default function Contact() {
                         <h3 className="font-playfair text-3xl font-bold mb-6 text-[#d4af37]">
                             {venue.name}
                         </h3>
-                        
+
                         <div className="space-y-4 mb-8">
                             <p className="text-[#faf8f3] opacity-80">
-                                {venue.address.street}<br/>
-                                {venue.address.district}<br/>
-                                {venue.address.city}, {venue.address.postalCode}<br/>
+                                {venue.address.street}<br />
+                                {venue.address.district}<br />
+                                {venue.address.city}, {venue.address.postalCode}<br />
                                 {venue.address.country}
                             </p>
-                            
+
                             <div className="pt-4 border-t border-[#d4af37]/20">
                                 <p className="text-[#faf8f3] opacity-60 mb-2">
                                     {venue.parking}
