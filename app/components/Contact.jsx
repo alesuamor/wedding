@@ -18,7 +18,7 @@ export default function Contact() {
         {
             icon: Phone,
             title: "Teléfono",
-            details: [couple.bride.phone, couple.groom.phone],
+            details: [couple.bride.phone],
             color: "from-[#d5ac2a] to-[#7e630d]"
         },
         {

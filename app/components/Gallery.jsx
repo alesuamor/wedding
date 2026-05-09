@@ -37,14 +37,14 @@ export default function Gallery() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <motion.div 
+            <motion.div
               className="h-[0.5px] bg-gradient-to-r from-transparent via-[#d4af37]/30 to-transparent mb-12"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               transition={{ duration: 1.5, ease: "easeOut" }}
               viewport={{ once: true }}
             />
-            
+
             <h2 className="font-playfair text-[clamp(3rem,8vw,5rem)] font-thin tracking-[0.02em] mb-5">
               <span className="bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent">
                 NUESTROS MOMENTOS
@@ -54,7 +54,7 @@ export default function Gallery() {
               Una pequeña colección de recuerdos
             </p>
             <p className="text-sm text-[#d4af37]/50 mt-4">
-              Haz clic en cualquier imagen para verla completa
+              Haz click en cualquier imagen para verla completa
             </p>
           </motion.div>
 
@@ -70,7 +70,7 @@ export default function Gallery() {
                 whileHover={{ scale: 0.98 }}
                 onClick={() => openLightbox(index)}
               >
-                <Image 
+                <Image
                   src={photo.url}
                   alt={photo.alt}
                   fill
@@ -78,7 +78,7 @@ export default function Gallery() {
                   className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                   loading="lazy"
                 />
-                
+
                 {/* Overlay with caption and icon */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/90 via-[#0a0a0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
                   <div className="absolute inset-0 flex flex-col justify-between p-4">

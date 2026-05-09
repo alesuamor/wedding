@@ -69,7 +69,7 @@ export default function Countdown() {
       {/* Animated gradient orbs - lighter */}
       <div className="absolute inset-0">
         {mounted && (
-          <motion.div 
+          <motion.div
             className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#f4e4a1]/20 via-[#ffd700]/10 to-transparent rounded-full blur-3xl will-change-transform"
             animate={{
               scale: [1, 1.2, 1],
@@ -83,7 +83,7 @@ export default function Countdown() {
           />
         )}
         {mounted && (
-          <motion.div 
+          <motion.div
             className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#ffb6c1]/15 via-[#ffc0cb]/10 to-transparent rounded-full blur-3xl will-change-transform"
             animate={{
               scale: [1, 1.3, 1],
@@ -97,7 +97,7 @@ export default function Countdown() {
           />
         )}
         {mounted && (
-          <motion.div 
+          <motion.div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#ffe4b5]/15 to-[#ffd700]/10 rounded-full blur-3xl will-change-transform"
             animate={{
               scale: [0.8, 1.1, 0.8],
@@ -124,7 +124,7 @@ export default function Countdown() {
             'text-[#f0e68c]/50',  // khaki
           ];
           const color = colors[i % colors.length];
-          
+
           return (
             <motion.div
               key={`star-${i}`}
@@ -161,7 +161,7 @@ export default function Countdown() {
             'text-[#f4a460]/30',  // sandy brown
           ];
           const color = heartColors[i % heartColors.length];
-          
+
           return (
             <motion.div
               key={`heart-${i}`}
@@ -170,7 +170,7 @@ export default function Countdown() {
                 left: `${(i * 67) % 100}%`,
                 bottom: '-5%'
               }}
-              animate={{ 
+              animate={{
                 y: ['0vh', '-110vh'],
                 x: [0, (i % 2 ? 20 : -20), 0],
                 rotate: [0, (i % 2 ? 15 : -15), 0],
@@ -183,7 +183,7 @@ export default function Countdown() {
               }}
             >
               <svg className={`w-4 h-4 ${color}`} fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
               </svg>
             </motion.div>
           );
@@ -199,7 +199,7 @@ export default function Countdown() {
             'text-[#ff9999]/20',  // light coral
           ];
           const color = tinyHeartColors[i % tinyHeartColors.length];
-          
+
           return (
             <div
               key={`tiny-heart-${i}`}
@@ -210,7 +210,7 @@ export default function Countdown() {
               }}
             >
               <svg className={`w-2 h-2 ${color}`} fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
               </svg>
             </div>
           );
@@ -235,8 +235,8 @@ export default function Countdown() {
           >
             {settings.wedding.day}, {settings.wedding.displayDate}
           </motion.p>
-          
-          <motion.h2 
+
+          <motion.h2
             className="font-playfair text-[clamp(2.5rem,6vw,4rem)] font-light mb-3"
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -247,7 +247,7 @@ export default function Countdown() {
               Aparta la fecha
             </span>
           </motion.h2>
-          
+
           <motion.p
             className="text-lg text-[#1a1a1a]/60 font-light"
             initial={{ opacity: 0 }}
@@ -364,7 +364,7 @@ export default function Countdown() {
                 className="text-center"
               >
                 <motion.div
-                  animate={{ 
+                  animate={{
                     scale: [1, 1.05, 1],
                   }}
                   transition={{
@@ -382,7 +382,7 @@ export default function Countdown() {
                 </p>
                 <motion.div
                   className="mt-8 inline-block"
-                  animate={{ 
+                  animate={{
                     y: [0, -10, 0],
                   }}
                   transition={{
@@ -392,7 +392,7 @@ export default function Countdown() {
                   }}
                 >
                   <svg className="w-16 h-16 text-[#d4af37] mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                   </svg>
                 </motion.div>
               </motion.div>
@@ -414,7 +414,7 @@ export default function Countdown() {
                 >
                   Gracias por celebrar con nosotros
                 </motion.h2>
-                
+
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -427,7 +427,7 @@ export default function Countdown() {
                   <div className="flex items-center justify-center gap-2 text-[#d4af37]">
                     <span className="h-px w-12 bg-[#d4af37]/30"></span>
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                     </svg>
                     <span className="h-px w-12 bg-[#d4af37]/30"></span>
                   </div>
@@ -466,7 +466,7 @@ export default function Countdown() {
           viewport={{ once: true }}
           className="text-center mt-8"
         >
-          <motion.p 
+          <motion.p
             className="font-playfair text-lg lg:text-xl italic text-[#1a1a1a]/50"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

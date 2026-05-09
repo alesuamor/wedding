@@ -17,10 +17,10 @@ export default function LoveStory() {
 
   // Map images to milestones
   const imageMap = {
-    0: '/love-story/coffe.webp',
-    1: '/love-story/first_adventure.webp',
-    2: '/love-story/proposal.webp',
-    3: '/love-story/wedding.webp'
+    0: '/love-story/01.jpg',
+    1: '/love-story/02.jpg',
+    2: '/love-story/03.jpg',
+    3: '/love-story/04.jpg',
   };
 
   const milestones = settings.loveStory.map((story, idx) => ({

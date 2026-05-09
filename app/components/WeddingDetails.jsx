@@ -375,7 +375,7 @@ export default function WeddingDetails() {
                 Conoce el lugar
               </h3>
               <p className="text-lg text-[#faf8f3]/60">
-                Haz clic en cualquier imagen para verla completa
+                Haz click en cualquier imagen para verla completa
               </p>
             </motion.div>
 

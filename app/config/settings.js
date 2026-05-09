@@ -40,7 +40,7 @@ const settings = {
       name: "Mich",
       fullName: "Michelle",
       email: "michelle@example.com",
-      phone: "2291833790",
+      phone: "2291 83 37 90",
       instagram: "@michy",
       parents: "Familia de Michelle"
     },
@@ -60,7 +60,7 @@ const settings = {
   wedding: {
     date: "2026-11-15",
     displayDate: "Sábado 8 de agosto de 2026",
-    shortDate: "15.11.26",
+    shortDate: "08.08.26",
     day: "Sábado",
     ceremony: {
       time: "17:30",
