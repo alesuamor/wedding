@@ -58,13 +58,13 @@ const settings = {
 
   // Wedding Date & Time
   wedding: {
-    date: "2026-11-15",
+    date: "2026-08-08",
     displayDate: "Sábado 8 de agosto de 2026",
     shortDate: "08.08.26",
     day: "Sábado",
     ceremony: {
-      time: "17:30",
-      displayTime: "5:30 PM",
+      time: "16:00",
+      displayTime: "4:00 PM",
       duration: "2 hora"
     },
     cocktailHour: {
@@ -97,7 +97,7 @@ const settings = {
       lat: 19.0965436,
       lng: -96.116551
     },
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Quinta+R%C3%ADo+H-J&query_place_id=ChIJ5X6pSreBw4URravwhIqwZk8",
+    googleMapsUrl: "https://maps.app.goo.gl/nen98Wb5dHpp1Vs87",
     shareUrl: "https://maps.app.goo.gl/D8dgwCaJhi4vjXL38?g_st=iw",
     parking: "Jardín de Eventos ",
     accommodation: [
