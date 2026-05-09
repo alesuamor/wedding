@@ -194,19 +194,19 @@ const settings = {
     heroImage: "/botanical-house-bkk/wide_bh.png",
     images: [
       {
-        url: "/botanical-house-bkk/5.jpg",
-        alt: "Lugar del evento",
-        caption: "Espacio del evento por confirmar"
+        url: "/location/2.png",
+        alt: "",
+        caption: ""
       },
       {
-        url: "/botanical-house-bkk/3.jpg",
-        alt: "Área de ceremonia",
-        caption: "Área de ceremonia por confirmar"
+        url: "/location/3.png",
+        alt: "",
+        caption: ""
       },
       {
-        url: "/botanical-house-bkk/4.jpg",
-        alt: "Área de recepción",
-        caption: "Área de recepción por confirmar"
+        url: "/location/4.png",
+        alt: "",
+        caption: ""
       }
     ]
   },
