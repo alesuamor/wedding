@@ -31,8 +31,7 @@ export default function Contact() {
             icon: Clock,
             title: "Itinerario",
             details: [
-                `Ceremonia: ${wedding.ceremony.displayTime}`,
-                `Recepción: ${wedding.reception.displayTime}`
+                `Inicio: ${wedding.ceremony.displayTime}`
             ],
             color: "from-[#d5ac2a] to-[#7e630d]"
         }

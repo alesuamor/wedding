@@ -65,17 +65,17 @@ const settings = {
     ceremony: {
       time: "16:00",
       displayTime: "4:00 PM",
-      duration: "2 hora"
+      duration: "1 hora"
     },
     cocktailHour: {
-      time: "18:30",
-      displayTime: "6:30 PM"
+      time: "17:00",
+      displayTime: "5:00 PM"
     },
     reception: {
-      time: "19:00",
-      displayTime: "7:00 PM",
+      time: "18:00",
+      displayTime: "6:00 PM",
       endTime: "00:00",
-      displayEndTime: "Medianoche"
+      displayEndTime: "12:00 AM"
     }
   },
 
@@ -114,14 +114,14 @@ const settings = {
     ceremony: {
       title: "Ceremonia",
       description: "Nos encantará contar con su presencia para acompañarnos en este momento tan especial.",
-      dressCode: "Formal elegante",
+      dressCode: "Coctel formal jardín",
       colors: ["Negro", "Dorado", "Tonos neutros"],
       notes: "Muy pronto compartiremos la hora y ubicación exacta de la ceremonia."
     },
     reception: {
       title: "Recepción",
       description: "Después de la ceremonia, celebraremos juntos con cena, música y mucho cariño.",
-      dressCode: "Formal elegante",
+      dressCode: "Coctel formal jardín",
       features: ["Cena", "Música", "Baile", "Brindis"],
       menu: "Cena por confirmar"
     }

@@ -5,13 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, MapPin, Calendar, Music, Utensils, Camera, Heart, Users, Sparkles, Palette, Gift, CalendarPlus, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import settings from '../config/settings';
-import Lightbox from './shared/Lightbox';
 
 export default function WeddingDetails() {
   const { wedding, venue, events, social, venueGallery } = settings;
   const [activeTab, setActiveTab] = useState(0);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [calendarUrl, setCalendarUrl] = useState('#');
   const [mounted, setMounted] = useState(false);
 
@@ -46,28 +43,10 @@ export default function WeddingDetails() {
     setCalendarUrl(`${baseUrl}&${params.toString()}`);
   }, []);
 
-  // Lightbox functions
-  const openLightbox = (index) => {
-    setCurrentIndex(index);
-    setIsLightboxOpen(true);
-  };
 
-  const closeLightbox = () => {
-    setIsLightboxOpen(false);
-  };
-
-  const navigateToImage = (index) => {
-    setCurrentIndex(index);
-  };
 
   // Timeline data
   const timeline = [
-    {
-      time: wedding.ceremony.displayTime,
-      title: "Llegada de invitados",
-      description: "Recepción y bienvenida",
-      icon: Users
-    },
     {
       time: wedding.ceremony.displayTime,
       title: "Ceremonia",
@@ -76,21 +55,15 @@ export default function WeddingDetails() {
     },
     {
       time: wedding.cocktailHour.displayTime,
-      title: "Cóctel",
+      title: "Coctel",
       description: "Bebidas, bocadillos y música",
       icon: Music
     },
     {
       time: wedding.reception.displayTime,
-      title: "Cena",
+      title: "Celebración",
       description: "Cena y celebración",
       icon: Utensils
-    },
-    {
-      time: "9:00 PM",
-      title: "Primer baile y fiesta",
-      description: "Baile y música para celebrar",
-      icon: Sparkles
     },
     {
       time: wedding.reception.displayEndTime,
@@ -106,15 +79,14 @@ export default function WeddingDetails() {
       title: "Ceremonia",
       icon: Heart,
       content: {
-        title: events.ceremony.title,
+        title: "Ceremonia",
         time: wedding.ceremony.displayTime,
         location: venue.ceremonyLocation,
-        duration: "30 minutos",
+        duration: "Duración aproximada: 30 minutos",
         notes: [
-          "Ceremonia en un ambiente especial",
-          "Les pedimos vivir la ceremonia sin celulares",
-          "Habrá fotografía profesional",
-
+          "Su presencia es muy importante para nosotros, agradeceremos su asistencia y puntualidad.",
+          "Les pedimos vivir la ceremonia sin celulares.",
+          "Habrá fotografía profesional."
         ]
       }
     },
@@ -122,11 +94,15 @@ export default function WeddingDetails() {
       title: "Recepción",
       icon: Music,
       content: {
-        title: events.reception.title,
-        time: wedding.reception.displayTime,
-        location: "Salón principal",
-        duration: `Hasta ${wedding.reception.displayEndTime}`,
-        notes: events.reception.features
+        title: "Coctel y celebración",
+        time: `${wedding.cocktailHour.displayTime} Coctel`,
+        location: `${wedding.reception.displayTime} Celebración`,
+        duration: `${wedding.reception.displayEndTime} Cierre de la noche`,
+        notes: [
+          "Habrá bebidas, bocadillos, cena y música.",
+          "Los esperamos para compartir este momento tan especial.",
+          "Gracias por acompañarnos en este día tan importante."
+        ]
       }
     },
     {
@@ -134,13 +110,12 @@ export default function WeddingDetails() {
       icon: Palette,
       content: {
         title: "Código de vestimenta",
-        time: events.ceremony.dressCode,
-        location: "Paleta de color",
-        duration: events.ceremony.colors.join(', '),
+        time: "Coctel formal jardín",
+        location: "",
+        duration: "",
         notes: [
-          "Vestimenta formal o cóctel",
-          "Se recomiendan telas cómodas",
-          "Sugerimos zapatos cómodos",
+          "Para caballeros: Se sugiere evitar tonalidades en color verde.",
+          "Para damas: Se sugiere evitar colores neón, rojo, blanco, ivory, hueso o tonos muy similares al vestido de la novia."
         ]
       }
     },
@@ -149,12 +124,12 @@ export default function WeddingDetails() {
       icon: Gift,
       content: {
         title: "Información importante",
-        time: "Confirmar antes de:",
-        location: wedding.displayDate,
-        duration: "Detalles para invitados",
+        time: "Ubicación: Quinta Río HJ, Playa de Vacas, Veracruz.",
+        location: "Confirmación: Por favor confirma tu asistencia desde esta invitación.",
+        duration: "",
         notes: [
-          "Si tienes alguna restricción alimentaria, avísanos",
-          `Hashtag del evento: ${social.instagram.hashtag}`
+          "Si tienes alguna restricción alimentaria, puedes escribirla al confirmar.",
+          "Para cualquier duda, pueden comunicarse por WhatsApp."
         ]
       }
     }
@@ -356,57 +331,6 @@ export default function WeddingDetails() {
             </div>
           </motion.div>
 
-          {/* Venue Gallery Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h3 className="font-playfair text-4xl font-thin text-[#faf8f3] mb-4">
-                Conoce el lugar
-              </h3>
-              <p className="text-lg text-[#faf8f3]/60">
-                Haz click en cualquier imagen para verla completa
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {venueGallery.images.map((image, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
-                  className="relative aspect-square cursor-pointer group overflow-hidden rounded-2xl"
-                  onClick={() => openLightbox(index)}
-                >
-                  <Image
-                    src={image.url}
-                    alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <p className="text-white font-medium text-lg">{image.caption}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
           {/* Detail Tabs */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -455,18 +379,24 @@ export default function WeddingDetails() {
                         {detailTabs[activeTab].content.title}
                       </h3>
                       <div className="space-y-4">
-                        <div className="flex items-start gap-3">
-                          <span className="text-[#d4af37]/60">•</span>
-                          <span className="text-[#faf8f3]/70">{detailTabs[activeTab].content.time}</span>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <span className="text-[#d4af37]/60">•</span>
-                          <span className="text-[#faf8f3]/70">{detailTabs[activeTab].content.location}</span>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <span className="text-[#d4af37]/60">•</span>
-                          <span className="text-[#faf8f3]/70">{detailTabs[activeTab].content.duration}</span>
-                        </div>
+                        {detailTabs[activeTab].content.time && (
+                          <div className="flex items-start gap-3">
+                            <span className="text-[#d4af37]/60">•</span>
+                            <span className="text-[#faf8f3]/70">{detailTabs[activeTab].content.time}</span>
+                          </div>
+                        )}
+                        {detailTabs[activeTab].content.location && (
+                          <div className="flex items-start gap-3">
+                            <span className="text-[#d4af37]/60">•</span>
+                            <span className="text-[#faf8f3]/70">{detailTabs[activeTab].content.location}</span>
+                          </div>
+                        )}
+                        {detailTabs[activeTab].content.duration && (
+                          <div className="flex items-start gap-3">
+                            <span className="text-[#d4af37]/60">•</span>
+                            <span className="text-[#faf8f3]/70">{detailTabs[activeTab].content.duration}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div>
@@ -577,14 +507,7 @@ export default function WeddingDetails() {
         </div>
       </section>
 
-      {/* Lightbox */}
-      <Lightbox
-        images={venueGallery.images}
-        currentIndex={currentIndex}
-        isOpen={isLightboxOpen}
-        onClose={closeLightbox}
-        onNavigate={navigateToImage}
-      />
+
     </>
   );
 }
