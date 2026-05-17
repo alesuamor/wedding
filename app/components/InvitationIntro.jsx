@@ -46,8 +46,15 @@ export default function InvitationIntro({ guest }) {
         >
           {/* Full Screen Background Image */}
           <motion.div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center md:hidden"
             style={{ backgroundImage: "url('/bg-cool.jpg')" }}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: isClicked ? 0 : 1 }}
+            transition={{ duration: 1 }}
+          />
+          <motion.div
+            className="absolute inset-0 bg-cover bg-center hidden md:block"
+            style={{ backgroundImage: "url('/bg-cool-desktop.jpg')" }}
             initial={{ opacity: 1 }}
             animate={{ opacity: isClicked ? 0 : 1 }}
             transition={{ duration: 1 }}
@@ -77,10 +84,10 @@ export default function InvitationIntro({ guest }) {
             {/* Dynamic Content Overlay (Absolute Positions) */}
             <div className="absolute inset-0 z-10 w-full h-full text-center">
               
-              {/* Logo (Top 11%) */}
+              {/* Logo (Top 13%) */}
               <div 
                 className="absolute w-full flex justify-center"
-                style={{ top: '11%' }}
+                style={{ top: '13%' }}
               >
                 <div 
                   className="w-[100px] h-[80px] md:w-[110px] bg-[#C29A56]"
@@ -97,10 +104,10 @@ export default function InvitationIntro({ guest }) {
                 />
               </div>
 
-              {/* INVITACIÓN PARA (Top 27%) */}
+              {/* INVITACIÓN PARA (Top 29%) */}
               <div
                 className="absolute w-full text-[#F5F1E8] font-inter text-[10px] md:text-xs uppercase tracking-[0.25em]"
-                style={{ top: '27%' }}
+                style={{ top: '29%' }}
               >
                 Invitación para
               </div>
@@ -108,52 +115,52 @@ export default function InvitationIntro({ guest }) {
               {/* Guest Names Handling */}
               {guest.displayName.includes(' & ') ? (
                 <>
-                  {/* Nombre 1 (Top 32%) */}
+                  {/* Nombre 1 (Top 34%) */}
                   <div
                     className="absolute w-full font-playfair text-[28px] md:text-3xl text-[#F5F1E8] font-normal leading-tight px-4"
-                    style={{ top: '32%' }}
+                    style={{ top: '34%' }}
                   >
                     {guest.displayName.split(' & ')[0]}
                   </div>
 
-                  {/* & (Top 39%) */}
+                  {/* & (Top 41%) */}
                   <div
                     className="absolute w-full font-playfair text-xl md:text-2xl text-[#C29A56] italic"
-                    style={{ top: '39%' }}
+                    style={{ top: '41%' }}
                   >
                     &
                   </div>
 
-                  {/* Nombre 2 (Top 43%) */}
+                  {/* Nombre 2 (Top 45%) */}
                   <div
                     className="absolute w-full font-playfair text-[28px] md:text-3xl text-[#F5F1E8] font-normal leading-tight px-4"
-                    style={{ top: '43%' }}
+                    style={{ top: '45%' }}
                   >
                     {guest.displayName.split(' & ')[1]}
                   </div>
                 </>
               ) : (
-                /* Single Name (Top 37% approx) */
+                /* Single Name (Top 39% approx) */
                 <div
                   className="absolute w-full font-playfair text-[28px] md:text-3xl text-[#F5F1E8] font-normal leading-tight px-4"
-                  style={{ top: '37%' }}
+                  style={{ top: '39%' }}
                 >
                   {guest.displayName}
                 </div>
               )}
 
-              {/* Passes (Top 51%) */}
+              {/* Passes (Top 56%) */}
               <div
                 className="absolute w-full text-[#C29A56] font-inter text-[10px] md:text-xs uppercase tracking-[0.2em]"
-                style={{ top: '51%' }}
+                style={{ top: '56%' }}
               >
                 {guest.passes} {guest.passes === 1 ? 'pase reservado' : 'pases reservados'}
               </div>
 
-              {/* Action (Bottom 7%) */}
+              {/* Action (Bottom 14%) */}
               <div
                 className="absolute w-full text-[#F5F1E8] font-inter text-[9px] md:text-[10px] uppercase tracking-[0.25em]"
-                style={{ bottom: '7%' }}
+                style={{ bottom: '14%' }}
               >
                 Toca para abrir tu invitación
               </div>
