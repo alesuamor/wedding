@@ -158,34 +158,34 @@ const settings = {
   // Gallery Images
   gallery: [
     {
-      url: "/our-moments/no-image.jpg",
-      alt: "Foto de la pareja",
+      url: "/our-moments/01.jpg",
+      alt: "Mich y Lalo en un momento especial",
       caption: "Un recuerdo especial"
     },
     {
-      url: "/our-moments/no-image.jpg",
-      alt: "Detalle de la boda",
-      caption: "Detalles que cuentan nuestra historia"
+      url: "/our-moments/02.jpg",
+      alt: "Mich y Lalo en el jardín",
+      caption: "Entre risas y momentos juntos"
     },
     {
-      url: "/our-moments/no-image.jpg",
-      alt: "Anillos de boda",
-      caption: "El símbolo de nuestro compromiso"
+      url: "/our-moments/03.jpg",
+      alt: "Mich y Lalo compartiendo un momento",
+      caption: "Nuestra historia en una imagen"
     },
     {
-      url: "/our-moments/no-image.jpg",
-      alt: "Flores de boda",
-      caption: "Detalles para un día inolvidable"
+      url: "/our-moments/04.jpg",
+      alt: "Mich y Lalo durante su sesión de fotos",
+      caption: "Un día para recordar"
     },
     {
-      url: "/our-moments/no-image.jpg",
-      alt: "Pareja caminando",
-      caption: "Un camino juntos"
+      url: "/our-moments/05.jpg",
+      alt: "Mich y Lalo juntos",
+      caption: "Momentos que se quedan"
     },
     {
-      url: "/our-moments/no-image.jpg",
-      alt: "Celebración de boda",
-      caption: "La celebración apenas comienza"
+      url: "/our-moments/06.jpg",
+      alt: "Mich y Lalo en exterior",
+      caption: "El comienzo de una nueva etapa"
     }
   ],
 
