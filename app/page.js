@@ -5,7 +5,7 @@ import Hero from './components/Hero'
 import Countdown from './components/Countdown'
 import FloatingMenu from './components/FloatingMenu'
 import FloatingMusicControl from './components/FloatingMusicControl'
-
+import InvitationIntro from './components/InvitationIntro'
 // Lazy load heavy components for better initial load performance
 const WeddingDetails = lazy(() => import('./components/WeddingDetails'))
 const LoveStory = lazy(() => import('./components/LoveStory'))
@@ -29,6 +29,7 @@ export default function Home({ guest }) {
 
   return (
     <div className="min-h-screen">
+      <InvitationIntro guest={guest} />
       <FloatingMenu showRSVP={showRSVP} />
       <FloatingMusicControl />
       <Hero guest={guest} />

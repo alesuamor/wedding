@@ -101,17 +101,7 @@ export default function Hero({ guest }) {
             <ChevronDown className="w-8 h-8" />
           </motion.div>
 
-          {/* Guest Information (Optional, if guest object is passed) */}
-          {guest && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-              className="mt-8 text-[#F5F1E8]/80 text-xs tracking-wider"
-            >
-              Invitación para: {guest.displayName} ({guest.passes} pases)
-            </motion.div>
-          )}
+
         </motion.div>
       </div>
     </div>
