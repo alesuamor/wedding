@@ -77,7 +77,7 @@ export default function Hero({ guest }) {
           <div className="flex flex-col items-center mb-8 space-y-3">
             <img src="/guirnalda.png" alt="Guirnalda" className="w-28 md:w-36 h-auto object-contain mb-2" />
             <p className="text-xs md:text-sm tracking-[0.2em] uppercase text-[#F5F1E8] font-light whitespace-nowrap">
-              SÁBADO 8 • AGOSTO • 2026
+              {settings.wedding.heroDisplayDate}
             </p>
             <p className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-[#F5F1E8] font-light whitespace-nowrap">
               QUINTA RIO HJ, VERACRUZ

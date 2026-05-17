@@ -116,7 +116,11 @@ export default function WeddingDetails() {
         notes: [
           "Para caballeros: Se sugiere evitar tonalidades en color verde.",
           "Para damas: Se sugiere evitar colores neón, rojo, blanco, ivory, hueso o tonos muy similares al vestido de la novia."
-        ]
+        ],
+        action: {
+          label: "Date una idea",
+          url: "https://www.google.com/search?tbm=isch&q=coctel+formal+jardin"
+        }
       }
     },
     {
@@ -318,7 +322,7 @@ export default function WeddingDetails() {
                       />
                       <div className="absolute bottom-6 left-6 z-20">
                         <p className="text-[#F5F1E8]/80 text-sm tracking-wider uppercase">
-                          {wedding.displayDate}
+                          {wedding.detailsDisplayDate}
                         </p>
                         <p className="text-[#C8A96B] text-lg">
                           {wedding.ceremony.displayTime} en adelante
@@ -395,6 +399,18 @@ export default function WeddingDetails() {
                           <div className="flex items-start gap-3">
                             <span className="text-[#C8A96B]/60">•</span>
                             <span className="text-[#F5F1E8]/70">{detailTabs[activeTab].content.duration}</span>
+                          </div>
+                        )}
+                        {detailTabs[activeTab].content.action && (
+                          <div className="pt-4">
+                            <a
+                              href={detailTabs[activeTab].content.action.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-6 py-2 border border-[#C8A96B]/50 text-[#C8A96B] hover:bg-[#C8A96B] hover:text-[#4E5B31] transition-all duration-300 rounded-md text-sm font-medium tracking-wider"
+                            >
+                              {detailTabs[activeTab].content.action.label}
+                            </a>
                           </div>
                         )}
                       </div>

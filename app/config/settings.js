@@ -60,6 +60,9 @@ const settings = {
   wedding: {
     date: "2026-08-08",
     displayDate: "Sábado 8 de agosto de 2026",
+    heroDisplayDate: "SÁBADO 8 • AGOSTO • 2026",
+    countdownDisplayDate: "SÁBADO 8 DE AGOSTO DE 2026",
+    detailsDisplayDate: "SÁBADO 8 DE AGOSTO DE 2026",
     shortDate: "08.08.26",
     day: "Sábado",
     ceremony: {

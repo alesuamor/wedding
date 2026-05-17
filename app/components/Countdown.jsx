@@ -233,7 +233,7 @@ export default function Countdown() {
             transition={{ duration: 1, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {settings.wedding.day}, {settings.wedding.displayDate}
+            {settings.wedding.countdownDisplayDate}
           </motion.p>
 
           <motion.h2
