@@ -195,11 +195,11 @@ export default function RSVPForm({ guest }) {
                     <motion.button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-5 border-2 border-[#B96F4D] bg-transparent text-[#B96F4D] font-semibold tracking-[2px] uppercase relative overflow-hidden group transition-all duration-300 hover:text-[#F5F1E8]"
+                        className="w-full py-5 bg-[#4E5B31] text-[#F5F1E8] font-semibold tracking-[2px] uppercase relative overflow-hidden group transition-all duration-300 hover:bg-[#2E3523] border border-transparent hover:border-[#C8A96B] rounded-md"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                     >
-                        <span className="absolute inset-0 bg-[#B96F4D] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
+                        <span className="absolute inset-0 bg-[#2E3523] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
                         <span className="relative flex items-center justify-center gap-3">
                             {isSubmitting ? (
                                 <>

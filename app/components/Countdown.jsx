@@ -70,7 +70,7 @@ export default function Countdown() {
       <div className="absolute inset-0">
         {mounted && (
           <motion.div
-            className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#f4e4a1]/20 via-[#ffd700]/10 to-transparent rounded-full blur-3xl will-change-transform"
+            className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#C8A96B]/20 via-[#DCCDB8]/10 to-transparent rounded-full blur-3xl will-change-transform"
             animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 90, 0],
@@ -84,7 +84,7 @@ export default function Countdown() {
         )}
         {mounted && (
           <motion.div
-            className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#ffb6c1]/15 via-[#ffc0cb]/10 to-transparent rounded-full blur-3xl will-change-transform"
+            className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#A8B091]/15 via-[#C8A96B]/10 to-transparent rounded-full blur-3xl will-change-transform"
             animate={{
               scale: [1, 1.3, 1],
               rotate: [0, -90, 0],
@@ -98,7 +98,7 @@ export default function Countdown() {
         )}
         {mounted && (
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#ffe4b5]/15 to-[#ffd700]/10 rounded-full blur-3xl will-change-transform"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#DCCDB8]/15 to-[#C8A96B]/10 rounded-full blur-3xl will-change-transform"
             animate={{
               scale: [0.8, 1.1, 0.8],
               rotate: [0, 180, 360],
@@ -118,10 +118,10 @@ export default function Countdown() {
         {mounted && [...Array(40)].map((_, i) => {
           const colors = [
             'text-[#C8A96B]/50',  // gold
-            'text-[#ff9999]/40',  // light coral
-            'text-[#87ceeb]/40',  // sky blue
-            'text-[#dda0dd]/40',  // plum
-            'text-[#f0e68c]/50',  // khaki
+            'text-[#A8B091]/40',  // sage
+            'text-[#DCCDB8]/40',  // champagne
+            'text-[#C8A96B]/40',  // gold
+            'text-[#A8B091]/50',  // sage
           ];
           const color = colors[i % colors.length];
 
@@ -154,11 +154,11 @@ export default function Countdown() {
         {/* Floating small hearts */}
         {mounted && [...Array(15)].map((_, i) => {
           const heartColors = [
-            'text-[#ffb6c1]/35',  // light pink
-            'text-[#ff9999]/30',  // light coral
-            'text-[#ffc0cb]/35',  // pink
-            'text-[#dda0dd]/30',  // plum
-            'text-[#f4a460]/30',  // sandy brown
+            'text-[#C8A96B]/35',  // gold
+            'text-[#DCCDB8]/30',  // champagne
+            'text-[#A8B091]/35',  // sage
+            'text-[#C8A96B]/30',  // gold
+            'text-[#DCCDB8]/30',  // champagne
           ];
           const color = heartColors[i % heartColors.length];
 
@@ -192,11 +192,11 @@ export default function Countdown() {
         {/* Additional tiny hearts scattered */}
         {mounted && [...Array(25)].map((_, i) => {
           const tinyHeartColors = [
-            'text-[#ffb6c1]/20',  // light pink
-            'text-[#87ceeb]/20',  // sky blue
-            'text-[#dda0dd]/20',  // plum
-            'text-[#f0e68c]/25',  // khaki
-            'text-[#ff9999]/20',  // light coral
+            'text-[#C8A96B]/20',  // gold
+            'text-[#A8B091]/20',  // sage
+            'text-[#DCCDB8]/20',  // champagne
+            'text-[#C8A96B]/25',  // gold
+            'text-[#A8B091]/20',  // sage
           ];
           const color = tinyHeartColors[i % tinyHeartColors.length];
 

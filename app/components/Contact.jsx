@@ -1,197 +1,88 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MapPin, Clock, ExternalLink } from 'lucide-react';
-import settings from '../config/settings';
+import { Gift } from 'lucide-react';
 
-export default function Contact() {
-    const { couple, venue, wedding } = settings;
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    const contactInfo = [
-
-        {
-            icon: Phone,
-            title: "Teléfono",
-            details: [couple.bride.phone],
-            color: "from-[#d5ac2a] to-[#7e630d]"
-        },
-        {
-            icon: MapPin,
-            title: "Lugar",
-            details: [venue.name, venue.address.district],
-            color: "from-[#d5ac2a] to-[#7e630d]"
-        },
-        {
-            icon: Clock,
-            title: "Itinerario",
-            details: [
-                `Inicio: ${wedding.ceremony.displayTime}`
-            ],
-            color: "from-[#d5ac2a] to-[#7e630d]"
-        }
-    ];
-
-    const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.1266164658011!2d-96.11655101019373!3d19.096543562806673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c341974ea97ec5%3A0x4f7ab08af086abad!2sQuinta%20R%C3%ADo%20H-J!5e0!3m2!1ses-419!2smx!4v1778309098750!5m2!1ses-419!2smx";
+export default function GiftRegistry() {
     return (
-        <section id="contact" className="min-h-screen flex items-center justify-center py-20 bg-[#2E3523] relative overflow-hidden">
-            {/* Elegant Gradient Mesh Background - same as Hero */}
-            <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#4E5B31] via-[#2E3523] to-[#0f0f0f]" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#C8A96B15] via-transparent to-[#B96F4D10]" />
-                <div className="absolute inset-0 bg-gradient-to-bl from-[#A8B09110] via-transparent to-transparent" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(200,169,107,0.08)_0%,_transparent_40%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(168,176,145,0.06)_0%,_transparent_40%)]" />
+        <section id="gifts" className="py-24 bg-[#F5F1E8] relative overflow-hidden">
+            {/* Subtle background decoration */}
+            <div className="absolute inset-0 opacity-20">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#A8B091] rounded-full blur-[100px] transform translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#DCCDB8] rounded-full blur-[100px] transform -translate-x-1/2 translate-y-1/2" />
             </div>
 
-            {/* Floating Particles - reduced based on performance */}
-            {mounted && performance.particleCount > 0 && (
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {[...Array(Math.min(performance.particleCount, 20))].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            className="absolute w-1 h-1 bg-[#C8A96B]/20 rounded-full will-change-transform"
-                            style={{
-                                left: `${(i * 13) % 100}%`,
-                                top: `${(i * 17) % 100}%`
-                            }}
-                            animate={{
-                                y: [-20, -120],
-                                opacity: [0, 1, 0]
-                            }}
-                            transition={{
-                                duration: 10 + (i % 3) * 5,
-                                repeat: Infinity,
-                                delay: i * 0.5,
-                                ease: "linear"
-                            }}
-                        />
-                    ))}
-                </div>
-            )}
-
-            <div className="max-w-6xl w-full mx-auto px-6 relative z-10">
+            <div className="max-w-4xl w-full mx-auto px-6 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: performance.animationLevel === 'none' ? 0 : 50 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: performance.animationLevel === 'none' ? 0 : 0.8 }}
+                    transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-playfair text-[clamp(3rem,8vw,5rem)] font-thin tracking-[0.02em] mb-5">
-                        <span className="bg-gradient-to-r from-[#F5F1E8] via-[#C8A96B] to-[#F5F1E8] bg-clip-text text-transparent">
-                            CONTACTO
-                        </span>
+                    <motion.div
+                        className="flex justify-center mb-6"
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="w-16 h-16 rounded-full border border-[#C8A96B] flex items-center justify-center bg-white/50 backdrop-blur-sm">
+                            <Gift className="w-8 h-8 text-[#4E5B31]" />
+                        </div>
+                    </motion.div>
+
+                    <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl text-[#4E5B31] font-thin tracking-wider mb-6">
+                        UN DETALLE ESPECIAL ✨
                     </h2>
-                    <p className="text-lg font-light tracking-[2px] uppercase opacity-60 text-[#F5F1E8]">
-                        Estamos para ayudarles
+                    
+                    <p className="text-[#2E3523] text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                        Tu compañía es lo más importante para nosotros. Si deseas hacernos un regalo, hemos habilitado una opción de transferencia bancaria.
                     </p>
                 </motion.div>
 
-                <div className="flex flex-wrap justify-center gap-8">
-                    {contactInfo.map((item, index) => {
-                        const Icon = item.icon;
-                        return (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: performance.animationLevel === 'none' ? 0 : 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: performance.animationLevel === 'none' ? 0 : 0.6, delay: performance.animationLevel === 'none' ? 0 : index * 0.1 }}
-                                viewport={{ once: true }}
-                                className="glass p-8 text-center group hover:shadow-2xl transition-all duration-300 rounded-2xl w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] max-w-[350px]"
-                                whileHover={performance.animationLevel === 'full' ? { y: -10 } : {}}
-                            >
-                                <motion.div
-                                    className={`w-20 h-20 bg-gradient-to-br ${item.color} rounded-full mx-auto mb-6 flex items-center justify-center`}
-                                    whileHover={performance.animationLevel === 'full' ? { scale: 1.1, rotate: 360 } : {}}
-                                    transition={performance.animationLevel === 'full' ? { duration: 0.5 } : {}}
-                                >
-                                    <Icon className="w-10 h-10 text-white" />
-                                </motion.div>
-
-                                <h3 className="text-xl font-semibold mb-4 text-[#C8A96B]">
-                                    {item.title}
-                                </h3>
-
-                                <div className="space-y-2">
-                                    {item.details.map((detail, idx) => (
-                                        <p key={idx} className="text-[#F5F1E8] opacity-70 hover:opacity-100 transition-opacity text-sm">
-                                            {detail}
-                                        </p>
-                                    ))}
-                                </div>
-                            </motion.div>
-                        );
-                    })}
-                </div>
-
-                {/* Venue Details & Map */}
                 <motion.div
-                    initial={{ opacity: 0, y: performance.animationLevel === 'none' ? 0 : 50 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: performance.animationLevel === 'none' ? 0 : 0.8, delay: performance.animationLevel === 'none' ? 0 : 0.4 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
                     viewport={{ once: true }}
-                    className="mt-16 grid lg:grid-cols-2 gap-8"
+                    className="max-w-lg mx-auto"
                 >
-                    {/* Venue Information */}
-                    <div className="glass p-8 rounded-2xl">
-                        <h3 className="font-playfair text-3xl font-bold mb-6 text-[#C8A96B]">
-                            {venue.name}
+                    <div className="bg-white/60 backdrop-blur-md border border-[#C8A96B]/40 rounded-2xl p-8 md:p-12 text-center shadow-[0_8px_32px_rgba(78,91,49,0.05)] relative overflow-hidden">
+                        
+                        {/* Decorative corners */}
+                        <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-[#C8A96B]/60" />
+                        <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-[#C8A96B]/60" />
+                        <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-[#C8A96B]/60" />
+                        <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-[#C8A96B]/60" />
+
+                        <h3 className="font-playfair text-2xl text-[#4E5B31] mb-8 font-medium">
+                            Transferencia bancaria
                         </h3>
 
-                        <div className="space-y-4 mb-8">
-                            <p className="text-[#F5F1E8] opacity-80">
-                                {venue.address.street}<br />
-                                {venue.address.district}<br />
-                                {venue.address.city}, {venue.address.postalCode}<br />
-                                {venue.address.country}
-                            </p>
-
-                            <div className="pt-4 border-t border-[#C8A96B]/20">
-                                <p className="text-[#F5F1E8] opacity-60 mb-2">
-                                    {venue.parking}
-                                </p>
-                                <p className="text-[#F5F1E8] opacity-60">
-                                    GPS: {venue.coordinates.lat}, {venue.coordinates.lng}
-                                </p>
+                        <div className="space-y-6 text-[#2E3523]">
+                            <div>
+                                <p className="text-xs uppercase tracking-widest text-[#A8B091] font-semibold mb-1">Nombre</p>
+                                <p className="font-playfair text-xl">Karen Michelle Naranjo Vargas</p>
+                            </div>
+                            
+                            <div className="w-12 h-[1px] bg-[#DCCDB8] mx-auto" />
+                            
+                            <div>
+                                <p className="text-xs uppercase tracking-widest text-[#A8B091] font-semibold mb-1">Banco</p>
+                                <p className="font-playfair text-xl">BBVA</p>
+                            </div>
+                            
+                            <div className="w-12 h-[1px] bg-[#DCCDB8] mx-auto" />
+                            
+                            <div>
+                                <p className="text-xs uppercase tracking-widest text-[#A8B091] font-semibold mb-1">No. Tarjeta</p>
+                                <p className="font-playfair text-xl tracking-widest">4152 3139 3007 1233</p>
                             </div>
                         </div>
-
-                        <motion.a
-                            href={venue.googleMapsUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 border border-[#C8A96B] text-[#C8A96B] hover:bg-[#C8A96B] hover:text-[#2E3523] transition-all duration-300"
-                            whileHover={performance.animationLevel === 'full' ? { scale: 1.05 } : {}}
-                            whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
-                        >
-                            <MapPin className="w-5 h-5" />
-                            Ver cómo llegar
-                            <ExternalLink className="w-4 h-4" />
-                        </motion.a>
-                    </div>
-
-                    {/* Google Map */}
-                    <div className="glass p-2 rounded-2xl overflow-hidden">
-                        <iframe
-                            src={mapUrl}
-                            width="100%"
-                            height="400"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            className="rounded-xl"
-                            title="Ubicación de la boda"
-                        ></iframe>
                     </div>
                 </motion.div>
-
             </div>
         </section>
     );

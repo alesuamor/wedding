@@ -282,7 +282,7 @@ export default function WeddingDetails() {
                         href={venue.googleMapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 border border-[#C8A96B]/50 text-[#C8A96B] hover:bg-[#C8A96B] hover:text-[#4E5B31] transition-all duration-300 rounded-full"
+                        className="inline-flex items-center gap-2 px-6 py-3 border border-[#C8A96B] text-[#F5F1E8] hover:bg-[#DCCDB8] hover:text-[#4E5B31] transition-all duration-300 rounded-md"
                         whileHover={performance.animationLevel === 'full' ? { scale: 1.05 } : {}}
                         whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
                       >
@@ -294,7 +294,7 @@ export default function WeddingDetails() {
                           href={calendarUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-6 py-3 border border-[#C8A96B]/50 text-[#C8A96B] hover:bg-[#C8A96B] hover:text-[#4E5B31] transition-all duration-300 rounded-full"
+                          className="inline-flex items-center gap-2 px-6 py-3 border border-[#C8A96B] text-[#F5F1E8] hover:bg-[#DCCDB8] hover:text-[#4E5B31] transition-all duration-300 rounded-md"
                           whileHover={performance.animationLevel === 'full' ? { scale: 1.05 } : {}}
                           whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
                         >
@@ -348,8 +348,8 @@ export default function WeddingDetails() {
                     key={index}
                     onClick={() => setActiveTab(index)}
                     className={`flex items-center gap-3 px-6 py-3 rounded-full border transition-all duration-300 ${activeTab === index
-                      ? 'border-[#C8A96B] bg-[#C8A96B]/10 text-[#C8A96B]'
-                      : 'border-white/10 text-[#F5F1E8]/50 hover:border-[#C8A96B]/50 hover:text-[#C8A96B]/70'
+                      ? 'border-[#C8A96B] bg-[#C8A96B]/20 text-[#F5F1E8]'
+                      : 'border-[#C8A96B]/20 text-[#F5F1E8]/60 hover:border-[#C8A96B]/50 hover:text-[#F5F1E8]'
                       }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -473,8 +473,8 @@ export default function WeddingDetails() {
                         whileHover={{ scale: 1.2, rotate: 360 }}
                         transition={{ duration: 0.5 }}
                       >
-                        <div className="w-12 h-12 bg-[#4E5B31] rounded-full flex items-center justify-center border-2 border-[#C8A96B]/30">
-                          <span className="text-[#C8A96B] text-xs font-bold">{index + 1}</span>
+                        <div className="w-12 h-12 bg-[#4E5B31] rounded-full flex items-center justify-center border border-[#C8A96B]">
+                          <span className="text-[#F5F1E8] text-sm font-bold">{index + 1}</span>
                         </div>
                       </motion.div>
 

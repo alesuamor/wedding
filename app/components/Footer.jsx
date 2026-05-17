@@ -90,18 +90,6 @@ export default function Footer() {
                         <p className="text-xs text-[#F5F1E8] opacity-60 tracking-wider uppercase">
                             Hecho con cariño para nuestro gran día
                         </p>
-
-                        <p className="text-[10px] text-[#F5F1E8] opacity-50 mt-4">
-                            Contacto{' '}
-                            <a
-                                href="https://alesuamor.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-[#C8A96B] hover:text-[#f4e4a1] transition-colors duration-300"
-                            >
-                                Alejandro Suarez
-                            </a>
-                        </p>
                     </div>
                 </motion.div>
             </div>

@@ -11,7 +11,7 @@ const WeddingDetails = lazy(() => import('./components/WeddingDetails'))
 const LoveStory = lazy(() => import('./components/LoveStory'))
 const Gallery = lazy(() => import('./components/Gallery'))
 const RSVPForm = lazy(() => import('./components/RSVPForm'))
-const Contact = lazy(() => import('./components/Contact'))
+const GiftRegistry = lazy(() => import('./components/Contact'))
 const Footer = lazy(() => import('./components/Footer'))
 
 // Simple loading component for lazy loaded sections
@@ -43,7 +43,7 @@ export default function Home({ guest }) {
         <Gallery />
       </Suspense>
       <Suspense fallback={<LoadingFallback />}>
-        <Contact />
+        <GiftRegistry />
       </Suspense>
       {/* RSVP is only shown on personalized guest pages. */}
       {showRSVP && (

@@ -61,7 +61,7 @@ export default function FloatingMenu({ showRSVP = false }) {
             >
               <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="relative w-12 h-12 bg-[#2E3523]/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-[#C8A96B]/30 hover:border-[#C8A96B] transition-colors group"
+                className="relative w-12 h-12 bg-[#2E3523]/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-[#C8A96B] hover:bg-[#4E5B31]/90 transition-colors group shadow-lg"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import settings from '../config/settings';
 
@@ -85,10 +86,20 @@ export default function Hero({ guest }) {
 
           <button 
             onClick={scrollToNext}
-            className="group relative px-10 py-4 bg-[#F5F1E8] text-[#2E3523] hover:bg-[#C8A96B] hover:text-[#F5F1E8] transition-all duration-500 ease-in-out font-inter uppercase tracking-[0.15em] text-xs md:text-sm shadow-xl hover:shadow-[#C8A96B]/20"
+            className="group relative px-10 py-4 bg-[#4E5B31] text-[#F5F1E8] hover:bg-[#2E3523] hover:text-[#F5F1E8] transition-all duration-500 ease-in-out font-inter uppercase tracking-[0.15em] text-xs md:text-sm shadow-xl hover:shadow-[#2E3523]/20 border border-transparent hover:border-[#C8A96B] rounded-md"
           >
             Acompáñanos
           </button>
+
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="mt-6 text-[#C8A96B] cursor-pointer hover:text-[#F5F1E8] transition-colors"
+            onClick={scrollToNext}
+          >
+            <ChevronDown className="w-8 h-8" />
+          </motion.div>
 
           {/* Guest Information (Optional, if guest object is passed) */}
           {guest && (

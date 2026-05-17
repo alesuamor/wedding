@@ -53,9 +53,6 @@ export default function Gallery() {
             <p className="text-lg font-light tracking-[2px] uppercase opacity-60 text-[#F5F1E8]">
               Una pequeña colección de recuerdos
             </p>
-            <p className="text-sm text-[#C8A96B]/50 mt-4">
-              Haz click en cualquier imagen para verla completa
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
@@ -66,7 +63,7 @@ export default function Gallery() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="aspect-square relative overflow-hidden cursor-pointer group rounded-xl lg:rounded-2xl"
+                className="aspect-square relative overflow-hidden cursor-pointer group rounded-xl lg:rounded-2xl shadow-lg shadow-[#2E3523]/20 border border-[#C8A96B]/20"
                 whileHover={{ scale: 0.98 }}
                 onClick={() => openLightbox(index)}
               >

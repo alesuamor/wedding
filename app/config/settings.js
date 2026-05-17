@@ -148,7 +148,7 @@ const settings = {
       icon: "Sparkles"
     },
     {
-      date: "15 de noviembre de 2026",
+      date: "El gran día",
       title: "Nuestra boda",
       description: "Hoy queremos celebrar nuestro amor rodeados de las personas que forman parte de nuestra vida.",
       icon: "Calendar"
@@ -275,7 +275,7 @@ const settings = {
 
   // Metadata for SEO
   metadata: {
-    title: "Mich & Lalo | Sábado 15 de noviembre de 2026",
+    title: "Mich & Lalo | Sábado 8 de agosto de 2026",
     description: "Acompáñanos a celebrar la boda de Michy y Lalo en Veracruz, México.",
     keywords: "boda, invitación, Mich, lalo, veracruz, 2026",
     ogImage: "/og-image.jpg"
