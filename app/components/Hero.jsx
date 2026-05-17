@@ -24,8 +24,7 @@ export default function Hero({ guest }) {
     <div id="hero" className="h-screen relative flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/our-moments/01.jpg)' }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/bg-hero.jpg')] md:bg-[url('/bg-hero-desktop.jpg')]"
       />
       
       {/* Dark Olive Green Overlay */}
@@ -42,11 +41,11 @@ export default function Hero({ guest }) {
           transition={{ duration: 1, delay: 0.2 }}
           className="flex flex-col items-center mt-4 md:mt-8"
         >
-          <div className="text-[#F5F1E8] font-playfair text-xl tracking-[0.2em] mb-4">
-            M <span className="mx-2 text-[#C8A96B]">|</span> L
+          <div className="mb-4">
+            <img src="/logo.png" alt="Logo" className="h-16 md:h-20 w-auto object-contain mx-auto" />
           </div>
-          <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-[#C8A96B] font-light">
-            Nuestra Boda
+          <p className="text-sm md:text-base tracking-[0.3em] uppercase text-[#F5F1E8] font-medium">
+            NUESTRA BODA
           </p>
         </motion.div>
 
@@ -55,16 +54,16 @@ export default function Hero({ guest }) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          className="flex flex-col items-center justify-center my-auto"
+          className="flex flex-col items-center justify-center mt-auto mb-8 md:mb-14"
         >
           <h1 className="font-playfair text-6xl md:text-8xl lg:text-9xl text-[#F5F1E8] font-thin leading-[0.9]">
-            Mich
+            Michelle
           </h1>
-          <div className="font-script italic text-5xl md:text-7xl text-[#C8A96B] my-2 md:my-4">
-            &
+          <div className="my-3 md:my-5">
+            <img src="/and.png" alt="&" className="h-10 md:h-14 w-auto object-contain mx-auto" />
           </div>
           <h1 className="font-playfair text-6xl md:text-8xl lg:text-9xl text-[#F5F1E8] font-thin leading-[0.9]">
-            Lalo
+            Eduardo
           </h1>
         </motion.div>
 
@@ -75,12 +74,13 @@ export default function Hero({ guest }) {
           transition={{ duration: 1, delay: 0.8 }}
           className="flex flex-col items-center mb-4 md:mb-8"
         >
-          <div className="mb-8 space-y-2">
-            <p className="text-xs md:text-sm tracking-[0.2em] uppercase text-[#F5F1E8] font-light">
-              {settings.wedding.displayDate}
+          <div className="flex flex-col items-center mb-8 space-y-3">
+            <img src="/guirnalda.png" alt="Guirnalda" className="w-28 md:w-36 h-auto object-contain mb-2" />
+            <p className="text-xs md:text-sm tracking-[0.2em] uppercase text-[#F5F1E8] font-light whitespace-nowrap">
+              SÁBADO 8 • AGOSTO • 2026
             </p>
-            <p className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-[#F5F1E8]/70 font-light">
-              {settings.venue.name} <br/> Veracruz, México
+            <p className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-[#F5F1E8] font-light whitespace-nowrap">
+              QUINTA RIO HJ, VERACRUZ
             </p>
           </div>
 
