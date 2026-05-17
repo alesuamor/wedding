@@ -216,16 +216,16 @@ export default function RSVPForm({ guest }) {
                         whileTap={{ scale: 0.98 }}
                     >
                         <span className="absolute inset-0 bg-[#2E3523] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
-                        <span className="relative flex items-center justify-center gap-3">
+                        <span className="relative flex items-center justify-center gap-2 md:gap-3 px-4">
                             {isSubmitting ? (
                                 <>
-                                    <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
-                                    Enviando...
+                                    <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin flex-shrink-0"></div>
+                                    <span className="text-sm md:text-base text-center">Enviando...</span>
                                 </>
                             ) : (
                                 <>
-                                    <Send className="w-5 h-5" />
-                                    Confirmar asistencia
+                                    <Send className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                                    <span className="text-sm md:text-base text-center">Confirmar asistencia</span>
                                 </>
                             )}
                         </span>
