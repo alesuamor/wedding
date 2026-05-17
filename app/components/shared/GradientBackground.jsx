@@ -9,15 +9,15 @@ export default function GradientBackground({
 }) {
   const variants = {
     default: {
-      gradient: 'from-[#2a2a2a] via-[#1a1a1a] to-[#0a0a0a]',
+      gradient: 'from-[#2a2a2a] via-[#2E3523] to-[#4E5B31]',
       opacity: 0.7
     },
     light: {
-      gradient: 'from-[#3a3a3a] via-[#2a2a2a] to-[#1a1a1a]',
+      gradient: 'from-[#3a3a3a] via-[#2a2a2a] to-[#2E3523]',
       opacity: 0.6
     },
     dark: {
-      gradient: 'from-[#1a1a1a] via-[#0a0a0a] to-black',
+      gradient: 'from-[#2E3523] via-[#4E5B31] to-black',
       opacity: 0.8
     }
   };

@@ -11,15 +11,15 @@ export default function Footer() {
 
 
     return (
-        <footer className="py-20 bg-[#1a1a1a] relative overflow-hidden">
+        <footer className="py-20 bg-[#2E3523] relative overflow-hidden">
             {/* Decorative Background */}
             <div className="absolute inset-0 opacity-5">
                 <div
                     className="absolute w-[200%] h-[200%] top-[-50%] left-[-50%]"
                     style={{
                         backgroundImage: `
-                            radial-gradient(circle at 20% 80%, #ff6b6b 0%, transparent 50%),
-                            radial-gradient(circle at 80% 20%, #d4af37 0%, transparent 50%)
+                            radial-gradient(circle at 20% 80%, #B96F4D 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, #C8A96B 0%, transparent 50%)
                         `,
                         animation: 'float 25s ease-in-out infinite'
                     }}
@@ -40,13 +40,13 @@ export default function Footer() {
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <span className="bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-[#F5F1E8] via-[#C8A96B] to-[#F5F1E8] bg-clip-text text-transparent">
                             {settings.couple.bride.name[0].toUpperCase()} & {settings.couple.groom.name[0].toUpperCase()}
                         </span>
                     </motion.h3>
 
                     {/* Contact Info */}
-                    <p className="text-lg text-[#faf8f3] opacity-80 leading-relaxed mb-8">
+                    <p className="text-lg text-[#F5F1E8] opacity-80 leading-relaxed mb-8">
                         Nos encantará celebrar este día con ustedes<br />
                         Para cualquier duda, escríbannos por WhatsApp
                     </p>
@@ -61,14 +61,14 @@ export default function Footer() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             whileHover={{ scale: 1.1 }}
                             viewport={{ once: true }}
-                            className="text-[#d4af37] hover:text-[#ff6b6b] transition-colors duration-300"
+                            className="text-[#C8A96B] hover:text-[#B96F4D] transition-colors duration-300"
                         >
                             <MessageCircle className="w-12 h-12" />
                         </motion.a>
                     </div>
 
                     {/* Divider */}
-                    <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mb-8"></div>
+                    <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-[#C8A96B] to-transparent mx-auto mb-8"></div>
 
                     {/* Copyright and Credits */}
                     <div className="space-y-4">
@@ -84,20 +84,20 @@ export default function Footer() {
                             }}
                             className="inline-block"
                         >
-                            <Heart className="w-6 h-6 text-[#ff6b6b] fill-[#ff6b6b] mx-auto" />
+                            <Heart className="w-6 h-6 text-[#B96F4D] fill-[#B96F4D] mx-auto" />
                         </motion.div>
 
-                        <p className="text-xs text-[#faf8f3] opacity-60 tracking-wider uppercase">
+                        <p className="text-xs text-[#F5F1E8] opacity-60 tracking-wider uppercase">
                             Hecho con cariño para nuestro gran día
                         </p>
 
-                        <p className="text-[10px] text-[#faf8f3] opacity-50 mt-4">
+                        <p className="text-[10px] text-[#F5F1E8] opacity-50 mt-4">
                             Contacto{' '}
                             <a
                                 href="https://alesuamor.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-[#d4af37] hover:text-[#f4e4a1] transition-colors duration-300"
+                                className="text-[#C8A96B] hover:text-[#f4e4a1] transition-colors duration-300"
                             >
                                 Alejandro Suarez
                             </a>

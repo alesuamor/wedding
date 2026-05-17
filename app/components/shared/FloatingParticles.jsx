@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function FloatingParticles({ 
   count = 20,
-  colors = ['#d4af37', '#ff6b6b', '#4a90e2'],
+  colors = ['#C8A96B', '#B96F4D', '#A8B091'],
   sizes = { min: 2, max: 6 },
   duration = { min: 15, max: 30 },
   className = ''

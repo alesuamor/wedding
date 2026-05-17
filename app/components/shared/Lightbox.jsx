@@ -40,13 +40,13 @@ export default function Lightbox({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-[#1a1a1a]/95 z-[200] flex items-center justify-center p-4"
+          className="fixed inset-0 bg-[#2E3523]/95 z-[200] flex items-center justify-center p-4"
           onClick={onClose}
           onKeyDown={handleKeyDown}
           tabIndex={0}
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-[#d4af37] transition-colors z-[210]"
+            className="absolute top-4 right-4 text-white hover:text-[#C8A96B] transition-colors z-[210]"
             onClick={onClose}
             aria-label="Close lightbox"
           >
@@ -56,7 +56,7 @@ export default function Lightbox({
           {images.length > 1 && (
             <>
               <button
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-[#d4af37] transition-colors z-[210]"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-[#C8A96B] transition-colors z-[210]"
                 onClick={(e) => {
                   e.stopPropagation();
                   goToPrevious();
@@ -67,7 +67,7 @@ export default function Lightbox({
               </button>
 
               <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-[#d4af37] transition-colors z-[210]"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-[#C8A96B] transition-colors z-[210]"
                 onClick={(e) => {
                   e.stopPropagation();
                   goToNext();
@@ -95,7 +95,7 @@ export default function Lightbox({
               priority
             />
             {showCaption && (currentImage.caption || currentImage.description) && (
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1a1a1a] to-transparent p-6">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#2E3523] to-transparent p-6">
                 <p className="text-white text-center text-lg">
                   {currentImage.caption || currentImage.description}
                 </p>
@@ -110,7 +110,7 @@ export default function Lightbox({
                   key={index}
                   className={`w-2 h-2 rounded-full transition-all ${
                     index === currentIndex 
-                      ? 'bg-[#d4af37]' 
+                      ? 'bg-[#C8A96B]' 
                       : 'bg-white/30 hover:bg-white/50'
                   }`}
                   onClick={(e) => {

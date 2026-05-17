@@ -30,18 +30,18 @@ export default function LoveStory() {
   }));
 
   return (
-    <section id="love-story" className="min-h-screen py-40 bg-[#0a0a0a] relative overflow-hidden">
+    <section id="love-story" className="min-h-screen py-40 bg-[#4E5B31] relative overflow-hidden">
       {/* Elegant Gradient Background - Same as Hero */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#4E5B31] via-[#2E3523] to-[#0f0f0f]" />
         {/* Multiple gradient overlays for better distribution */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#d4af3715] via-transparent to-[#ff6b6b10]" />
-        <div className="absolute inset-0 bg-gradient-to-bl from-[#87a87810] via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-[#d4af3708] to-[#faf8f305]" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#C8A96B15] via-transparent to-[#B96F4D10]" />
+        <div className="absolute inset-0 bg-gradient-to-bl from-[#A8B09110] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-[#C8A96B08] to-[#F5F1E805]" />
         {/* Radial gradients for depth */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,175,55,0.1)_0%,_transparent_40%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,107,107,0.08)_0%,_transparent_40%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(135,168,120,0.05)_0%,_transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(200,169,107,0.1)_0%,_transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(185,111,77,0.08)_0%,_transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(168,176,145,0.05)_0%,_transparent_60%)]" />
       </div>
 
       {/* Floating Particles - reduced based on performance */}
@@ -50,7 +50,7 @@ export default function LoveStory() {
           {[...Array(Math.min(performance.particleCount, 20))].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-[#d4af37]/20 rounded-full will-change-transform"
+              className="absolute w-1 h-1 bg-[#C8A96B]/20 rounded-full will-change-transform"
               style={{
                 left: `${(i * 17) % 100}%`,
                 top: `${(i * 23) % 100}%`
@@ -81,7 +81,7 @@ export default function LoveStory() {
         >
           {/* Decorative Line */}
           <motion.div
-            className="h-[0.5px] bg-gradient-to-r from-transparent via-[#d4af37]/30 to-transparent mb-12"
+            className="h-[0.5px] bg-gradient-to-r from-transparent via-[#C8A96B]/30 to-transparent mb-12"
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
             transition={{ duration: performance.animationLevel === 'none' ? 0 : 1.5, ease: "easeOut" }}
@@ -95,16 +95,16 @@ export default function LoveStory() {
             transition={{ duration: performance.animationLevel === 'none' ? 0 : 1.2, delay: performance.animationLevel === 'none' ? 0 : 0.2 }}
             viewport={{ once: true }}
           >
-            <span className="block bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-[#F5F1E8] via-[#C8A96B] to-[#F5F1E8] bg-clip-text text-transparent">
               NUESTRA
             </span>
-            <span className="block bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent mt-2">
+            <span className="block bg-gradient-to-r from-[#F5F1E8] via-[#C8A96B] to-[#F5F1E8] bg-clip-text text-transparent mt-2">
               HISTORIA
             </span>
           </motion.h2>
 
           <motion.p
-            className="mt-8 text-sm font-light tracking-[0.3em] uppercase text-[#faf8f3]/40"
+            className="mt-8 text-sm font-light tracking-[0.3em] uppercase text-[#F5F1E8]/40"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -122,7 +122,7 @@ export default function LoveStory() {
               transition={{ delay: 1.5 }}
             >
               <motion.div
-                className="w-px h-12 bg-gradient-to-b from-[#d4af37]/30 to-transparent will-change-transform"
+                className="w-px h-12 bg-gradient-to-b from-[#C8A96B]/30 to-transparent will-change-transform"
                 animate={performance.animationLevel === 'full' ? { scaleY: [1, 1.2, 1] } : {}}
                 transition={performance.animationLevel === 'full' ? { duration: 2, repeat: Infinity } : {}}
               />
@@ -137,7 +137,7 @@ export default function LoveStory() {
             <motion.div
               className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-[0.5px] h-full"
               style={{
-                background: "linear-gradient(to bottom, transparent, #d4af37, #d4af37, transparent)",
+                background: "linear-gradient(to bottom, transparent, #C8A96B, #C8A96B, transparent)",
                 opacity: 0.2
               }}
               initial={{ height: 0 }}
@@ -183,17 +183,17 @@ export default function LoveStory() {
                         transition={{ duration: 0.3 }}
                       >
                         {/* Date */}
-                        <p className="text-xs tracking-[0.3em] uppercase text-[#d4af37]/50 mb-4">
+                        <p className="text-xs tracking-[0.3em] uppercase text-[#C8A96B]/50 mb-4">
                           {milestone.date}
                         </p>
 
                         {/* Title */}
-                        <h3 className="font-playfair text-4xl lg:text-5xl font-thin text-[#faf8f3]/90 mb-4 leading-tight">
+                        <h3 className="font-playfair text-4xl lg:text-5xl font-thin text-[#F5F1E8]/90 mb-4 leading-tight">
                           {milestone.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-base text-[#faf8f3]/50 font-light leading-relaxed max-w-sm mx-auto lg:mx-0 lg:ml-auto">
+                        <p className="text-base text-[#F5F1E8]/50 font-light leading-relaxed max-w-sm mx-auto lg:mx-0 lg:ml-auto">
                           {milestone.description}
                         </p>
 
@@ -201,7 +201,7 @@ export default function LoveStory() {
                         {mounted && performance.animationLevel !== 'none' && (
                           <div className={`mt-6 flex ${isEven ? 'lg:justify-end' : 'lg:justify-start'} justify-center`}>
                             <motion.div
-                              className="h-[0.5px] bg-gradient-to-r from-transparent via-[#d4af37]/20 to-transparent"
+                              className="h-[0.5px] bg-gradient-to-r from-transparent via-[#C8A96B]/20 to-transparent"
                               initial={{ width: 0 }}
                               animate={{ width: performance.animationLevel === 'full' && isHovered ? 100 : 50 }}
                               transition={{ duration: 0.5 }}
@@ -226,16 +226,16 @@ export default function LoveStory() {
                             />
                           )}
                           {/* Overlay */}
-                          <div className={`absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 via-transparent to-transparent transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`} />
+                          <div className={`absolute inset-0 bg-gradient-to-t from-[#4E5B31]/60 via-transparent to-transparent transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`} />
                         </div>
 
                         {/* Border Rings */}
-                        <div className={`absolute inset-0 rounded-full border-2 border-[#d4af37]/20 transition-all ${mounted && performance.animationLevel === 'full' ? 'duration-500' : 'duration-0'} ${mounted && performance.animationLevel === 'full' && isHovered ? 'scale-105 border-[#d4af37]/40' : 'scale-100'}`} />
-                        <div className={`absolute inset-2 rounded-full border border-[#faf8f3]/10 transition-all ${mounted && performance.animationLevel === 'full' ? 'duration-700' : 'duration-0'} ${mounted && performance.animationLevel === 'full' && isHovered ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`} />
+                        <div className={`absolute inset-0 rounded-full border-2 border-[#C8A96B]/20 transition-all ${mounted && performance.animationLevel === 'full' ? 'duration-500' : 'duration-0'} ${mounted && performance.animationLevel === 'full' && isHovered ? 'scale-105 border-[#C8A96B]/40' : 'scale-100'}`} />
+                        <div className={`absolute inset-2 rounded-full border border-[#F5F1E8]/10 transition-all ${mounted && performance.animationLevel === 'full' ? 'duration-700' : 'duration-0'} ${mounted && performance.animationLevel === 'full' && isHovered ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`} />
 
                         {/* Number Overlay (subtle, on top of image) */}
                         {/*<div className={`absolute inset-0 flex items-end justify-center pb-8 pointer-events-none transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>*/}
-                        {/*  <span className="font-playfair text-5xl lg:text-6xl font-thin text-[#faf8f3]/30">*/}
+                        {/*  <span className="font-playfair text-5xl lg:text-6xl font-thin text-[#F5F1E8]/30">*/}
                         {/*    {String(index + 1).padStart(2, '0')}*/}
                         {/*  </span>*/}
                         {/*</div>*/}
@@ -260,15 +260,15 @@ export default function LoveStory() {
             {/* Decorative Elements */}
             <div className="flex items-center justify-center mb-12">
               <motion.div
-                className="h-[0.5px] w-24 bg-gradient-to-r from-transparent to-[#d4af37]/20"
+                className="h-[0.5px] w-24 bg-gradient-to-r from-transparent to-[#C8A96B]/20"
                 initial={{ width: 0 }}
                 whileInView={{ width: 96 }}
                 transition={{ duration: 1.5 }}
                 viewport={{ once: true }}
               />
-              <div className="w-2 h-2 bg-[#d4af37]/20 rounded-full mx-6" />
+              <div className="w-2 h-2 bg-[#C8A96B]/20 rounded-full mx-6" />
               <motion.div
-                className="h-[0.5px] w-24 bg-gradient-to-l from-transparent to-[#d4af37]/20"
+                className="h-[0.5px] w-24 bg-gradient-to-l from-transparent to-[#C8A96B]/20"
                 initial={{ width: 0 }}
                 whileInView={{ width: 96 }}
                 transition={{ duration: 1.5 }}
@@ -284,11 +284,11 @@ export default function LoveStory() {
               transition={{ duration: 1, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <p className="font-playfair text-2xl lg:text-3xl font-thin italic text-[#faf8f3]/70 leading-relaxed">
+              <p className="font-playfair text-2xl lg:text-3xl font-thin italic text-[#F5F1E8]/70 leading-relaxed">
                 "In all the world, there is no heart for me like yours.
                 <span className="block mt-2">In all the world, there is no love for you like mine."</span>
               </p>
-              <cite className="block mt-8 text-xs tracking-[0.3em] uppercase text-[#d4af37]/40 not-italic">
+              <cite className="block mt-8 text-xs tracking-[0.3em] uppercase text-[#C8A96B]/40 not-italic">
                 Con cariño, Michy & Lalo
               </cite>
             </motion.blockquote>

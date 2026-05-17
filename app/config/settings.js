@@ -5,18 +5,18 @@ const settings = {
   // Theme Configuration
   theme: {
     colors: {
-      primary: '#d4af37',
-      secondary: '#ff6b6b',
-      accent: '#4a90e2',
-      dark: '#1a1a1a',
-      darker: '#0a0a0a',
-      light: '#f5f5f5',
-      white: '#ffffff',
-      overlay: 'rgba(26, 26, 26, 0.95)',
+      primary: '#4E5B31',
+      secondary: '#A8B091',
+      accent: '#C8A96B',
+      dark: '#2E3523',
+      darker: '#2E3523',
+      light: '#F5F1E8',
+      white: '#F5F1E8',
+      overlay: 'rgba(46, 53, 35, 0.85)',
       text: {
-        primary: '#ffffff',
-        secondary: '#d4af37',
-        dark: '#1a1a1a'
+        primary: '#F5F1E8',
+        secondary: '#C8A96B',
+        dark: '#2E3523'
       }
     },
     animations: {

@@ -137,14 +137,14 @@ export default function WeddingDetails() {
 
   return (
     <>
-      <section id="wedding-details" className="min-h-screen py-20 bg-[#0a0a0a] relative overflow-hidden">
+      <section id="wedding-details" className="min-h-screen py-20 bg-[#4E5B31] relative overflow-hidden">
         {/* Elegant Gradient Background - Same as Hero */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#d4af3715] via-transparent to-[#ff6b6b10]" />
-          <div className="absolute inset-0 bg-gradient-to-bl from-[#87a87810] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(212,175,55,0.08)_0%,_transparent_40%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(135,168,120,0.06)_0%,_transparent_40%)]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#4E5B31] via-[#2E3523] to-[#0f0f0f]" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#C8A96B15] via-transparent to-[#B96F4D10]" />
+          <div className="absolute inset-0 bg-gradient-to-bl from-[#A8B09110] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(200,169,107,0.08)_0%,_transparent_40%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(168,176,145,0.06)_0%,_transparent_40%)]" />
         </div>
 
         {/* Floating Particles - reduced based on performance */}
@@ -153,7 +153,7 @@ export default function WeddingDetails() {
             {[...Array(Math.min(performance.particleCount, 15))].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-1 h-1 bg-[#d4af37]/20 rounded-full will-change-transform"
+                className="absolute w-1 h-1 bg-[#C8A96B]/20 rounded-full will-change-transform"
                 style={{
                   left: `${(i * 19) % 100}%`,
                   top: `${(i * 13) % 100}%`
@@ -183,7 +183,7 @@ export default function WeddingDetails() {
             className="text-center mb-20"
           >
             <motion.div
-              className="h-[0.5px] bg-gradient-to-r from-transparent via-[#d4af37]/30 to-transparent mb-12"
+              className="h-[0.5px] bg-gradient-to-r from-transparent via-[#C8A96B]/30 to-transparent mb-12"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               transition={{ duration: 1.5, ease: "easeOut" }}
@@ -191,11 +191,11 @@ export default function WeddingDetails() {
             />
 
             <h2 className="font-playfair text-[clamp(3.5rem,9vw,6rem)] font-thin tracking-[0.02em] mb-6">
-              <span className="bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#F5F1E8] via-[#C8A96B] to-[#F5F1E8] bg-clip-text text-transparent">
                 DETALLES DE LA BODA
               </span>
             </h2>
-            <p className="text-lg font-light tracking-[0.2em] uppercase text-[#faf8f3]/40">
+            <p className="text-lg font-light tracking-[0.2em] uppercase text-[#F5F1E8]/40">
               Todo lo que necesitas saber
             </p>
           </motion.div>
@@ -217,7 +217,7 @@ export default function WeddingDetails() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/50 to-[#0a0a0a]/80"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4E5B31]/50 to-[#4E5B31]/80"></div>
 
               <motion.div
                 className="absolute inset-0 flex items-center justify-center text-center z-10"
@@ -234,7 +234,7 @@ export default function WeddingDetails() {
                     transition={{ duration: 1, delay: 0.5 }}
                     viewport={{ once: true }}
                   >
-                    <span className="bg-gradient-to-r from-[#faf8f3] via-[#d4af19] to-[#faf8f3] bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#F5F1E8] via-[#d4af19] to-[#F5F1E8] bg-clip-text text-transparent">
                       {venue.name.toUpperCase()}
                     </span>
                   </motion.h3>
@@ -253,7 +253,7 @@ export default function WeddingDetails() {
 
             {/* Venue Info Card */}
             <div className="relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 to-transparent opacity-50" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#C8A96B]/5 to-transparent opacity-50" />
 
               <div className="relative p-12 lg:p-16">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -265,16 +265,16 @@ export default function WeddingDetails() {
                       transition={{ delay: 0.3 }}
                       viewport={{ once: true }}
                     >
-                      <span className="text-sm font-medium tracking-wider text-[#d4af37]/80 uppercase">
+                      <span className="text-sm font-medium tracking-wider text-[#C8A96B]/80 uppercase">
                         Dirección
                       </span>
                     </motion.div>
 
-                    <div className="space-y-3 text-[#faf8f3]/70">
+                    <div className="space-y-3 text-[#F5F1E8]/70">
                       <p className="text-lg">{venue.address.street}</p>
                       <p className="text-lg">{venue.address.district}</p>
                       <p className="text-lg">{venue.address.city}, {venue.address.country}</p>
-                      <p className="text-sm mt-6 text-[#d4af37]/60">{venue.parking}</p>
+                      <p className="text-sm mt-6 text-[#C8A96B]/60">{venue.parking}</p>
                     </div>
 
                     <div className="flex flex-wrap gap-4 mt-8">
@@ -282,7 +282,7 @@ export default function WeddingDetails() {
                         href={venue.googleMapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 border border-[#d4af37]/50 text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0a0a0a] transition-all duration-300 rounded-full"
+                        className="inline-flex items-center gap-2 px-6 py-3 border border-[#C8A96B]/50 text-[#C8A96B] hover:bg-[#C8A96B] hover:text-[#4E5B31] transition-all duration-300 rounded-full"
                         whileHover={performance.animationLevel === 'full' ? { scale: 1.05 } : {}}
                         whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
                       >
@@ -294,7 +294,7 @@ export default function WeddingDetails() {
                           href={calendarUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-6 py-3 border border-[#d4af37]/50 text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0a0a0a] transition-all duration-300 rounded-full"
+                          className="inline-flex items-center gap-2 px-6 py-3 border border-[#C8A96B]/50 text-[#C8A96B] hover:bg-[#C8A96B] hover:text-[#4E5B31] transition-all duration-300 rounded-full"
                           whileHover={performance.animationLevel === 'full' ? { scale: 1.05 } : {}}
                           whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
                         >
@@ -310,17 +310,17 @@ export default function WeddingDetails() {
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 to-transparent z-10" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#4E5B31]/60 to-transparent z-10" />
                       <img
                         src={venue.imageUrl || "/location/loc2.jpg"}
                         alt={venue.name}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute bottom-6 left-6 z-20">
-                        <p className="text-[#faf8f3]/80 text-sm tracking-wider uppercase">
+                        <p className="text-[#F5F1E8]/80 text-sm tracking-wider uppercase">
                           {wedding.displayDate}
                         </p>
-                        <p className="text-[#d4af37] text-lg">
+                        <p className="text-[#C8A96B] text-lg">
                           {wedding.ceremony.displayTime} en adelante
                         </p>
                       </div>
@@ -348,8 +348,8 @@ export default function WeddingDetails() {
                     key={index}
                     onClick={() => setActiveTab(index)}
                     className={`flex items-center gap-3 px-6 py-3 rounded-full border transition-all duration-300 ${activeTab === index
-                      ? 'border-[#d4af37] bg-[#d4af37]/10 text-[#d4af37]'
-                      : 'border-white/10 text-[#faf8f3]/50 hover:border-[#d4af37]/50 hover:text-[#d4af37]/70'
+                      ? 'border-[#C8A96B] bg-[#C8A96B]/10 text-[#C8A96B]'
+                      : 'border-white/10 text-[#F5F1E8]/50 hover:border-[#C8A96B]/50 hover:text-[#C8A96B]/70'
                       }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -375,39 +375,39 @@ export default function WeddingDetails() {
                 <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-white/10">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="font-playfair text-3xl font-thin text-[#faf8f3] mb-6">
+                      <h3 className="font-playfair text-3xl font-thin text-[#F5F1E8] mb-6">
                         {detailTabs[activeTab].content.title}
                       </h3>
                       <div className="space-y-4">
                         {detailTabs[activeTab].content.time && (
                           <div className="flex items-start gap-3">
-                            <span className="text-[#d4af37]/60">•</span>
-                            <span className="text-[#faf8f3]/70">{detailTabs[activeTab].content.time}</span>
+                            <span className="text-[#C8A96B]/60">•</span>
+                            <span className="text-[#F5F1E8]/70">{detailTabs[activeTab].content.time}</span>
                           </div>
                         )}
                         {detailTabs[activeTab].content.location && (
                           <div className="flex items-start gap-3">
-                            <span className="text-[#d4af37]/60">•</span>
-                            <span className="text-[#faf8f3]/70">{detailTabs[activeTab].content.location}</span>
+                            <span className="text-[#C8A96B]/60">•</span>
+                            <span className="text-[#F5F1E8]/70">{detailTabs[activeTab].content.location}</span>
                           </div>
                         )}
                         {detailTabs[activeTab].content.duration && (
                           <div className="flex items-start gap-3">
-                            <span className="text-[#d4af37]/60">•</span>
-                            <span className="text-[#faf8f3]/70">{detailTabs[activeTab].content.duration}</span>
+                            <span className="text-[#C8A96B]/60">•</span>
+                            <span className="text-[#F5F1E8]/70">{detailTabs[activeTab].content.duration}</span>
                           </div>
                         )}
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium tracking-wider text-[#d4af37]/80 uppercase mb-4">
+                      <h4 className="text-sm font-medium tracking-wider text-[#C8A96B]/80 uppercase mb-4">
                         Notas:
                       </h4>
                       <ul className="space-y-3">
                         {detailTabs[activeTab].content.notes.map((note, idx) => (
                           <li key={idx} className="flex items-start gap-3">
-                            <span className="text-[#d4af37] mt-1">•</span>
-                            <span className="text-[#faf8f3]/60 text-sm">{note}</span>
+                            <span className="text-[#C8A96B] mt-1">•</span>
+                            <span className="text-[#F5F1E8]/60 text-sm">{note}</span>
                           </li>
                         ))}
                       </ul>
@@ -425,13 +425,13 @@ export default function WeddingDetails() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-playfair text-4xl font-thin text-center text-[#faf8f3] mb-12">
+            <h3 className="font-playfair text-4xl font-thin text-center text-[#F5F1E8] mb-12">
               Itinerario del día
             </h3>
 
             <div className="relative">
               {/* Timeline Line - hidden on mobile */}
-              <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-[0.5px] h-full bg-gradient-to-b from-transparent via-[#d4af37]/30 to-transparent" />
+              <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-[0.5px] h-full bg-gradient-to-b from-transparent via-[#C8A96B]/30 to-transparent" />
 
               {/* Timeline Items */}
               <div className="space-y-12">
@@ -455,13 +455,13 @@ export default function WeddingDetails() {
                           whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <p className="text-[#d4af37] text-sm tracking-wider uppercase mb-2">
+                          <p className="text-[#C8A96B] text-sm tracking-wider uppercase mb-2">
                             {item.time}
                           </p>
-                          <h4 className="font-playfair text-2xl text-[#faf8f3] mb-2">
+                          <h4 className="font-playfair text-2xl text-[#F5F1E8] mb-2">
                             {item.title}
                           </h4>
-                          <p className="text-[#faf8f3]/50 text-sm">
+                          <p className="text-[#F5F1E8]/50 text-sm">
                             {item.description}
                           </p>
                         </motion.div>
@@ -473,8 +473,8 @@ export default function WeddingDetails() {
                         whileHover={{ scale: 1.2, rotate: 360 }}
                         transition={{ duration: 0.5 }}
                       >
-                        <div className="w-12 h-12 bg-[#0a0a0a] rounded-full flex items-center justify-center border-2 border-[#d4af37]/30">
-                          <span className="text-[#d4af37] text-xs font-bold">{index + 1}</span>
+                        <div className="w-12 h-12 bg-[#4E5B31] rounded-full flex items-center justify-center border-2 border-[#C8A96B]/30">
+                          <span className="text-[#C8A96B] text-xs font-bold">{index + 1}</span>
                         </div>
                       </motion.div>
 
@@ -496,10 +496,10 @@ export default function WeddingDetails() {
             className="mt-24 text-center"
           >
             <div className="inline-block bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <p className="text-sm tracking-wider text-[#faf8f3]/60 uppercase mb-2">
+              <p className="text-sm tracking-wider text-[#F5F1E8]/60 uppercase mb-2">
                 Comparte tus momentos
               </p>
-              <p className="font-playfair text-2xl text-[#d4af37]">
+              <p className="font-playfair text-2xl text-[#C8A96B]">
                 {social.instagram.hashtag}
               </p>
             </div>

@@ -134,20 +134,20 @@ export default function FloatingMusicControl() {
           >
             <motion.button
               onClick={toggleMusic}
-              className="relative w-12 h-12 bg-[#1a1a1a]/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-[#d4af37]/30 hover:border-[#d4af37] transition-colors group"
+              className="relative w-12 h-12 bg-[#2E3523]/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-[#C8A96B]/30 hover:border-[#C8A96B] transition-colors group"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               {isPlaying ? (
-                <Volume2 className="w-5 h-5 text-[#d4af37]" />
+                <Volume2 className="w-5 h-5 text-[#C8A96B]" />
               ) : (
-                <VolumeX className="w-5 h-5 text-[#d4af37]/60" />
+                <VolumeX className="w-5 h-5 text-[#C8A96B]/60" />
               )}
               
               {/* Pulse effect when playing */}
               {isPlaying && (
                 <motion.div
-                  className="absolute inset-0 rounded-full border border-[#d4af37]/50"
+                  className="absolute inset-0 rounded-full border border-[#C8A96B]/50"
                   animate={{ scale: [1, 1.3, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                   style={{ pointerEvents: 'none' }}

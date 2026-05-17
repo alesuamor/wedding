@@ -61,7 +61,7 @@ export default function FloatingMenu({ showRSVP = false }) {
             >
               <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="relative w-12 h-12 bg-[#1a1a1a]/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-[#d4af37]/30 hover:border-[#d4af37] transition-colors group"
+                className="relative w-12 h-12 bg-[#2E3523]/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-[#C8A96B]/30 hover:border-[#C8A96B] transition-colors group"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -74,7 +74,7 @@ export default function FloatingMenu({ showRSVP = false }) {
                       exit={{ rotate: 90, opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <Menu className="w-5 h-5 text-[#d4af37]" />
+                      <Menu className="w-5 h-5 text-[#C8A96B]" />
                     </motion.div>
                   ) : (
                     <motion.div
@@ -84,14 +84,14 @@ export default function FloatingMenu({ showRSVP = false }) {
                       exit={{ rotate: 90, opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <X className="w-5 h-5 text-[#d4af37]" />
+                      <X className="w-5 h-5 text-[#C8A96B]" />
                     </motion.div>
                   )}
                 </AnimatePresence>
 
                 {/* Pulse effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-full border border-[#d4af37]/50"
+                  className="absolute inset-0 rounded-full border border-[#C8A96B]/50"
                   animate={{ scale: [1, 1.3, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                   style={{ pointerEvents: 'none' }}
@@ -119,22 +119,22 @@ export default function FloatingMenu({ showRSVP = false }) {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: 300, opacity: 0 }}
                     transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                    className="fixed top-0 right-0 h-full w-72 bg-[#1a1a1a]/95 backdrop-blur-md z-[95] border-l border-[#d4af37]/20"
+                    className="fixed top-0 right-0 h-full w-72 bg-[#2E3523]/95 backdrop-blur-md z-[95] border-l border-[#C8A96B]/20"
                   >
                     {/* Header */}
-                    <div className="p-6 border-b border-[#d4af37]/20">
+                    <div className="p-6 border-b border-[#C8A96B]/20">
                       <motion.h3
                         className="font-playfair text-2xl text-left"
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                       >
-                        <span className="bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-[#F5F1E8] via-[#C8A96B] to-[#F5F1E8] bg-clip-text text-transparent">
                           {settings.couple.bride.name} & {settings.couple.groom.name}
                         </span>
                       </motion.h3>
                       <motion.p
-                        className="text-left text-xs text-[#d4af37]/60 mt-2 tracking-wider"
+                        className="text-left text-xs text-[#C8A96B]/60 mt-2 tracking-wider"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3 }}
@@ -157,14 +157,14 @@ export default function FloatingMenu({ showRSVP = false }) {
                             >
                               <button
                                 onClick={() => scrollToSection(item.href)}
-                                className="w-full flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-[#d4af37]/10 transition-colors group"
+                                className="w-full flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-[#C8A96B]/10 transition-colors group"
                               >
-                                <Icon className="w-4 h-4 text-[#d4af37]/60 group-hover:text-[#d4af37] transition-colors" />
-                                <span className="text-[#faf8f3]/80 group-hover:text-[#faf8f3] transition-colors">
+                                <Icon className="w-4 h-4 text-[#C8A96B]/60 group-hover:text-[#C8A96B] transition-colors" />
+                                <span className="text-[#F5F1E8]/80 group-hover:text-[#F5F1E8] transition-colors">
                                   {item.name}
                                 </span>
                                 <motion.div
-                                  className="ml-auto w-1 h-1 bg-[#d4af37] rounded-full opacity-0 group-hover:opacity-100"
+                                  className="ml-auto w-1 h-1 bg-[#C8A96B] rounded-full opacity-0 group-hover:opacity-100"
                                   whileHover={{ scale: 2 }}
                                   transition={{ duration: 0.2 }}
                                 />
@@ -176,17 +176,17 @@ export default function FloatingMenu({ showRSVP = false }) {
                     </nav>
 
                     {/* Footer */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-[#d4af37]/20">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-[#C8A96B]/20">
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
                         className="text-center"
                       >
-                        <p className="text-xs text-[#faf8f3]/40 tracking-wider uppercase mb-2">
+                        <p className="text-xs text-[#F5F1E8]/40 tracking-wider uppercase mb-2">
                           Comparte tus fotos
                         </p>
-                        <p className="text-sm text-[#d4af37]/60">
+                        <p className="text-sm text-[#C8A96B]/60">
                           {settings.social.instagram.hashtag}
                         </p>
                       </motion.div>

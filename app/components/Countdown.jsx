@@ -65,7 +65,7 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section id="countdown" className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-br from-[#faf8f3] via-white to-[#f5f0e8] relative overflow-hidden" onClick={handleCountdownClick}>
+    <section id="countdown" className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-br from-[#F5F1E8] via-white to-[#f5f0e8] relative overflow-hidden" onClick={handleCountdownClick}>
       {/* Animated gradient orbs - lighter */}
       <div className="absolute inset-0">
         {mounted && (
@@ -117,7 +117,7 @@ export default function Countdown() {
         {/* Static sparkle stars */}
         {mounted && [...Array(40)].map((_, i) => {
           const colors = [
-            'text-[#d4af37]/50',  // gold
+            'text-[#C8A96B]/50',  // gold
             'text-[#ff9999]/40',  // light coral
             'text-[#87ceeb]/40',  // sky blue
             'text-[#dda0dd]/40',  // plum
@@ -227,7 +227,7 @@ export default function Countdown() {
           className="text-center mb-20"
         >
           <motion.p
-            className="text-sm tracking-[0.3em] uppercase text-[#d4af37] mb-4"
+            className="text-sm tracking-[0.3em] uppercase text-[#C8A96B] mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -243,13 +243,13 @@ export default function Countdown() {
             transition={{ duration: 1.2 }}
             viewport={{ once: true }}
           >
-            <span className="text-[#1a1a1a] uppercase">
+            <span className="text-[#2E3523] uppercase">
               Aparta la fecha
             </span>
           </motion.h2>
 
           <motion.p
-            className="text-lg text-[#1a1a1a]/60 font-light"
+            className="text-lg text-[#2E3523]/60 font-light"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
@@ -290,10 +290,10 @@ export default function Countdown() {
                         transition={{ duration: 0.3 }}
                         className="relative"
                       >
-                        <span className="font-playfair text-[clamp(7rem,12vw,8rem)] leading-none text-[#1a1a1a] font-thin">
+                        <span className="font-playfair text-[clamp(7rem,12vw,8rem)] leading-none text-[#2E3523] font-thin">
                           {String(timeLeft.días).padStart(2, '0')}
                         </span>
-                        <span className="absolute -top-2 -right-6 text-xs tracking-[0.2em] uppercase text-[#d4af37]">
+                        <span className="absolute -top-2 -right-6 text-xs tracking-[0.2em] uppercase text-[#C8A96B]">
                           días
                         </span>
                       </motion.div>
@@ -301,7 +301,7 @@ export default function Countdown() {
                   </motion.div>
 
                   {/* Separator */}
-                  <div className="hidden lg:block text-4xl text-[#d4af37]/30 font-thin">:</div>
+                  <div className="hidden lg:block text-4xl text-[#C8A96B]/30 font-thin">:</div>
 
                   {/* Hours, Minutes, Seconds - Smaller */}
                   <div className="flex items-center gap-3 lg:gap-4">
@@ -312,7 +312,7 @@ export default function Countdown() {
                     ].map((unit, index) => (
                       <React.Fragment key={unit.label}>
                         {index > 0 && (
-                          <span className="text-2xl text-[#d4af37]/30 font-thin">:</span>
+                          <span className="text-2xl text-[#C8A96B]/30 font-thin">:</span>
                         )}
                         <motion.div
                           initial={{ opacity: 0, y: 30 }}
@@ -330,12 +330,12 @@ export default function Countdown() {
                               transition={{ duration: 0.2 }}
                               className="relative"
                             >
-                              <span className="font-playfair text-[clamp(2rem,4vw,3rem)] text-[#1a1a1a] font-light">
+                              <span className="font-playfair text-[clamp(2rem,4vw,3rem)] text-[#2E3523] font-light">
                                 {String(unit.value).padStart(2, '0')}
                               </span>
                             </motion.div>
                           </AnimatePresence>
-                          <p className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/40 mt-1">
+                          <p className="text-[10px] tracking-[0.15em] uppercase text-[#2E3523]/40 mt-1">
                             {unit.label}
                           </p>
                         </motion.div>
@@ -346,7 +346,7 @@ export default function Countdown() {
 
                 {/* Decorative line underneath */}
                 <motion.div
-                  className="mt-12 h-px bg-gradient-to-r from-transparent via-[#d4af37]/20 to-transparent"
+                  className="mt-12 h-px bg-gradient-to-r from-transparent via-[#C8A96B]/20 to-transparent"
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   transition={{ duration: 1.5, delay: 0.5 }}
@@ -373,11 +373,11 @@ export default function Countdown() {
                     ease: "easeInOut"
                   }}
                 >
-                  <span className="font-playfair text-[clamp(3rem,8vw,6rem)] text-[#d4af37] font-light">
+                  <span className="font-playfair text-[clamp(3rem,8vw,6rem)] text-[#C8A96B] font-light">
                     ¡Hoy es el gran día!
                   </span>
                 </motion.div>
-                <p className="text-xl text-[#1a1a1a]/70 mt-6 font-light">
+                <p className="text-xl text-[#2E3523]/70 mt-6 font-light">
                   Acompáñennos a celebrar nuestro amor
                 </p>
                 <motion.div
@@ -391,7 +391,7 @@ export default function Countdown() {
                     ease: "easeInOut"
                   }}
                 >
-                  <svg className="w-16 h-16 text-[#d4af37] mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-16 h-16 text-[#C8A96B] mx-auto" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                   </svg>
                 </motion.div>
@@ -407,7 +407,7 @@ export default function Countdown() {
                 className="text-center max-w-3xl mx-auto"
               >
                 <motion.h2
-                  className="font-playfair text-[clamp(2.5rem,6vw,4rem)] text-[#1a1a1a] font-light mb-6"
+                  className="font-playfair text-[clamp(2.5rem,6vw,4rem)] text-[#2E3523] font-light mb-6"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 0.2 }}
@@ -421,20 +421,20 @@ export default function Countdown() {
                   transition={{ duration: 1, delay: 0.4 }}
                   className="space-y-4"
                 >
-                  <p className="text-lg text-[#1a1a1a]/70 font-light">
+                  <p className="text-lg text-[#2E3523]/70 font-light">
                     Su presencia hizo que este día fuera aún más especial
                   </p>
-                  <div className="flex items-center justify-center gap-2 text-[#d4af37]">
-                    <span className="h-px w-12 bg-[#d4af37]/30"></span>
+                  <div className="flex items-center justify-center gap-2 text-[#C8A96B]">
+                    <span className="h-px w-12 bg-[#C8A96B]/30"></span>
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                     </svg>
-                    <span className="h-px w-12 bg-[#d4af37]/30"></span>
+                    <span className="h-px w-12 bg-[#C8A96B]/30"></span>
                   </div>
-                  <p className="font-playfair text-2xl italic text-[#d4af37]">
+                  <p className="font-playfair text-2xl italic text-[#C8A96B]">
                     Con cariño y gratitud,
                   </p>
-                  <p className="text-xl text-[#1a1a1a]/80">
+                  <p className="text-xl text-[#2E3523]/80">
                     {settings.couple.bride.name} & {settings.couple.groom.name}
                   </p>
                 </motion.div>
@@ -444,12 +444,12 @@ export default function Countdown() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1, delay: 0.8 }}
-                  className="mt-12 p-6 bg-white/50 backdrop-blur-sm rounded-2xl border border-[#d4af37]/20"
+                  className="mt-12 p-6 bg-white/50 backdrop-blur-sm rounded-2xl border border-[#C8A96B]/20"
                 >
-                  <p className="text-sm text-[#1a1a1a]/60 uppercase tracking-wider mb-2">
+                  <p className="text-sm text-[#2E3523]/60 uppercase tracking-wider mb-2">
                     Próximamente
                   </p>
-                  <p className="text-lg text-[#1a1a1a]/80">
+                  <p className="text-lg text-[#2E3523]/80">
                     Las fotos de la boda estarán disponibles en nuestra galería
                   </p>
                 </motion.div>
@@ -467,7 +467,7 @@ export default function Countdown() {
           className="text-center mt-8"
         >
           <motion.p
-            className="font-playfair text-lg lg:text-xl italic text-[#1a1a1a]/50"
+            className="font-playfair text-lg lg:text-xl italic text-[#2E3523]/50"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
@@ -490,12 +490,12 @@ export default function Countdown() {
           <motion.div
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[30px] h-[50px] border border-[#8b6914]/60 rounded-full flex items-start justify-center p-2 group-hover:border-[#8b6914] transition-colors"
+            className="w-[30px] h-[50px] border border-[#8C774E]/60 rounded-full flex items-start justify-center p-2 group-hover:border-[#8C774E] transition-colors"
           >
             <motion.div
               animate={{ y: [0, 15, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-1 h-2 bg-[#8b6914] rounded-full"
+              className="w-1 h-2 bg-[#8C774E] rounded-full"
             />
           </motion.div>
         </div>

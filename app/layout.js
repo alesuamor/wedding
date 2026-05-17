@@ -1,9 +1,9 @@
 import './styles/globals.css'
 import settings from './config/settings'
-import { Inter, Playfair_Display, Dancing_Script } from 'next/font/google'
+import { Montserrat, Playfair_Display, Cormorant_Garamond } from 'next/font/google'
 
 // Configure fonts with Next.js font optimization
-const inter = Inter({ 
+const inter = Montserrat({ 
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
@@ -15,8 +15,10 @@ const playfair = Playfair_Display({
   display: 'swap',
 })
 
-const dancing = Dancing_Script({ 
+const dancing = Cormorant_Garamond({ 
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-dancing',
   display: 'swap',
 })

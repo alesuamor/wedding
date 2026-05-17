@@ -39,14 +39,14 @@ export default function Contact() {
 
     const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.1266164658011!2d-96.11655101019373!3d19.096543562806673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c341974ea97ec5%3A0x4f7ab08af086abad!2sQuinta%20R%C3%ADo%20H-J!5e0!3m2!1ses-419!2smx!4v1778309098750!5m2!1ses-419!2smx";
     return (
-        <section id="contact" className="min-h-screen flex items-center justify-center py-20 bg-[#1a1a1a] relative overflow-hidden">
+        <section id="contact" className="min-h-screen flex items-center justify-center py-20 bg-[#2E3523] relative overflow-hidden">
             {/* Elegant Gradient Mesh Background - same as Hero */}
             <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#d4af3715] via-transparent to-[#ff6b6b10]" />
-                <div className="absolute inset-0 bg-gradient-to-bl from-[#87a87810] via-transparent to-transparent" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(212,175,55,0.08)_0%,_transparent_40%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(135,168,120,0.06)_0%,_transparent_40%)]" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#4E5B31] via-[#2E3523] to-[#0f0f0f]" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#C8A96B15] via-transparent to-[#B96F4D10]" />
+                <div className="absolute inset-0 bg-gradient-to-bl from-[#A8B09110] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(200,169,107,0.08)_0%,_transparent_40%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(168,176,145,0.06)_0%,_transparent_40%)]" />
             </div>
 
             {/* Floating Particles - reduced based on performance */}
@@ -55,7 +55,7 @@ export default function Contact() {
                     {[...Array(Math.min(performance.particleCount, 20))].map((_, i) => (
                         <motion.div
                             key={i}
-                            className="absolute w-1 h-1 bg-[#d4af37]/20 rounded-full will-change-transform"
+                            className="absolute w-1 h-1 bg-[#C8A96B]/20 rounded-full will-change-transform"
                             style={{
                                 left: `${(i * 13) % 100}%`,
                                 top: `${(i * 17) % 100}%`
@@ -84,11 +84,11 @@ export default function Contact() {
                     className="text-center mb-16"
                 >
                     <h2 className="font-playfair text-[clamp(3rem,8vw,5rem)] font-thin tracking-[0.02em] mb-5">
-                        <span className="bg-gradient-to-r from-[#faf8f3] via-[#d4af37] to-[#faf8f3] bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-[#F5F1E8] via-[#C8A96B] to-[#F5F1E8] bg-clip-text text-transparent">
                             CONTACTO
                         </span>
                     </h2>
-                    <p className="text-lg font-light tracking-[2px] uppercase opacity-60 text-[#faf8f3]">
+                    <p className="text-lg font-light tracking-[2px] uppercase opacity-60 text-[#F5F1E8]">
                         Estamos para ayudarles
                     </p>
                 </motion.div>
@@ -114,13 +114,13 @@ export default function Contact() {
                                     <Icon className="w-10 h-10 text-white" />
                                 </motion.div>
 
-                                <h3 className="text-xl font-semibold mb-4 text-[#d4af37]">
+                                <h3 className="text-xl font-semibold mb-4 text-[#C8A96B]">
                                     {item.title}
                                 </h3>
 
                                 <div className="space-y-2">
                                     {item.details.map((detail, idx) => (
-                                        <p key={idx} className="text-[#faf8f3] opacity-70 hover:opacity-100 transition-opacity text-sm">
+                                        <p key={idx} className="text-[#F5F1E8] opacity-70 hover:opacity-100 transition-opacity text-sm">
                                             {detail}
                                         </p>
                                     ))}
@@ -140,23 +140,23 @@ export default function Contact() {
                 >
                     {/* Venue Information */}
                     <div className="glass p-8 rounded-2xl">
-                        <h3 className="font-playfair text-3xl font-bold mb-6 text-[#d4af37]">
+                        <h3 className="font-playfair text-3xl font-bold mb-6 text-[#C8A96B]">
                             {venue.name}
                         </h3>
 
                         <div className="space-y-4 mb-8">
-                            <p className="text-[#faf8f3] opacity-80">
+                            <p className="text-[#F5F1E8] opacity-80">
                                 {venue.address.street}<br />
                                 {venue.address.district}<br />
                                 {venue.address.city}, {venue.address.postalCode}<br />
                                 {venue.address.country}
                             </p>
 
-                            <div className="pt-4 border-t border-[#d4af37]/20">
-                                <p className="text-[#faf8f3] opacity-60 mb-2">
+                            <div className="pt-4 border-t border-[#C8A96B]/20">
+                                <p className="text-[#F5F1E8] opacity-60 mb-2">
                                     {venue.parking}
                                 </p>
-                                <p className="text-[#faf8f3] opacity-60">
+                                <p className="text-[#F5F1E8] opacity-60">
                                     GPS: {venue.coordinates.lat}, {venue.coordinates.lng}
                                 </p>
                             </div>
@@ -166,7 +166,7 @@ export default function Contact() {
                             href={venue.googleMapsUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-[#1a1a1a] transition-all duration-300"
+                            className="inline-flex items-center gap-2 px-6 py-3 border border-[#C8A96B] text-[#C8A96B] hover:bg-[#C8A96B] hover:text-[#2E3523] transition-all duration-300"
                             whileHover={performance.animationLevel === 'full' ? { scale: 1.05 } : {}}
                             whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
                         >

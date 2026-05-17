@@ -8,7 +8,7 @@ export default function ScrollIndicator({
   onClick,
   className = '',
   showText = true,
-  color = '#d4af37'
+  color = '#C8A96B'
 }) {
   return (
     <motion.div

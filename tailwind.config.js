@@ -11,8 +11,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'playfair': ['var(--font-playfair)', 'Playfair Display', 'serif'],
-        'inter': ['var(--font-inter)', 'Inter', 'sans-serif'],
-        'script': ['var(--font-dancing)', 'Dancing Script', 'cursive'],
+        'inter': ['var(--font-inter)', 'Montserrat', 'sans-serif'],
+        'script': ['var(--font-dancing)', 'Cormorant Garamond', 'serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
