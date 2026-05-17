@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, MapPin, Calendar, Music, Utensils, Camera, Heart, Users, Sparkles, Palette, Gift, CalendarPlus, ChevronRight } from 'lucide-react';
+import { Clock, MapPin, Calendar, Music, Utensils, Camera, Heart, Users, Sparkles, Palette, Gift, CalendarPlus, ChevronRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import settings from '../config/settings';
 
@@ -55,7 +55,7 @@ export default function WeddingDetails() {
     },
     {
       time: wedding.cocktailHour.displayTime,
-      title: "Coctel",
+      title: "Cóctel",
       description: "Bebidas, bocadillos y música",
       icon: Music
     },
@@ -94,8 +94,8 @@ export default function WeddingDetails() {
       title: "Recepción",
       icon: Music,
       content: {
-        title: "Coctel y celebración",
-        time: `${wedding.cocktailHour.displayTime} Coctel`,
+        title: "Cóctel y celebración",
+        time: `${wedding.cocktailHour.displayTime} Cóctel`,
         location: `${wedding.reception.displayTime} Celebración`,
         duration: `${wedding.reception.displayEndTime} Cierre de la noche`,
         notes: [
@@ -110,7 +110,7 @@ export default function WeddingDetails() {
       icon: Palette,
       content: {
         title: "Código de vestimenta",
-        time: "Coctel formal jardín",
+        time: "Cóctel formal jardín",
         location: "",
         duration: "",
         notes: [
@@ -238,7 +238,7 @@ export default function WeddingDetails() {
                     transition={{ duration: 1, delay: 0.5 }}
                     viewport={{ once: true }}
                   >
-                    <span className="bg-gradient-to-r from-[#F5F1E8] via-[#d4af19] to-[#F5F1E8] bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#F5F1E8] via-[#fff] to-[#F5F1E8] bg-clip-text text-transparent">
                       {venue.name.toUpperCase()}
                     </span>
                   </motion.h3>
@@ -286,10 +286,11 @@ export default function WeddingDetails() {
                         href={venue.googleMapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 border border-[#C8A96B] text-[#F5F1E8] hover:bg-[#DCCDB8] hover:text-[#4E5B31] transition-all duration-300 rounded-md"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#4E5B31] text-[#F5F1E8] hover:bg-[#2E3523] border border-white transition-all duration-300 rounded-md font-medium tracking-wider w-full sm:w-auto"
                         whileHover={performance.animationLevel === 'full' ? { scale: 1.05 } : {}}
                         whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
                       >
+                        <MapPin className="w-5 h-5" />
                         Ver mapa
                       </motion.a>
 
@@ -298,10 +299,11 @@ export default function WeddingDetails() {
                           href={calendarUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-6 py-3 border border-[#C8A96B] text-[#F5F1E8] hover:bg-[#DCCDB8] hover:text-[#4E5B31] transition-all duration-300 rounded-md"
+                          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-[#C8A96B] text-[#C8A96B] hover:bg-[#C8A96B]/10 transition-all duration-300 rounded-md font-medium tracking-wider w-full sm:w-auto"
                           whileHover={performance.animationLevel === 'full' ? { scale: 1.05 } : {}}
                           whileTap={performance.animationLevel === 'full' ? { scale: 0.95 } : {}}
                         >
+                          <CalendarPlus className="w-5 h-5" />
                           Agregar al calendario
                         </motion.a>
                       )}
@@ -407,9 +409,10 @@ export default function WeddingDetails() {
                               href={detailTabs[activeTab].content.action.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 px-6 py-2 border border-[#C8A96B]/50 text-[#C8A96B] hover:bg-[#C8A96B] hover:text-[#4E5B31] transition-all duration-300 rounded-md text-sm font-medium tracking-wider"
+                              className="inline-flex items-center justify-center gap-2 px-6 py-2 border border-[#C8A96B]/50 text-[#C8A96B] hover:bg-[#C8A96B] hover:text-[#4E5B31] transition-all duration-300 rounded-md text-sm font-medium tracking-wider"
                             >
                               {detailTabs[activeTab].content.action.label}
+                              <ExternalLink className="w-4 h-4" />
                             </a>
                           </div>
                         )}

@@ -117,14 +117,14 @@ const settings = {
     ceremony: {
       title: "Ceremonia",
       description: "Nos encantará contar con su presencia para acompañarnos en este momento tan especial.",
-      dressCode: "Coctel formal jardín",
+      dressCode: "Cóctel formal jardín",
       colors: ["Negro", "Dorado", "Tonos neutros"],
       notes: "Muy pronto compartiremos la hora y ubicación exacta de la ceremonia."
     },
     reception: {
       title: "Recepción",
       description: "Después de la ceremonia, celebraremos juntos con cena, música y mucho cariño.",
-      dressCode: "Coctel formal jardín",
+      dressCode: "Cóctel formal jardín",
       features: ["Cena", "Música", "Baile", "Brindis"],
       menu: "Cena por confirmar"
     }
