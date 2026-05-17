@@ -53,7 +53,7 @@ export default function RSVPForm({ guest }) {
 
     if (submitted) {
         return (
-            <section className="min-h-screen flex items-center justify-center py-20 bg-[#F5F1E8]">
+            <section className="py-24 flex items-center justify-center bg-[#F5F1E8]">
                 <motion.div
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -79,16 +79,32 @@ export default function RSVPForm({ guest }) {
     }
 
     return (
-        <section id="rsvp" className="min-h-screen flex items-center justify-center py-20 bg-[#F5F1E8] text-[#2E3523]">
-            <div className="max-w-2xl w-full mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="font-playfair text-[clamp(3rem,8vw,5rem)] font-thin tracking-[0.02em] mb-5 drop-shadow-[0_0_5px_rgba(200,169,107,0.4)]">
+        <section id="rsvp" className="py-16 md:py-20 flex flex-col items-center justify-center bg-[#F5F1E8] text-[#2E3523]">
+            {/* Separador Decorativo Guirnalda */}
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="w-full flex justify-center mb-12 md:mb-16"
+            >
+                <img 
+                    src="/guirnalda.png" 
+                    alt="Separador floral" 
+                    className="w-40 md:w-56 opacity-70 object-contain mix-blend-multiply"
+                />
+            </motion.div>
+
+            <div className="max-w-3xl w-full mx-auto px-6">
+                <div className="bg-[#FCFBF8] border border-[#C8A96B]/20 rounded-3xl p-8 md:p-14 shadow-[0_8px_30px_rgba(0,0,0,0.04)] relative overflow-hidden">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <h2 className="font-playfair text-[clamp(2.5rem,6vw,4rem)] font-thin tracking-[0.02em] mb-4">
                         <span className="bg-gradient-to-r from-[#2E3523] via-[#514343] to-[#2E3523] bg-clip-text text-transparent">
                             Confirma tu asistencia
                         </span>
@@ -215,6 +231,7 @@ export default function RSVPForm({ guest }) {
                         </span>
                     </motion.button>
                 </motion.form>
+                </div>
             </div>
         </section>
     );

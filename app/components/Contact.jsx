@@ -6,12 +6,16 @@ import { Gift } from 'lucide-react';
 
 export default function GiftRegistry() {
     return (
-        <section id="gifts" className="py-24 bg-[#F5F1E8] relative overflow-hidden">
-            {/* Subtle background decoration */}
-            <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#A8B091] rounded-full blur-[100px] transform translate-x-1/2 -translate-y-1/2" />
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#DCCDB8] rounded-full blur-[100px] transform -translate-x-1/2 translate-y-1/2" />
-            </div>
+        <section id="gifts" className="py-16 md:py-24 bg-[#F5F1E8] relative overflow-hidden">
+            {/* Subtle background texture */}
+            <div 
+                className="absolute inset-0 z-0 opacity-[0.15] mix-blend-multiply pointer-events-none" 
+                style={{ 
+                    backgroundImage: 'url(/texture.jpg)', 
+                    backgroundRepeat: 'repeat',
+                    backgroundSize: '300px'
+                }} 
+            />
 
             <div className="max-w-4xl w-full mx-auto px-6 relative z-10">
                 <motion.div
@@ -34,7 +38,7 @@ export default function GiftRegistry() {
                     </motion.div>
 
                     <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl text-[#4E5B31] font-thin tracking-wider mb-6">
-                        UN DETALLE ESPECIAL ✨
+                        UN DETALLE ESPECIAL
                     </h2>
                     
                     <p className="text-[#2E3523] text-lg max-w-2xl mx-auto font-light leading-relaxed">
@@ -49,13 +53,13 @@ export default function GiftRegistry() {
                     viewport={{ once: true }}
                     className="max-w-lg mx-auto"
                 >
-                    <div className="bg-white/60 backdrop-blur-md border border-[#C8A96B]/40 rounded-2xl p-8 md:p-12 text-center shadow-[0_8px_32px_rgba(78,91,49,0.05)] relative overflow-hidden">
+                    <div className="bg-[#FCFBF8] border border-[#C8A96B]/30 rounded-2xl p-8 md:p-12 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)] relative overflow-hidden">
                         
                         {/* Decorative corners */}
-                        <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-[#C8A96B]/60" />
-                        <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-[#C8A96B]/60" />
-                        <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-[#C8A96B]/60" />
-                        <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-[#C8A96B]/60" />
+                        <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-[#C8A96B]/40" />
+                        <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-[#C8A96B]/40" />
+                        <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-[#C8A96B]/40" />
+                        <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-[#C8A96B]/40" />
 
                         <h3 className="font-playfair text-2xl text-[#4E5B31] mb-8 font-medium">
                             Transferencia bancaria
