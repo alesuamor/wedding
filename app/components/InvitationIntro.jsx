@@ -40,8 +40,7 @@ export default function InvitationIntro({ guest }) {
       {!isOpen && (
         <motion.div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
         >
@@ -49,14 +48,14 @@ export default function InvitationIntro({ guest }) {
           <motion.div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/bg-cool.jpg')" }}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: isClicked ? 0 : 1 }}
             transition={{ duration: 1 }}
           />
 
           {/* Card Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 20 }}
+            initial={{ opacity: 1, scale: 1, y: 0 }}
             animate={
               isClicked 
                 ? { scale: 1.03, y: 15, opacity: 0 }
@@ -99,86 +98,65 @@ export default function InvitationIntro({ guest }) {
               </div>
 
               {/* INVITACIÓN PARA (Top 27%) */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 1 }}
+              <div
                 className="absolute w-full text-[#F5F1E8] font-inter text-[10px] md:text-xs uppercase tracking-[0.25em]"
                 style={{ top: '27%' }}
               >
                 Invitación para
-              </motion.div>
+              </div>
 
               {/* Guest Names Handling */}
               {guest.displayName.includes(' & ') ? (
                 <>
                   {/* Nombre 1 (Top 32%) */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 1 }}
+                  <div
                     className="absolute w-full font-playfair text-[28px] md:text-3xl text-[#F5F1E8] font-normal leading-tight px-4"
                     style={{ top: '32%' }}
                   >
                     {guest.displayName.split(' & ')[0]}
-                  </motion.div>
+                  </div>
 
                   {/* & (Top 39%) */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.7, duration: 1 }}
+                  <div
                     className="absolute w-full font-playfair text-xl md:text-2xl text-[#C29A56] italic"
                     style={{ top: '39%' }}
                   >
                     &
-                  </motion.div>
+                  </div>
 
                   {/* Nombre 2 (Top 43%) */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 1 }}
+                  <div
                     className="absolute w-full font-playfair text-[28px] md:text-3xl text-[#F5F1E8] font-normal leading-tight px-4"
                     style={{ top: '43%' }}
                   >
                     {guest.displayName.split(' & ')[1]}
-                  </motion.div>
+                  </div>
                 </>
               ) : (
                 /* Single Name (Top 37% approx) */
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 1 }}
+                <div
                   className="absolute w-full font-playfair text-[28px] md:text-3xl text-[#F5F1E8] font-normal leading-tight px-4"
                   style={{ top: '37%' }}
                 >
                   {guest.displayName}
-                </motion.div>
+                </div>
               )}
 
               {/* Passes (Top 51%) */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.9, duration: 1 }}
+              <div
                 className="absolute w-full text-[#C29A56] font-inter text-[10px] md:text-xs uppercase tracking-[0.2em]"
                 style={{ top: '51%' }}
               >
                 {guest.passes} {guest.passes === 1 ? 'pase reservado' : 'pases reservados'}
-              </motion.div>
+              </div>
 
               {/* Action (Bottom 7%) */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
+              <div
                 className="absolute w-full text-[#F5F1E8] font-inter text-[9px] md:text-[10px] uppercase tracking-[0.25em]"
                 style={{ bottom: '7%' }}
               >
                 Toca para abrir tu invitación
-              </motion.div>
+              </div>
 
             </div>
           </motion.div>
