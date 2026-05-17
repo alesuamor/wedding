@@ -24,7 +24,7 @@ const dancing = Cormorant_Garamond({
 })
 
 // Use environment variable if available, otherwise use a default
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ceremony-nextjs.vercel.app'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.michylalo.com/'
 
 // Safely create URL object for metadataBase
 let metadataBaseUrl;
@@ -33,13 +33,13 @@ try {
 } catch (error) {
   // Fallback to a valid URL if the siteUrl is invalid
   console.warn('Invalid NEXT_PUBLIC_SITE_URL, using fallback URL');
-  metadataBaseUrl = new URL('https://ceremony-nextjs.vercel.app');
+  metadataBaseUrl = new URL('https://www.michylalo.com/');
 }
 
 export const metadata = {
   // Basic metadata
-  title: `${settings.couple.bride.name} & ${settings.couple.groom.name} | Wedding - ${settings.wedding.displayDate}`,
-  description: `Join ${settings.couple.bride.name} and ${settings.couple.groom.name} for their wedding celebration at ${settings.venue.name}, ${settings.venue.address.city}. ${settings.wedding.displayDate} at ${settings.wedding.ceremony.displayTime}. RSVP by ${settings.rsvp.displayDeadline}.`,
+  title: "Mich & Lalo | Invitación de boda",
+  description: "Acompáñanos a celebrar nuestra boda.",
   keywords: `wedding, ${settings.couple.bride.name.toLowerCase()}, ${settings.couple.groom.name.toLowerCase()}, ${settings.wedding.displayDate}, ${settings.venue.name}, ${settings.venue.address.city}, wedding invitation, RSVP`,
   authors: [{ name: `${settings.couple.bride.name} & ${settings.couple.groom.name}` }],
   creator: `${settings.couple.bride.name} & ${settings.couple.groom.name}`,
@@ -47,28 +47,28 @@ export const metadata = {
   
   // Open Graph metadata for social media sharing
   openGraph: {
-    title: `${settings.couple.bride.name} & ${settings.couple.groom.name} are Getting Married!`,
-    description: `Save the date! Join us for our wedding celebration on ${settings.wedding.displayDate} at ${settings.venue.name}, ${settings.venue.address.city}. ${settings.social.instagram.hashtag}`,
-    url: siteUrl,
-    siteName: `${settings.couple.bride.name} & ${settings.couple.groom.name} Wedding`,
+    title: "Mich & Lalo | Invitación de boda",
+    description: "Acompáñanos a celebrar nuestra boda.",
+    url: "https://www.michylalo.com/",
+    siteName: "Mich & Lalo",
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: `${settings.couple.bride.name} & ${settings.couple.groom.name} Wedding Invitation`,
+        alt: "Invitación de boda Mich & Lalo",
         type: 'image/jpeg',
       }
     ],
-    locale: 'en_US',
+    locale: 'es_MX',
     type: 'website',
   },
   
   // Twitter Card metadata
   twitter: {
     card: 'summary_large_image',
-    title: `${settings.couple.bride.name} & ${settings.couple.groom.name} - ${settings.wedding.displayDate}`,
-    description: `Join us for our wedding celebration at ${settings.venue.name}. RSVP at our website!`,
+    title: "Mich & Lalo | Invitación de boda",
+    description: "Acompáñanos a celebrar nuestra boda.",
     images: ['/og-image.jpg'],
     creator: settings.social.instagram.wedding || settings.social.instagram.bride,
   },
@@ -131,24 +131,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${dancing.variable}`}>
       <head>
-        <title>{`${settings.couple.bride.name} & ${settings.couple.groom.name} | Wedding - ${settings.wedding.displayDate}`}</title>
-        
-        {/* Open Graph meta tags for better WhatsApp/social media support */}
-        <meta property="og:title" content={`${settings.couple.bride.name} & ${settings.couple.groom.name} are Getting Married!`} />
-        <meta property="og:description" content={`Save the date! Join us for our wedding celebration on ${settings.wedding.displayDate}`} />
-        <meta property="og:image" content="/og-image.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:url" content={siteUrl} />
-        <meta property="og:type" content="website" />
-        
-        {/* Twitter Card meta tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${settings.couple.bride.name} & ${settings.couple.groom.name} - ${settings.wedding.displayDate}`} />
-        <meta name="twitter:description" content={`Join us for our wedding celebration at ${settings.venue.name}`} />
-        <meta name="twitter:image" content="/og-image.jpg" />
-        
         {/* Additional structured data for rich snippets */}
         <script
           type="application/ld+json"

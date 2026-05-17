@@ -45,6 +45,53 @@ async function fetchGuest(slug) {
   }
 }
 
+export async function generateMetadata({ params }) {
+  const slug = params.guest;
+
+  let guestData = null;
+  try {
+    // Attempt to fetch dynamically from Google Sheets
+    guestData = await fetchGuest(slug);
+  } catch (error) {
+    console.error("Metadata fetch error:", error);
+  }
+
+  // Fallback to local config if not found in sheets
+  if (!guestData) {
+    guestData = fallbackGuests.find((g) => g.slug === slug);
+  }
+
+  const title = guestData ? `Invitación para ${guestData.displayName}` : "Invitación de boda | Mich & Lalo";
+  const description = "Mich & Lalo te invitan a celebrar su boda.";
+  const url = `https://www.michylalo.com/${slug}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Mich & Lalo",
+      images: [
+        {
+          url: '/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: "Invitación de boda Mich & Lalo",
+        }
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ['/og-image.jpg'],
+    },
+  };
+}
+
 export default async function GuestPage({ params }) {
   const slug = params.guest;
 
