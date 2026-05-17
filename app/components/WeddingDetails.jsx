@@ -217,7 +217,7 @@ export default function WeddingDetails() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4E5B31]/50 to-[#4E5B31]/80"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-[#1D240D]/80" />
 
               <motion.div
                 className="absolute inset-0 flex items-center justify-center text-center z-10"
