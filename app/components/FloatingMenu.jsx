@@ -119,10 +119,10 @@ export default function FloatingMenu({ showRSVP = false }) {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: 300, opacity: 0 }}
                     transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                    className="fixed top-0 right-0 h-full w-72 bg-[#2E3523]/95 backdrop-blur-md z-[95] border-l border-[#C8A96B]/20"
+                    className="fixed top-0 right-0 h-full w-72 bg-[#2E3523]/95 backdrop-blur-md z-[95] border-l border-[#C8A96B]/20 flex flex-col"
                   >
                     {/* Header */}
-                    <div className="p-6 border-b border-[#C8A96B]/20">
+                    <div className="p-6 border-b border-[#C8A96B]/20 shrink-0">
                       <motion.h3
                         className="font-playfair text-2xl text-left"
                         initial={{ opacity: 0, y: -20 }}
@@ -144,8 +144,8 @@ export default function FloatingMenu({ showRSVP = false }) {
                     </div>
 
                     {/* Menu Items */}
-                    <nav className="p-6">
-                      <ul className="space-y-4">
+                    <nav className="p-6 flex-1 overflow-y-auto pb-[90px]">
+                      <ul className="space-y-3 md:space-y-4">
                         {menuItems.map((item, index) => {
                           const Icon = item.icon;
                           return (
@@ -157,10 +157,10 @@ export default function FloatingMenu({ showRSVP = false }) {
                             >
                               <button
                                 onClick={() => scrollToSection(item.href)}
-                                className="w-full flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-[#C8A96B]/10 transition-colors group"
+                                className="w-full flex items-center gap-3 md:gap-4 px-4 py-2 md:py-3 rounded-lg hover:bg-[#C8A96B]/10 transition-colors group"
                               >
-                                <Icon className="w-4 h-4 text-[#C8A96B]/60 group-hover:text-[#C8A96B] transition-colors" />
-                                <span className="text-[#F5F1E8]/80 group-hover:text-[#F5F1E8] transition-colors">
+                                <Icon className="w-4 h-4 text-[#C8A96B]/60 group-hover:text-[#C8A96B] transition-colors flex-shrink-0" />
+                                <span className="text-[#F5F1E8]/80 group-hover:text-[#F5F1E8] transition-colors text-sm md:text-base whitespace-nowrap">
                                   {item.name}
                                 </span>
                                 <motion.div
@@ -176,7 +176,7 @@ export default function FloatingMenu({ showRSVP = false }) {
                     </nav>
 
                     {/* Footer */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-[#C8A96B]/20">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-[#C8A96B]/20 bg-[#2E3523]/95 backdrop-blur-md">
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

@@ -46,7 +46,7 @@ export default function Footer() {
                     </motion.h3>
 
                     {/* Contact Info */}
-                    <p className="text-lg text-[#F5F1E8] opacity-80 leading-relaxed mb-8">
+                    <p className="text-[clamp(0.75rem,3.5vw,1.125rem)] md:text-lg text-[#F5F1E8] opacity-80 leading-relaxed mb-8 whitespace-nowrap md:whitespace-normal">
                         Nos encantará celebrar este día con ustedes<br />
                         Para cualquier duda, escríbannos por WhatsApp
                     </p>
