@@ -32,7 +32,7 @@ export default function FloatingMenu({ showRSVP = false }) {
     { name: 'Nuestra Historia', href: '#love-story', icon: Heart },
     { name: 'Galería', href: '#gallery', icon: Camera },
     { name: 'Mesa de Regalos', href: '#gifts', icon: Gift },
-    { name: 'Contacto', href: 'https://api.whatsapp.com/send?phone=522291123473&text=Hola!', icon: Users },
+    { name: 'Contacto', href: 'https://api.whatsapp.com/send?phone=522291261381&text=Hola!', icon: Users },
   ];
 
   const menuItems = showRSVP
