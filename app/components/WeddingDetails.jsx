@@ -115,7 +115,7 @@ export default function WeddingDetails() {
         duration: "",
         notes: [
           "Para caballeros: Se sugiere evitar tonalidades en color verde.",
-          "Para damas: Se sugiere evitar colores neón, rojo, blanco, ivory, hueso o tonos muy similares al vestido de la novia."
+          "Para damas: Se sugiere evitar color blanco."
         ],
         action: {
           label: "Date una idea",
