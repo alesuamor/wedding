@@ -114,8 +114,8 @@ export default function WeddingDetails() {
         location: "",
         duration: "",
         notes: [
-          "Para caballeros: Se sugiere evitar tonalidades en color verde.",
-          "Para damas: Se sugiere evitar color blanco."
+          "Para caballeros: sugerimos evitar tonalidades en color verde.",
+          "Para damas: sugerimos evitar el color blanco."
         ],
         action: {
           label: "Date una idea",
