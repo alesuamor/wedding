@@ -285,11 +285,11 @@ export default function LoveStory() {
               viewport={{ once: true }}
             >
               <p className="font-playfair text-2xl lg:text-3xl font-thin italic text-[#F5F1E8]/70 leading-relaxed">
-                "In all the world, there is no heart for me like yours.
-                <span className="block mt-2">In all the world, there is no love for you like mine."</span>
+                "Ya me vi, ya te vi,
+                <span className="block mt-2">por el tiempo que nos dure el por venir"</span>
               </p>
               <cite className="block mt-8 text-xs tracking-[0.3em] uppercase text-[#C8A96B]/40 not-italic">
-                Con cariño, Michy & Lalo
+                CON CARIÑO, MICHY & LALO
               </cite>
             </motion.blockquote>
           </div>

@@ -33,7 +33,7 @@ export async function POST(request) {
       reservedPasses,
     } = body;
 
-    if (!email || !guestDisplayName || reservedPasses === undefined || reservedPasses === null) {
+    if (!guestDisplayName || reservedPasses === undefined || reservedPasses === null) {
       console.error("Missing required fields:", body);
 
       return NextResponse.json(
@@ -41,7 +41,6 @@ export async function POST(request) {
           success: false,
           error: "Missing required fields",
           debug: {
-            email: Boolean(email),
             guestDisplayName: Boolean(guestDisplayName),
             reservedPasses,
           },

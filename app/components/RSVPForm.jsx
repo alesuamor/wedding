@@ -6,7 +6,6 @@ import { Send, Check } from 'lucide-react';
 
 export default function RSVPForm({ guest }) {
     const [formData, setFormData] = useState({
-        email: '',
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,7 +29,7 @@ export default function RSVPForm({ guest }) {
                 },
                 body: JSON.stringify({
                     slug: guest?.slug || "",
-                    email: formData.email,
+                    email: "",
                     message: formData.message,
                     guestDisplayName: guest?.displayName || "Invitación general",
                     reservedPasses: guest?.passes || null
@@ -125,7 +124,7 @@ export default function RSVPForm({ guest }) {
                     onSubmit={handleSubmit}
                     className="space-y-8"
                 >
-                    {/* Guest Row */}
+                    {/* Guest and Passes Row */}
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="relative">
                             <input
@@ -145,27 +144,6 @@ export default function RSVPForm({ guest }) {
                         </div>
 
                         <div className="relative">
-                            <input
-                                type="email"
-                                id="email"
-                                value={formData.email}
-                                onChange={(e) => handleInputChange('email', e.target.value)}
-                                required
-                                className="w-full px-0 py-3 bg-transparent border-b border-[#2E3523]/20 focus:border-[#C8A96B] outline-none transition-all duration-300 peer"
-                                placeholder=" "
-                            />
-                            <label
-                                htmlFor="email"
-                                className="absolute left-0 top-3 text-[#2E3523]/60 transition-all duration-300 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#C8A96B] peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-sm"
-                            >
-                                Correo electrónico
-                            </label>
-                        </div>
-                    </div>
-
-                    {/* Passes Row */}
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div className="relative md:col-span-1">
                             <input
                                 type="text"
                                 id="guests"
