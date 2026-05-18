@@ -9,6 +9,7 @@ export default function RSVPForm({ guest }) {
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isDeclining, setIsDeclining] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [submitError, setSubmitError] = useState('');
 
@@ -16,7 +17,7 @@ export default function RSVPForm({ guest }) {
         setFormData(prev => ({ ...prev, [field]: value }));
     };
 
-    const handleSubmit = async (e) => {
+    const handleConfirm = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitError('');
@@ -28,6 +29,7 @@ export default function RSVPForm({ guest }) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
+                    action: "confirm",
                     slug: guest?.slug || "",
                     email: "",
                     message: formData.message,
@@ -47,6 +49,33 @@ export default function RSVPForm({ guest }) {
             setSubmitError('No pudimos registrar tu confirmación. Inténtalo nuevamente.');
         } finally {
             setIsSubmitting(false);
+        }
+    };
+
+    const handleDecline = async () => {
+        setIsDeclining(true);
+        setSubmitError('');
+
+        try {
+            await fetch('/api/rsvp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    action: "decline",
+                    slug: guest?.slug || "",
+                    email: "",
+                    message: formData.message,
+                    guestDisplayName: guest?.displayName || "Invitación general",
+                    reservedPasses: guest?.passes || null
+                }),
+            });
+        } catch (error) {
+            console.error("Error declining:", error);
+        } finally {
+            setIsDeclining(false);
+            window.open("https://api.whatsapp.com/send?phone=522291123473&text=Lamentablemente+no+podremos+asistir", "_blank");
         }
     };
 
@@ -121,7 +150,7 @@ export default function RSVPForm({ guest }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
-                    onSubmit={handleSubmit}
+                    onSubmit={handleConfirm}
                     className="space-y-8"
                 >
                     {/* Guest and Passes Row */}
@@ -188,7 +217,7 @@ export default function RSVPForm({ guest }) {
                     {/* Submit Button */}
                     <motion.button
                         type="submit"
-                        disabled={isSubmitting}
+                        disabled={isSubmitting || isDeclining}
                         className="w-full py-4 md:py-5 bg-[#4E5B31] text-[#F5F1E8] font-semibold uppercase relative overflow-hidden group transition-all duration-300 hover:bg-[#2E3523] border border-transparent hover:border-[#C8A96B] rounded-md"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
@@ -208,6 +237,18 @@ export default function RSVPForm({ guest }) {
                             )}
                         </span>
                     </motion.button>
+
+                    {/* Decline Option */}
+                    <div className="text-center pt-2">
+                        <button
+                            type="button"
+                            onClick={handleDecline}
+                            disabled={isSubmitting || isDeclining}
+                            className="text-sm text-[#2E3523]/60 hover:text-[#2E3523] hover:underline underline-offset-4 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-transparent border-none p-2 inline-block"
+                        >
+                            {isDeclining ? "Registrando respuesta..." : "No vamos a poder asistir"}
+                        </button>
+                    </div>
                 </motion.form>
                 </div>
             </div>

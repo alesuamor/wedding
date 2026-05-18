@@ -26,6 +26,7 @@ export async function POST(request) {
     const body = await request.json();
 
     const {
+      action,
       slug,
       email,
       message,
@@ -51,6 +52,7 @@ export async function POST(request) {
 
     const payload = {
       secret: RSVP_SECRET,
+      action: action || "confirm",
       slug: slug || "",
       firstName: "",
       lastName: "",
