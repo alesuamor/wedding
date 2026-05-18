@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Heart, Calendar, Users, Camera, Mail, MapPin } from 'lucide-react';
+import { Menu, X, Heart, Calendar, Users, Camera, Mail, MapPin, Gift } from 'lucide-react';
 import settings from '../config/settings';
 
 export default function FloatingMenu({ showRSVP = false }) {
@@ -31,7 +31,8 @@ export default function FloatingMenu({ showRSVP = false }) {
     { name: 'Detalles', href: '#wedding-details', icon: MapPin },
     { name: 'Nuestra Historia', href: '#love-story', icon: Heart },
     { name: 'Galería', href: '#gallery', icon: Camera },
-    { name: 'Contacto', href: '#contact', icon: Users },
+    { name: 'Mesa de Regalos', href: '#gifts', icon: Gift },
+    { name: 'Contacto', href: 'https://api.whatsapp.com/send?phone=522291123473&text=Hola!', icon: Users },
   ];
 
   const menuItems = showRSVP
@@ -39,6 +40,11 @@ export default function FloatingMenu({ showRSVP = false }) {
     : allMenuItems;
 
   const scrollToSection = (href) => {
+    if (href.startsWith('http')) {
+      window.open(href, '_blank', 'noopener,noreferrer');
+      setIsOpen(false);
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

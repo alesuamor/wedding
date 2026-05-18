@@ -60,55 +60,20 @@ export async function POST(request) {
       reservedPasses,
     };
 
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
+    // Fire and forget: hacemos la petición sin 'await' para no bloquear al usuario
+    // y asumimos que se enviará correctamente a Google Apps Script.
+    fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(payload),
+    }).catch(error => {
+      console.error("Error al enviar a Google Apps Script en segundo plano:", error);
     });
 
-    const responseText = await response.text();
-
-    let result;
-
-    try {
-      result = JSON.parse(responseText);
-    } catch (parseError) {
-      console.error("Google Apps Script did not return JSON:", {
-        status: response.status,
-        statusText: response.statusText,
-        responseText,
-      });
-
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Google Apps Script did not return JSON",
-          debug: {
-            status: response.status,
-            statusText: response.statusText,
-            responseText,
-          },
-        },
-        { status: 500 }
-      );
-    }
-
-    if (result.success === true) {
-      return NextResponse.json({ success: true });
-    }
-
-    console.error("Google Apps Script returned an error:", result);
-
-    return NextResponse.json(
-      {
-        success: false,
-        error: "Google Script error",
-        debug: result,
-      },
-      { status: 500 }
-    );
+    // Retornamos éxito inmediatamente al frontend
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error("RSVP API failed:", error);
 
