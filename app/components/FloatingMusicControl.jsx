@@ -119,7 +119,7 @@ export default function FloatingMusicControl() {
       <audio
         ref={audioRef}
         src="/music.mp3"
-        preload="auto"
+        preload="none"
         playsInline
       />
       

@@ -2,14 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function InvitationIntro({ guest }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
     if (guest) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -31,7 +30,6 @@ export default function InvitationIntro({ guest }) {
     }, 1200); // Wait 1.2s to finish animations
   };
 
-  if (!isClient) return null;
   // If no guest, do not render the overlay to avoid affecting general homepage
   if (!guest) return null;
 
@@ -39,7 +37,7 @@ export default function InvitationIntro({ guest }) {
     <AnimatePresence>
       {!isOpen && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#2E3523]"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
@@ -76,9 +74,14 @@ export default function InvitationIntro({ guest }) {
             onClick={handleOpen}
           >
             {/* Card Image */}
-            <div
-              className="absolute inset-0 bg-contain bg-center bg-no-repeat z-0"
-              style={{ backgroundImage: "url('/card-cool.png')" }}
+            <Image
+              src="/card-cool.png"
+              alt="Invitación"
+              fill
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 420px, 460px"
+              className="object-contain z-0"
             />
 
             {/* Dynamic Content Overlay (Absolute Positions) */}
