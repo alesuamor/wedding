@@ -76,6 +76,24 @@ export default function WeddingDetails() {
   // Detail tabs
   const detailTabs = [
     {
+      title: "Vestimenta",
+      icon: Palette,
+      content: {
+        title: "Código de vestimenta",
+        time: "Cóctel formal jardín",
+        location: "",
+        duration: "",
+        notes: [
+          "Para caballeros: sugerimos evitar tonalidades en color verde.",
+          "Para damas: sugerimos evitar el color blanco."
+        ],
+        action: {
+          label: "Date una idea",
+          url: "https://www.google.com/search?tbm=isch&q=coctel+formal+jardin"
+        }
+      }
+    },
+    {
       title: "Ceremonia",
       icon: Heart,
       content: {
@@ -103,24 +121,6 @@ export default function WeddingDetails() {
           "Los esperamos para compartir este momento tan especial.",
           "Gracias por acompañarnos en este día tan importante."
         ]
-      }
-    },
-    {
-      title: "Vestimenta",
-      icon: Palette,
-      content: {
-        title: "Código de vestimenta",
-        time: "Cóctel formal jardín",
-        location: "",
-        duration: "",
-        notes: [
-          "Para caballeros: sugerimos evitar tonalidades en color verde.",
-          "Para damas: sugerimos evitar el color blanco."
-        ],
-        action: {
-          label: "Date una idea",
-          url: "https://www.google.com/search?tbm=isch&q=coctel+formal+jardin"
-        }
       }
     },
     {
